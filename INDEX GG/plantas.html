@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantas | NicaSalud</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="Diseño.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="NicaSalud.html#inicio" aria-label="NicaSalud inicio">
+            <img class="brand-logo" src="assets/Logo.jpeg" alt="" aria-hidden="true">
+            <span>NicaSalud</span>
+        </a>
+
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="NicaSalud.html#inicio">Inicio</a></li>
+                <li><a href="mapa.html">Mapa</a></li>
+                <li><a href="enfermedades.html">Enfermedades</a></li>
+                <li><a href="plantas.html">Plantas</a></li>
+                <li><a href="recetas.html">Recetas</a></li>
+                <li><a href="NicaSalud.html#contacto">Contactarnos</a></li>
+            </ul>
+        </nav>
+
+        <form class="site-search" role="search" aria-label="Buscar en el sitio">
+            <input type="search" id="siteSearch" placeholder="Buscar..." aria-label="Buscar palabras en el sitio">
+            <button type="submit">Buscar</button>
+            <span class="search-status" id="searchStatus" aria-live="polite"></span>
+        </form>
+    </header>
+
+    <section class="page-hero plant-hero" id="inicio-plantas">
+        <div class="hero-content">
+            <p class="eyebrow">
+                <span class="pulse" aria-hidden="true"></span>
+                Plantas y bienestar
+            </p>
+            <h1>Plantas medicinales</h1>
+            <p>
+                Conoce usos tradicionales de plantas comunes como apoyo al cuidado diario, siempre con
+                orientación responsable y sin sustituir la atención médica.
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <section id="plantas">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <h2>Buscar plantas medicinales</h2>
+                    <p>Escribe una letra o el nombre de una planta para ver las coincidencias.</p>
+                </div>
+
+                <div class="disease-search plant-search">
+                    <label for="plantSearch">Buscar planta</label>
+                    <input type="search" id="plantSearch" placeholder="Ej. orégano, manzanilla, sábila..." autocomplete="off" aria-autocomplete="list" aria-controls="plantSuggestions" aria-expanded="false">
+                    <div class="disease-suggestions plant-suggestions" id="plantSuggestions" role="listbox" aria-label="Sugerencias de plantas medicinales"></div>
+                    <p id="plantSearchStatus" aria-live="polite">Busca por nombre o uso entre varias plantas medicinales.</p>
+                </div>
+
+                <div class="health-note">
+                    <strong>Nota importante</strong>
+                    <p>La información de uso es tradicional y educativa. No sustituye una consulta médica ni debe usarse para reemplazar tratamientos indicados.</p>
+                </div>
+
+                <aside class="plant-detail-panel" id="plantDetailPanel" aria-live="polite">
+                    <div>
+                        <span class="plant-detail-label">Planta seleccionada</span>
+                        <h3 id="plantDetailTitle">Selecciona una planta</h3>
+                        <p id="plantDetailInfo">Haz clic en cualquier cuadro para ver información básica y su uso tradicional.</p>
+                    </div>
+                    <div class="plant-detail-use">
+                        <strong>Uso</strong>
+                        <p id="plantDetailUse">La información aparecerá aquí.</p>
+                    </div>
+                    <div class="plant-detail-care">
+                        <strong>Cuidado</strong>
+                        <p id="plantDetailCare">Consulta con personal de salud si estás embarazada, tomas medicamentos o tienes una enfermedad crónica.</p>
+                    </div>
+                </aside>
+
+                <div class="filter-grid plant-grid" id="plantList">
+                    <article class="filter-card plant-card" data-plant-card data-reference-plant data-use="Uso tradicional: apoyo para molestias leves de piel y cuidado casero.">
+                        <strong>Achiote</strong>
+                        <p>Semillas usadas como colorante natural y en cuidados caseros de la piel.</p>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: apoyo en resfriados leves y alimentación saludable.">
+                        <strong>Ajo</strong>
+                        <p>Bulbo aromático usado en comidas y en preparaciones tradicionales para resfriados leves.</p>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: infusiones suaves para digestión y relajación.">
+                        <strong>Albahaca</strong>
+                        <p>Hierba aromática de uso culinario y en infusiones suaves para digestión.</p>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: gel externo para irritaciones leves de la piel.">
+                        <strong>Aloe vera</strong>
+                        <p>Planta de hojas carnosas cuyo gel se usa de forma externa en piel sensible.</p>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: molestias digestivas leves y gases.">
+                        <strong>Anís</strong>
+                        <p>Semilla aromática usada en infusiones ligeras para gases y digestión.</p>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: uso externo para golpes o dolores musculares leves.">
+                        <strong>Árnica</strong>
+                        <p>Planta tradicional de uso externo en golpes o molestias musculares leves.</p>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: digestión pesada; usar con cuidado y orientación.">
+                        <strong>Boldo</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: cuidado externo de piel sensible o irritada.">
+                        <strong>Caléndula</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: infusiones para frío, digestión y sabor en alimentos.">
+                        <strong>Canela</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: jarabes caseros para tos leve y alimentación.">
+                        <strong>Cebolla</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: infusión relajante y apoyo digestivo.">
+                        <strong>Cedrón</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: fibra para digestión y alimentación equilibrada.">
+                        <strong>Chía</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: apoyo digestivo y uso culinario.">
+                        <strong>Cilantro</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: molestias de garganta y dolor dental leve.">
+                        <strong>Clavo de olor</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: apoyo diurético; evitar exceso y consultar si hay enfermedad renal.">
+                        <strong>Cola de caballo</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: apoyo antiinflamatorio en comidas e infusiones.">
+                        <strong>Cúrcuma</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: apoyo digestivo y diurético suave.">
+                        <strong>Diente de león</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: apoyo en resfriados; puede interactuar con medicamentos.">
+                        <strong>Equinácea</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: vapores para congestión nasal; no ingerir aceite esencial.">
+                        <strong>Eucalipto</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: bebida refrescante y apoyo a la presión arterial saludable.">
+                        <strong>Flor de Jamaica</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: energía y cansancio; consultar si hay presión alta o medicamentos.">
+                        <strong>Ginseng</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: hojas para diarrea leve y cuidado digestivo.">
+                        <strong>Guayaba</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: digestión, gases y aliento fresco.">
+                        <strong>Hierbabuena</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: gases, cólicos leves y digestión.">
+                        <strong>Hinojo</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-reference-plant data-use="Uso tradicional: náuseas, resfriado leve y digestión.">
+                        <strong>Jengibre</strong>
+                        <p>Raíz picante usada en infusiones y comidas para digestión y resfriados leves.</p>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: infusiones para digestión y sabor en comidas.">
+                        <strong>Laurel</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: fibra para estreñimiento leve y salud digestiva.">
+                        <strong>Linaza</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: garganta irritada, tos leve y piel.">
+                        <strong>Llantén</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: garganta irritada y molestias digestivas leves.">
+                        <strong>Malva</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-reference-plant data-use="Uso tradicional: descanso, nervios leves y molestias digestivas.">
+                        <strong>Manzanilla</strong>
+                        <p>Flor aromática usada en infusiones suaves para descanso y molestias digestivas.</p>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: digestión, náuseas leves y aliento fresco.">
+                        <strong>Menta</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: alimentación nutritiva; evitar usar como cura de enfermedades.">
+                        <strong>Moringa</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: digestión, náuseas y resfriado leve.">
+                        <strong>Naranja agria</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: bienestar general; consultar por posibles interacciones.">
+                        <strong>Noni</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-reference-plant data-use="Uso tradicional: tos leve, garganta y digestión.">
+                        <strong>Orégano</strong>
+                        <p>Hierba culinaria usada en infusiones tradicionales para tos leve y digestión.</p>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: apoyo diurético y molestias articulares leves.">
+                        <strong>Ortiga</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: relajación, sueño y nervios leves.">
+                        <strong>Pasiflora</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: apoyo diurético suave y uso culinario.">
+                        <strong>Perejil</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: digestión, concentración y molestias musculares externas.">
+                        <strong>Romero</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: cólicos y usos rituales; evitar en embarazo.">
+                        <strong>Ruda</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: garganta, sudoración leve y digestión.">
+                        <strong>Salvia</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-reference-plant data-use="Uso tradicional: gel externo para quemaduras leves e irritación de piel.">
+                        <strong>Sábila</strong>
+                        <p>Planta de hojas carnosas cuyo gel se usa externamente en irritaciones leves.</p>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: resfriados leves, tos y defensas.">
+                        <strong>Sauco</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: bebida antioxidante y apoyo al estado de alerta.">
+                        <strong>Té verde</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: relajación, sueño y nervios leves.">
+                        <strong>Tilo</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: tos leve, garganta y digestión.">
+                        <strong>Tomillo</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: relajación, estrés leve y digestión.">
+                        <strong>Toronjil</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-reference-plant data-use="Uso tradicional: sueño y relajación; puede causar somnolencia.">
+                        <strong>Valeriana</strong>
+                        <p>Raíz usada tradicionalmente para sueño, relajación y nervios leves.</p>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: resfriado leve, digestión y bebida relajante.">
+                        <strong>Zacate limón</strong>
+                    </article>
+                    <article class="filter-card plant-card" data-plant-card data-use="Uso tradicional: piel, articulaciones y bienestar general.">
+                        <strong>Zarzaparrilla</strong>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - NicaSalud | Salud Comunitaria de Nicaragua</p>
+    </footer>
+    <script src="Frontend.js"></script>
+</body>
+</html>

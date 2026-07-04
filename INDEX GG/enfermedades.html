@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enfermedades | NicaSalud</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="Diseño.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="NicaSalud.html#inicio" aria-label="NicaSalud inicio">
+            <img class="brand-logo" src="assets/Logo.jpeg" alt="" aria-hidden="true">
+            <span>NicaSalud</span>
+        </a>
+
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="NicaSalud.html#inicio">Inicio</a></li>
+                <li><a href="mapa.html">Mapa</a></li>
+                <li><a href="enfermedades.html">Enfermedades</a></li>
+                <li><a href="plantas.html">Plantas</a></li>
+                <li><a href="recetas.html">Recetas</a></li>
+                <li><a href="NicaSalud.html#contacto">Contactarnos</a></li>
+            </ul>
+        </nav>
+
+        <form class="site-search" role="search" aria-label="Buscar en el sitio">
+            <input type="search" id="siteSearch" placeholder="Buscar..." aria-label="Buscar palabras en el sitio">
+            <button type="submit">Buscar</button>
+            <span class="search-status" id="searchStatus" aria-live="polite"></span>
+        </form>
+    </header>
+
+    <section class="page-hero disease-hero" id="inicio-enfermedades">
+        <div class="hero-content">
+            <p class="eyebrow">
+                <span class="pulse" aria-hidden="true"></span>
+                Prevención y señales de alerta
+            </p>
+            <h1>Enfermedades frecuentes</h1>
+            <p>
+                Información clara para reconocer síntomas comunes, prevenir riesgos y buscar atención
+                a tiempo cuando una señal de salud necesita cuidado.
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <section id="enfermedades">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <h2>Buscar enfermedades</h2>
+                    <p>Escribe el nombre o una palabra relacionada para filtrar los ejemplos.</p>
+                </div>
+
+                <div class="disease-search">
+                    <label for="diseaseSearch">Buscar enfermedad</label>
+                    <input type="search" id="diseaseSearch" placeholder="Ej. dengue, tos, diarrea..." autocomplete="off" aria-autocomplete="list" aria-controls="diseaseSuggestions" aria-expanded="false">
+                    <div class="disease-suggestions" id="diseaseSuggestions" role="listbox" aria-label="Sugerencias de enfermedades"></div>
+                    <p id="diseaseSearchStatus" aria-live="polite">Mostrando enfermedades más comunes.</p>
+                </div>
+
+                <div class="health-note">
+                    <strong>Nota importante</strong>
+                    <p>Esta información es educativa y sirve para reconocer señales de alerta. No sustituye una consulta médica, un diagnóstico ni un tratamiento indicado por personal de salud.</p>
+                </div>
+
+                <div class="filter-grid disease-grid" id="diseaseList">
+                    <article class="filter-card" data-disease-card data-common="true">
+                        <strong>Dengue</strong>
+                        <p class="disease-card-intro">Enfermedad viral transmitida principalmente por el mosquito Aedes aegypti. En Nicaragua y otros países tropicales puede aumentar durante temporadas de lluvia, acumulación de agua y presencia de criaderos cerca de viviendas.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Fiebre alta, dolor de cabeza, dolor detrás de los ojos, dolor muscular o articular.</li>
+                                <li>Náuseas, vómitos, cansancio intenso, sarpullido o dolor abdominal.</li>
+                                <li>Algunas personas tienen síntomas leves, pero otras pueden evolucionar a dengue grave.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Eliminar agua acumulada en baldes, llantas, floreros, pilas destapadas y recipientes sin uso.</li>
+                                <li>Usar ropa que cubra la piel, mosquiteros, cedazos y repelente si está disponible.</li>
+                                <li>Tomar líquidos y descansar. Evitar automedicarse, especialmente con aspirina o ibuprofeno si se sospecha dengue.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Dolor abdominal fuerte, vómitos persistentes, sangrado de nariz o encías, somnolencia, irritabilidad o dificultad para respirar.</li>
+                                <li>Piel fría, debilidad intensa, sangre en vómito o heces, o empeoramiento después de que baja la fiebre.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card data-common="true">
+                        <strong>Gripe</strong>
+                        <p class="disease-card-intro">Infección respiratoria causada por virus influenza. Puede parecer un resfriado fuerte, pero suele iniciar de forma más brusca y puede complicarse en niñas, niños pequeños, adultos mayores, embarazadas y personas con enfermedades crónicas.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Fiebre, escalofríos, dolor muscular, dolor de cabeza, tos, dolor de garganta y cansancio marcado.</li>
+                                <li>Congestión nasal, secreción nasal y malestar general; algunas personas pueden tener vómitos o diarrea, sobre todo menores.</li>
+                                <li>La tos y el cansancio pueden durar varios días aun cuando la fiebre ya bajó.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Lavarse las manos, cubrirse al toser, ventilar espacios y evitar contacto cercano si hay fiebre o tos intensa.</li>
+                                <li>Descansar, tomar líquidos y vigilar la fiebre. No usar antibióticos sin indicación médica, porque la gripe es viral.</li>
+                                <li>La vacunación anual puede reducir el riesgo de enfermedad grave en grupos vulnerables.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Dificultad para respirar, dolor en el pecho, confusión, labios morados, fiebre que no cede o empeoramiento después de mejorar.</li>
+                                <li>En menores: respiración rápida, rechazo de líquidos, somnolencia excesiva o señales de deshidratación.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card data-common="true">
+                        <strong>Infección respiratoria</strong>
+                        <p class="disease-card-intro">Grupo de enfermedades que afectan nariz, garganta, bronquios o pulmones. Pueden ser leves, como un resfriado, o más serias, como bronquitis, neumonía o crisis respiratorias en personas con asma o EPOC.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Tos seca o con flema, fiebre, dolor de garganta, congestión nasal y dolor de pecho al toser.</li>
+                                <li>Dificultad para respirar, silbidos en el pecho o respiración rápida pueden indicar mayor gravedad.</li>
+                                <li>En adultos mayores, puede presentarse como decaimiento, confusión o falta de apetito, incluso con poca fiebre.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Ventilar la casa, evitar humo de tabaco o leña, lavarse las manos y cubrirse con el antebrazo al toser.</li>
+                                <li>Tomar líquidos, descansar y observar la evolución de la tos y la fiebre.</li>
+                                <li>No compartir vasos, cubiertos ni pañuelos si hay síntomas respiratorios.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Respiración difícil, hundimiento de costillas, labios morados, fiebre alta persistente o dolor fuerte en el pecho.</li>
+                                <li>Tos por más de dos semanas, flema con sangre, pérdida de peso o sudoración nocturna.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card data-common="true">
+                        <strong>Diarrea</strong>
+                        <p class="disease-card-intro">Aumento de evacuaciones líquidas o blandas que puede deberse a virus, bacterias, parásitos, alimentos contaminados o agua insegura. El principal riesgo es la deshidratación, especialmente en niñas, niños y adultos mayores.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Evacuaciones líquidas, dolor abdominal, cólicos, náuseas, vómitos y fiebre.</li>
+                                <li>La deshidratación puede causar mucha sed, boca seca, orina escasa, ojos hundidos, debilidad o mareos.</li>
+                                <li>La diarrea con sangre o moco puede indicar infección que necesita valoración.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Tomar suero oral en sorbitos frecuentes y continuar alimentación según tolerancia.</li>
+                                <li>Usar agua segura, lavar manos con agua y jabón, cocinar bien los alimentos y mantener limpias las superficies.</li>
+                                <li>Evitar automedicarse con antibióticos o antidiarreicos, especialmente en niños, sin orientación de salud.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Sangre en heces, vómitos repetidos, fiebre alta, dolor abdominal fuerte o signos de deshidratación.</li>
+                                <li>En bebés: llanto sin lágrimas, somnolencia, rechazo del pecho o pacha, pañales secos o decaimiento.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card data-common="true">
+                        <strong>Presión alta</strong>
+                        <p class="disease-card-intro">También llamada hipertensión. Es una condición en la que la fuerza de la sangre contra las arterias se mantiene elevada. Muchas veces no produce síntomas, pero aumenta el riesgo de infarto, derrame cerebral, daño renal y problemas de visión.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Qué observar</h4>
+                            <ul>
+                                <li>La mayoría de personas no siente nada, por eso es importante medirse la presión con regularidad.</li>
+                                <li>Algunas personas presentan dolor de cabeza, mareos, zumbido de oídos, visión borrosa o palpitaciones, pero estos síntomas no siempre aparecen.</li>
+                                <li>El riesgo aumenta con edad, antecedentes familiares, exceso de sal, sobrepeso, sedentarismo, tabaco, alcohol y diabetes.</li>
+                            </ul>
+                            <h4>Prevención y control</h4>
+                            <ul>
+                                <li>Reducir sal, embutidos, sopas instantáneas y alimentos muy procesados; aumentar frutas, verduras y actividad física según capacidad.</li>
+                                <li>Evitar tabaco, moderar alcohol, dormir mejor y asistir a controles aunque se sienta bien.</li>
+                                <li>Si ya toma medicamentos, no suspenderlos sin indicación médica.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Dolor fuerte en el pecho, falta de aire, debilidad de un lado del cuerpo, dificultad para hablar o dolor de cabeza intenso y repentino.</li>
+                                <li>Presión muy elevada acompañada de visión borrosa, confusión, vómitos o dolor torácico.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card data-common="true">
+                        <strong>Diabetes</strong>
+                        <p class="disease-card-intro">Enfermedad crónica relacionada con niveles altos de glucosa en la sangre. Puede aparecer cuando el cuerpo no produce suficiente insulina o no la utiliza bien. Sin control, puede afectar corazón, riñones, ojos, nervios y pies.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Mucha sed, orinar con frecuencia, hambre excesiva, cansancio, visión borrosa y pérdida de peso sin explicación.</li>
+                                <li>Heridas que tardan en sanar, infecciones repetidas, hormigueo en pies o manos y piel seca.</li>
+                                <li>En la diabetes tipo 2 los síntomas pueden ser leves durante años, por eso los controles son importantes.</li>
+                            </ul>
+                            <h4>Prevención y control</h4>
+                            <ul>
+                                <li>Alimentación equilibrada, porciones moderadas, actividad física regular y evitar bebidas azucaradas ayudan a reducir riesgos.</li>
+                                <li>Revisar glucosa, presión, pies y visión según indicación del personal de salud.</li>
+                                <li>No abandonar medicamentos o insulina sin orientación profesional.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Vómitos, respiración rápida, somnolencia, confusión, deshidratación, dolor abdominal o aliento con olor extraño.</li>
+                                <li>Heridas en pies con pus, enrojecimiento, mal olor, fiebre o dolor intenso.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Asma</strong>
+                        <p class="disease-card-intro">Condición crónica de las vías respiratorias en la que los bronquios se inflaman y se estrechan por momentos. Puede controlarse bien con seguimiento, identificación de desencadenantes y uso correcto del tratamiento indicado.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Tos repetida, silbidos en el pecho, opresión torácica y dificultad para respirar.</li>
+                                <li>Los síntomas pueden empeorar por humo, polvo, moho, ejercicio, infecciones respiratorias, cambios de clima o emociones fuertes.</li>
+                                <li>Puede despertar por la noche o limitar juegos, trabajo o actividades diarias.</li>
+                            </ul>
+                            <h4>Prevención y control</h4>
+                            <ul>
+                                <li>Evitar humo de tabaco o leña, polvo acumulado, olores fuertes y alérgenos identificados.</li>
+                                <li>Aprender a usar correctamente inhaladores y seguir el plan indicado por personal de salud.</li>
+                                <li>No suspender el medicamento controlador solo porque la persona se siente mejor.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Dificultad para hablar por falta de aire, labios morados, hundimiento de costillas o silbidos intensos.</li>
+                                <li>Si el medicamento de rescate no mejora los síntomas o la crisis empeora rápidamente.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Anemia</strong>
+                        <p class="disease-card-intro">Condición en la que la sangre tiene menos capacidad de transportar oxígeno, con frecuencia por falta de hierro, pérdida de sangre, mala alimentación, embarazo, parásitos u otras enfermedades. Es común, pero necesita buscar la causa.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Cansancio, palidez, debilidad, mareos, falta de aire al esfuerzo y palpitaciones.</li>
+                                <li>Uñas frágiles, caída de cabello, dolor de cabeza o dificultad para concentrarse.</li>
+                                <li>En niñas y niños puede afectar crecimiento, aprendizaje y energía diaria.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Consumir alimentos con hierro como frijoles, carnes, huevos, hojas verdes y alimentos fortificados cuando estén disponibles.</li>
+                                <li>Combinar hierro vegetal con frutas ricas en vitamina C, como naranja, limón o guayaba, puede ayudar a su absorción.</li>
+                                <li>Tratar parásitos o pérdidas de sangre si el personal de salud lo indica.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Debilidad intensa, desmayos, falta de aire, palpitaciones fuertes o embarazo con cansancio marcado.</li>
+                                <li>Sangrado abundante, heces negras, pérdida de peso o anemia que no mejora con orientación inicial.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Chikungunya</strong>
+                        <p class="disease-card-intro">Enfermedad viral transmitida por mosquitos Aedes. Suele causar fiebre y dolor articular intenso, a veces prolongado. Comparte medidas de prevención con dengue y zika porque los criaderos suelen estar cerca de las viviendas.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Fiebre de inicio brusco, dolor fuerte en articulaciones, dolor muscular, dolor de cabeza y cansancio.</li>
+                                <li>Puede aparecer sarpullido, inflamación articular, náuseas o conjuntivitis leve.</li>
+                                <li>El dolor en articulaciones puede durar semanas o meses en algunas personas.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Eliminar criaderos, tapar recipientes, cambiar agua de floreros y limpiar patios.</li>
+                                <li>Usar mosquiteros, repelente y ropa que cubra la piel, especialmente durante el día.</li>
+                                <li>Descansar, hidratarse y consultar antes de tomar antiinflamatorios si no se ha descartado dengue.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Dolor incapacitante, fiebre persistente, signos de deshidratación o empeoramiento general.</li>
+                                <li>Mayor cuidado en embarazadas, recién nacidos, adultos mayores y personas con enfermedades crónicas.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Malaria</strong>
+                        <p class="disease-card-intro">Enfermedad causada por parásitos Plasmodium y transmitida por mosquitos Anopheles. Puede ser grave si no se diagnostica y trata a tiempo, especialmente en niñas, niños pequeños, embarazadas y personas con defensas bajas.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Fiebre, escalofríos, sudoración, dolor de cabeza, dolor muscular, náuseas y cansancio.</li>
+                                <li>Los síntomas pueden aparecer días o semanas después de la picadura, y al inicio parecen una infección común.</li>
+                                <li>En casos graves puede haber convulsiones, confusión, dificultad respiratoria, anemia intensa o piel amarilla.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Usar mosquiteros, proteger ventanas, usar repelente y evitar picaduras al atardecer y durante la noche.</li>
+                                <li>Consultar temprano si hay fiebre en zonas donde existe malaria o después de viajar a un área de riesgo.</li>
+                                <li>La malaria requiere prueba diagnóstica y tratamiento específico indicado por personal de salud.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Fiebre con confusión, convulsiones, dificultad para respirar, debilidad extrema o vómitos persistentes.</li>
+                                <li>Fiebre en embarazo, niñas y niños pequeños, o personas con VIH u otras condiciones de riesgo.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Influenza</strong>
+                        <p class="disease-card-intro">La influenza es una gripe causada por virus específicos que cambian con el tiempo. Puede circular por temporadas y causar brotes. Aunque muchas personas se recuperan, puede provocar neumonía o descompensar enfermedades crónicas.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Fiebre o sensación febril, tos, dolor de garganta, dolor muscular, dolor de cabeza, escalofríos y cansancio fuerte.</li>
+                                <li>Puede haber congestión nasal, secreción nasal y, en algunos casos, diarrea o vómitos.</li>
+                                <li>El inicio suele ser repentino, a diferencia de muchos resfriados que avanzan poco a poco.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Lavado de manos, etiqueta respiratoria, ventilación y quedarse en casa mientras haya fiebre ayudan a cortar contagios.</li>
+                                <li>La vacuna anual protege especialmente contra enfermedad grave en personas vulnerables.</li>
+                                <li>Descanso, líquidos y control de fiebre según orientación segura son medidas básicas.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Falta de aire, dolor en el pecho, confusión, deshidratación, labios morados o fiebre que empeora.</li>
+                                <li>Embarazo, edad avanzada, asma, diabetes, enfermedad cardiaca o síntomas intensos en menores.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Neumonía</strong>
+                        <p class="disease-card-intro">Infección que inflama los pulmones y puede llenar los alvéolos de líquido o secreciones. Puede ser causada por bacterias, virus u otros microorganismos. En personas vulnerables puede avanzar rápido.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Tos con flema o seca, fiebre, escalofríos, respiración rápida, dolor en el pecho y cansancio intenso.</li>
+                                <li>Puede haber falta de apetito, confusión en adultos mayores o dificultad para alimentarse en bebés.</li>
+                                <li>La falta de aire o labios morados son señales de gravedad.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Vacunación según edad y riesgo, lavado de manos, evitar humo y tratar infecciones respiratorias a tiempo.</li>
+                                <li>Tomar líquidos y descansar, pero la neumonía puede requerir evaluación y tratamiento específico.</li>
+                                <li>No usar antibióticos sin indicación, porque no todas las neumonías tienen la misma causa.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Dificultad para respirar, respiración muy rápida, dolor fuerte en el pecho o fiebre persistente.</li>
+                                <li>Decaimiento extremo, confusión, labios morados o empeoramiento en niñas, niños, embarazadas o adultos mayores.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>COVID-19</strong>
+                        <p class="disease-card-intro">Enfermedad causada por el coronavirus SARS-CoV-2. Puede ir desde síntomas leves hasta enfermedad respiratoria grave, especialmente en adultos mayores, embarazadas y personas con diabetes, hipertensión, obesidad, enfermedad renal o defensas bajas.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Fiebre, tos, dolor de garganta, congestión, cansancio, dolor muscular, dolor de cabeza o pérdida de olfato/gusto.</li>
+                                <li>Algunas personas presentan diarrea, náuseas o malestar general.</li>
+                                <li>Puede complicarse con falta de aire, neumonía o empeoramiento de enfermedades previas.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Ventilar espacios, lavarse las manos, cubrirse al toser y evitar contacto cercano si hay síntomas.</li>
+                                <li>Usar mascarilla en lugares cerrados o con personas vulnerables cuando hay síntomas respiratorios.</li>
+                                <li>La vacunación reduce el riesgo de enfermedad grave; seguir las recomendaciones locales de salud.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Dificultad para respirar, dolor persistente en el pecho, confusión, somnolencia extrema o labios morados.</li>
+                                <li>Empeoramiento rápido, fiebre persistente o saturación baja si se cuenta con oxímetro.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Leptospirosis</strong>
+                        <p class="disease-card-intro">Infección bacteriana que puede transmitirse por contacto con agua, lodo o suelo contaminado con orina de animales, especialmente después de lluvias, inundaciones o exposición a charcos y aguas estancadas.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Fiebre, dolor de cabeza, dolor muscular fuerte, especialmente en pantorrillas y espalda.</li>
+                                <li>Ojos rojos, náuseas, vómitos, diarrea, dolor abdominal o sarpullido.</li>
+                                <li>En casos graves puede afectar hígado, riñones, pulmones o causar sangrados.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Evitar caminar descalzo en agua sucia, lodo o zonas inundadas; usar botas y guantes si se debe limpiar.</li>
+                                <li>Cubrir heridas, lavar la piel después de exposición y controlar roedores en la vivienda.</li>
+                                <li>Consultar temprano si aparece fiebre después de contacto con agua contaminada.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Piel u ojos amarillos, orina oscura o escasa, falta de aire, sangrado o dolor fuerte en el pecho.</li>
+                                <li>Fiebre alta con debilidad extrema después de inundaciones o exposición a aguas sucias.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Tuberculosis</strong>
+                        <p class="disease-card-intro">Enfermedad bacteriana que afecta principalmente los pulmones, aunque también puede afectar otras partes del cuerpo. Se transmite por el aire cuando una persona enferma tose, habla o estornuda en espacios cerrados o poco ventilados.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Tos por dos semanas o más, flema, sangre al toser, dolor en el pecho o dificultad para respirar.</li>
+                                <li>Fiebre, sudoración nocturna, pérdida de peso, cansancio y falta de apetito.</li>
+                                <li>Puede avanzar lentamente, por eso muchas personas tardan en consultar.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Ventilar habitaciones, cubrirse al toser y acudir a evaluación si hay tos persistente.</li>
+                                <li>El tratamiento debe completarse tal como se indica, aunque la persona se sienta mejor antes de terminarlo.</li>
+                                <li>Los contactos cercanos pueden necesitar evaluación para descartar infección.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Tos con sangre, pérdida de peso marcada, fiebre nocturna o tos persistente por más de dos semanas.</li>
+                                <li>Mayor prioridad si la persona vive con VIH, diabetes, desnutrición o defensas bajas.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>VIH/SIDA</strong>
+                        <p class="disease-card-intro">El VIH es un virus que afecta el sistema inmunológico. Con diagnóstico temprano y tratamiento antirretroviral, una persona puede vivir muchos años con buena calidad de vida y reducir mucho el riesgo de transmitir el virus.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Qué puede ocurrir</h4>
+                            <ul>
+                                <li>Al inicio puede causar fiebre, dolor de garganta, ganglios inflamados, sarpullido o cansancio, aunque muchas personas no notan síntomas.</li>
+                                <li>Sin tratamiento, con los años puede debilitar defensas y favorecer infecciones oportunistas.</li>
+                                <li>El SIDA es una etapa avanzada de la infección, no el inicio.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Usar condón, realizarse pruebas, no compartir agujas y acudir a control si hubo exposición de riesgo.</li>
+                                <li>El tratamiento diario ayuda a controlar el virus; no debe suspenderse sin indicación médica.</li>
+                                <li>La información, el respeto y la confidencialidad son clave para reducir estigma y mejorar el cuidado.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Exposición sexual sin protección, ruptura de condón, contacto con sangre o síntomas persistentes sin explicación.</li>
+                                <li>Pérdida de peso, fiebre prolongada, diarrea persistente, infecciones repetidas o manchas en piel/mucosas.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Zika</strong>
+                        <p class="disease-card-intro">Enfermedad viral transmitida por mosquitos Aedes y también relacionada con transmisión sexual. Suele ser leve, pero es importante en embarazo porque puede afectar el desarrollo del bebé.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Fiebre leve, sarpullido, ojos rojos, dolor articular, dolor muscular y dolor de cabeza.</li>
+                                <li>Muchas personas no presentan síntomas o tienen molestias leves de pocos días.</li>
+                                <li>Puede confundirse con dengue o chikungunya, por eso el contexto y la valoración son importantes.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Eliminar criaderos, usar repelente, mosquiteros y ropa que cubra la piel.</li>
+                                <li>En embarazo o planificación de embarazo, reforzar prevención de picaduras y consultar si hay síntomas o exposición.</li>
+                                <li>Usar protección sexual si existe riesgo de exposición.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Síntomas en embarazadas, fiebre con dolor intenso, debilidad progresiva o sospecha de dengue.</li>
+                                <li>Hormigueo, debilidad en piernas o dificultad para caminar después de infección viral.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Parasitosis intestinal</strong>
+                        <p class="disease-card-intro">Infecciones por parásitos que viven en el intestino. Se relacionan con agua o alimentos contaminados, manos sucias, caminar descalzo en suelos contaminados y saneamiento insuficiente.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Dolor abdominal, diarrea, gases, náuseas, pérdida de apetito o picazón anal.</li>
+                                <li>Cansancio, anemia, pérdida de peso o retraso en crecimiento si la infección se mantiene.</li>
+                                <li>Algunas personas no sienten síntomas, pero pueden seguir transmitiendo si no hay higiene adecuada.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Lavar manos, uñas, frutas y verduras; tomar agua segura y cocinar bien alimentos.</li>
+                                <li>Usar calzado, disponer adecuadamente de excretas y mantener baños o letrinas limpias.</li>
+                                <li>La desparasitación debe hacerse según orientación del personal de salud, edad y contexto.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Diarrea persistente, sangre en heces, pérdida de peso, anemia o dolor abdominal fuerte.</li>
+                                <li>Niñas, niños, embarazadas o personas con defensas bajas necesitan evaluación oportuna.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Hipertensión arterial</strong>
+                        <p class="disease-card-intro">Nombre médico de la presión alta. Se considera un problema silencioso porque puede dañar órganos durante años sin causar molestias claras. Controlarla reduce riesgo de infarto, accidente cerebrovascular y enfermedad renal.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Factores relacionados</h4>
+                            <ul>
+                                <li>Edad, antecedentes familiares, exceso de sal, sobrepeso, falta de actividad física, alcohol, tabaco y estrés sostenido.</li>
+                                <li>Diabetes, enfermedad renal y apnea del sueño pueden aumentar o acompañar la hipertensión.</li>
+                                <li>Medirse la presión correctamente es la forma de detectarla.</li>
+                            </ul>
+                            <h4>Prevención y control</h4>
+                            <ul>
+                                <li>Comer con menos sal, más frutas y verduras, caminar o moverse de forma regular y mantener peso saludable.</li>
+                                <li>Tomar medicamentos exactamente como fueron indicados si ya existe diagnóstico.</li>
+                                <li>Llevar registro de mediciones puede ayudar al seguimiento médico.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Dolor de pecho, falta de aire, debilidad de un lado del cuerpo, dificultad para hablar o visión perdida.</li>
+                                <li>Dolor de cabeza repentino muy fuerte, confusión o presión alta con síntomas intensos.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Enfermedades cardiovasculares</strong>
+                        <p class="disease-card-intro">Conjunto de enfermedades que afectan el corazón y los vasos sanguíneos. Incluyen infarto, angina, insuficiencia cardiaca, enfermedad arterial y accidentes cerebrovasculares. Muchas se relacionan con factores prevenibles.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Factores de riesgo</h4>
+                            <ul>
+                                <li>Presión alta, diabetes, colesterol alto, tabaco, sedentarismo, obesidad y alimentación alta en sal, grasas trans o azúcares.</li>
+                                <li>Antecedentes familiares, edad, enfermedad renal y estrés crónico también influyen.</li>
+                                <li>Algunas personas no sienten señales hasta que ocurre una complicación.</li>
+                            </ul>
+                            <h4>Prevención y control</h4>
+                            <ul>
+                                <li>Controlar presión, glucosa y colesterol; dejar tabaco; moverse con regularidad; dormir mejor y comer más alimentos frescos.</li>
+                                <li>Seguir tratamiento indicado y acudir a controles aunque no haya dolor o molestias.</li>
+                                <li>Reconocer señales de infarto o derrame permite actuar rápido.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Dolor u opresión en el pecho, falta de aire, sudoración fría, náuseas o dolor que corre a brazo, espalda, cuello o mandíbula.</li>
+                                <li>Debilidad de un lado del cuerpo, habla rara, cara caída o pérdida repentina de visión.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Infarto agudo al miocardio</strong>
+                        <p class="disease-card-intro">Ocurre cuando se bloquea el flujo de sangre a una parte del corazón. Es una emergencia médica: mientras más rápido se recibe atención, mayor posibilidad hay de salvar músculo cardiaco y reducir complicaciones.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Señales frecuentes</h4>
+                            <ul>
+                                <li>Dolor, presión, ardor u opresión en el pecho que dura varios minutos o va y viene.</li>
+                                <li>Dolor que se extiende a brazo izquierdo o ambos brazos, espalda, cuello, mandíbula o estómago.</li>
+                                <li>Sudor frío, náuseas, falta de aire, mareo, ansiedad intensa o sensación de desmayo.</li>
+                            </ul>
+                            <h4>Factores que aumentan riesgo</h4>
+                            <ul>
+                                <li>Hipertensión, diabetes, colesterol alto, tabaco, obesidad, sedentarismo y antecedentes familiares.</li>
+                                <li>El riesgo aumenta si se combinan varios factores o si no están controlados.</li>
+                                <li>En mujeres, adultos mayores y personas con diabetes los síntomas pueden ser menos típicos.</li>
+                            </ul>
+                            <h4>Qué hacer</h4>
+                            <ul>
+                                <li>Buscar ayuda médica de inmediato. No esperar a que el dolor “se pase”.</li>
+                                <li>Evitar manejar solo hacia el hospital si hay dolor fuerte, mareo o falta de aire.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Accidente cerebrovascular</strong>
+                        <p class="disease-card-intro">También llamado derrame cerebral o ACV. Ocurre cuando se interrumpe el flujo de sangre al cerebro o hay sangrado cerebral. Es una emergencia en la que cada minuto importa.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Señales de alarma</h4>
+                            <ul>
+                                <li>Cara desviada, debilidad o adormecimiento de brazo o pierna, especialmente de un solo lado.</li>
+                                <li>Dificultad para hablar, entender, caminar, ver o mantener equilibrio.</li>
+                                <li>Dolor de cabeza súbito e intenso, confusión o pérdida de conciencia.</li>
+                            </ul>
+                            <h4>Factores de riesgo</h4>
+                            <ul>
+                                <li>Presión alta, diabetes, colesterol alto, tabaquismo, arritmias, obesidad y sedentarismo.</li>
+                                <li>Haber tenido un ACV previo o ataques transitorios aumenta el riesgo.</li>
+                                <li>Controlar presión y glucosa reduce mucho el peligro.</li>
+                            </ul>
+                            <h4>Qué hacer</h4>
+                            <ul>
+                                <li>Buscar atención inmediata si aparece una señal, aunque desaparezca en minutos.</li>
+                                <li>Anotar la hora en que comenzaron los síntomas ayuda al personal de salud.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Enfermedad renal crónica</strong>
+                        <p class="disease-card-intro">Daño progresivo de los riñones que reduce su capacidad para filtrar la sangre, eliminar líquidos y equilibrar minerales. Puede avanzar sin síntomas hasta etapas tardías, por eso los controles son esenciales.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Factores relacionados</h4>
+                            <ul>
+                                <li>Diabetes, hipertensión, infecciones urinarias repetidas, uso frecuente de ciertos analgésicos, deshidratación y antecedentes familiares.</li>
+                                <li>En zonas de calor intenso, trabajos físicos prolongados y poca hidratación pueden aumentar riesgo de daño renal.</li>
+                                <li>También puede relacionarse con enfermedades autoinmunes o problemas obstructivos.</li>
+                            </ul>
+                            <h4>Síntomas posibles</h4>
+                            <ul>
+                                <li>Hinchazón de pies o cara, cansancio, presión alta difícil de controlar, náuseas o picazón.</li>
+                                <li>Orina espumosa, con sangre, muy poca orina o necesidad de orinar más por la noche.</li>
+                                <li>En etapas iniciales puede no sentirse nada.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Controlar presión y diabetes, hidratarse, evitar automedicación frecuente y realizar exámenes si hay riesgo.</li>
+                                <li>Consultar si hay hinchazón, cambios en orina, dolor lumbar con fiebre o presión alta persistente.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Cáncer</strong>
+                        <p class="disease-card-intro">Grupo amplio de enfermedades en las que células del cuerpo crecen de manera anormal y pueden invadir tejidos. Existen muchos tipos, y la detección temprana mejora las posibilidades de tratamiento y control.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Señales que conviene revisar</h4>
+                            <ul>
+                                <li>Bultos, heridas que no cicatrizan, sangrados inexplicables, cambios en lunares o pérdida de peso sin razón.</li>
+                                <li>Tos persistente, ronquera prolongada, dificultad para tragar, dolor constante o cambios en hábitos intestinales/urinarios.</li>
+                                <li>No toda señal significa cáncer, pero sí merece evaluación si persiste.</li>
+                            </ul>
+                            <h4>Prevención y detección</h4>
+                            <ul>
+                                <li>Evitar tabaco, reducir alcohol, protegerse del sol, mantener alimentación variada y actividad física.</li>
+                                <li>Vacunas como VPH y hepatitis B pueden prevenir algunos cánceres relacionados con infecciones.</li>
+                                <li>Participar en tamizajes disponibles, como Papanicolaou, examen de mama o pruebas indicadas por edad y riesgo.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Sangrado vaginal anormal, sangre en heces u orina, masa que crece, dolor persistente o pérdida de peso marcada.</li>
+                                <li>Cualquier síntoma que dura semanas y no tiene explicación clara.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>EPOC</strong>
+                        <p class="disease-card-intro">Enfermedad pulmonar obstructiva crónica. Dificulta la salida del aire de los pulmones y suele avanzar lentamente. Se relaciona con humo de tabaco, humo de leña, contaminación y exposición laboral a polvo o químicos.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Tos crónica, flemas, falta de aire al caminar o subir gradas, silbidos y cansancio.</li>
+                                <li>Las crisis pueden empeorar con infecciones respiratorias, humo, polvo o cambios de clima.</li>
+                                <li>Algunas personas se acostumbran a la falta de aire y consultan tarde.</li>
+                            </ul>
+                            <h4>Prevención y control</h4>
+                            <ul>
+                                <li>Evitar humo de tabaco y leña, mejorar ventilación de cocina y reducir exposición a polvo.</li>
+                                <li>Usar inhaladores y medicamentos como fueron indicados; aprender técnica correcta.</li>
+                                <li>Vacunación, actividad física supervisada y controles reducen complicaciones.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Falta de aire intensa, labios morados, confusión, fiebre con flema abundante o dolor en el pecho.</li>
+                                <li>Empeoramiento rápido de tos, flemas o respiración respecto a lo habitual.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Obesidad</strong>
+                        <p class="disease-card-intro">Condición crónica caracterizada por exceso de grasa corporal que puede afectar la salud. No es solo un tema estético: aumenta el riesgo de diabetes tipo 2, hipertensión, enfermedad cardiovascular, apnea del sueño, hígado graso y dolor articular.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Factores relacionados</h4>
+                            <ul>
+                                <li>Alimentación alta en bebidas azucaradas y ultraprocesados, baja actividad física, sueño insuficiente y estrés.</li>
+                                <li>También influyen genética, medicamentos, enfermedades hormonales, entorno familiar y acceso a alimentos saludables.</li>
+                                <li>El IMC orienta, pero la evaluación de salud debe considerar edad, cintura, presión, glucosa, hábitos y contexto.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Priorizar agua, comidas caseras, frutas, verduras, frijoles, porciones adecuadas y actividad física progresiva.</li>
+                                <li>Evitar dietas extremas; los cambios sostenibles y acompañados suelen ser más seguros.</li>
+                                <li>Revisar presión, glucosa, colesterol y salud mental si hay aumento de peso importante.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Falta de aire al dormir, ronquidos fuertes, dolor de pecho, presión alta, azúcar elevada o dolor articular limitante.</li>
+                                <li>Aumento de peso rápido sin explicación, cansancio extremo o cambios hormonales importantes.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Resfriado común</strong>
+                        <p class="disease-card-intro">Infección viral leve de nariz y garganta. Es muy frecuente en escuelas, hogares y espacios cerrados, especialmente cuando hay cambios de clima o contacto cercano con personas enfermas.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Estornudos, secreción nasal, congestión, dolor de garganta, tos leve y malestar general.</li>
+                                <li>Puede haber fiebre baja, cansancio y dolor de cabeza, pero normalmente mejora en pocos días.</li>
+                                <li>La tos puede durar un poco más que la congestión, aun cuando la persona ya se siente mejor.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Lavarse las manos, cubrirse al toser, ventilar espacios y evitar compartir vasos o cubiertos.</li>
+                                <li>Tomar líquidos, descansar y evitar humo de tabaco o leña que irrite la garganta.</li>
+                                <li>No usar antibióticos sin indicación, porque la mayoría de resfriados son virales.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Fiebre alta persistente, dolor fuerte de oído, dificultad para respirar o empeoramiento después de mejorar.</li>
+                                <li>Mayor cuidado en bebés, adultos mayores y personas con asma, EPOC o defensas bajas.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Faringitis y amigdalitis</strong>
+                        <p class="disease-card-intro">Inflamación de garganta o amígdalas causada por virus o bacterias. Es frecuente en niñas, niños y adolescentes, y puede transmitirse por gotitas respiratorias o contacto cercano.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Dolor de garganta, dificultad al tragar, fiebre, ganglios del cuello inflamados y mal aliento.</li>
+                                <li>Puede haber tos, congestión y ronquera si es viral; placas o pus en amígdalas pueden requerir valoración.</li>
+                                <li>En menores puede presentarse con rechazo de alimentos, irritabilidad o dolor abdominal.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Lavado de manos, no compartir vasos y cubrirse al toser o estornudar.</li>
+                                <li>Tomar líquidos, usar alimentos suaves y descansar la voz si hay irritación.</li>
+                                <li>Si se indica antibiótico, completar el tratamiento para evitar recaídas o complicaciones.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Dificultad para respirar o tragar saliva, babeo, cuello muy inflamado o fiebre alta persistente.</li>
+                                <li>Dolor de garganta intenso sin tos, placas en amígdalas o brotes repetidos.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Otitis media</strong>
+                        <p class="disease-card-intro">Infección o inflamación del oído medio. Es común después de resfriados, alergias o congestión nasal, especialmente en niñas y niños pequeños.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Dolor de oído, fiebre, sensación de oído tapado, disminución de audición o salida de líquido.</li>
+                                <li>En bebés puede causar llanto, irritabilidad, rechazo de alimento o tocarse mucho la oreja.</li>
+                                <li>Puede aparecer después de varios días de congestión nasal o tos.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Evitar humo, tratar congestión, mantener vacunas al día y no introducir objetos en el oído.</li>
+                                <li>Dar líquidos y controlar fiebre o dolor con orientación segura según edad.</li>
+                                <li>No usar gotas, antibióticos o remedios dentro del oído sin indicación médica.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Dolor fuerte, fiebre alta, secreción con mal olor, hinchazón detrás de la oreja o pérdida de audición.</li>
+                                <li>En menores de 6 meses o si los síntomas duran más de dos días.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Conjuntivitis</strong>
+                        <p class="disease-card-intro">Inflamación de la conjuntiva, la membrana que cubre parte del ojo. Puede ser viral, bacteriana, alérgica o por irritación; algunas formas se contagian fácilmente.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Ojo rojo, lagrimeo, picazón, ardor, sensación de arenilla y secreción.</li>
+                                <li>Puede pegar los párpados al despertar si hay secreción espesa.</li>
+                                <li>La conjuntivitis alérgica suele afectar ambos ojos y acompañarse de estornudos o picazón nasal.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Lavarse las manos, no compartir toallas, limpiar secreciones con gasa limpia y evitar tocarse los ojos.</li>
+                                <li>No usar gotas con antibiótico o esteroides sin indicación médica.</li>
+                                <li>Evitar lentes de contacto mientras haya irritación o secreción.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Dolor fuerte, sensibilidad a la luz, visión borrosa, lesión por golpe o químico en el ojo.</li>
+                                <li>Enrojecimiento intenso en un solo ojo o síntomas que no mejoran.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Infección urinaria</strong>
+                        <p class="disease-card-intro">Infección que puede afectar vejiga, uretra o riñones. Es frecuente en mujeres, pero también puede presentarse en hombres, niñas, niños y adultos mayores.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Ardor al orinar, urgencia, orinar muchas veces, dolor bajo vientre y orina con mal olor o turbia.</li>
+                                <li>Si llega a riñones puede causar fiebre, escalofríos, dolor en espalda baja, náuseas o vómitos.</li>
+                                <li>En adultos mayores puede provocar confusión, decaimiento o pérdida de apetito.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Tomar agua, no aguantar mucho las ganas de orinar y mantener higiene adecuada.</li>
+                                <li>Evitar automedicarse; algunas infecciones requieren examen de orina y antibiótico indicado.</li>
+                                <li>Consultar si se repite con frecuencia para buscar causas como cálculos, diabetes o problemas urinarios.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Fiebre, dolor en costado o espalda, vómitos, embarazo, sangre en orina o dolor fuerte.</li>
+                                <li>Síntomas en bebés, hombres, personas con diabetes o enfermedad renal.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Gastroenteritis e intoxicación alimentaria</strong>
+                        <p class="disease-card-intro">Irritación o infección del estómago e intestinos por alimentos contaminados, agua insegura, virus, bacterias o toxinas. Puede aparecer en brotes familiares o comunitarios.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Náuseas, vómitos, dolor abdominal, diarrea, fiebre y debilidad.</li>
+                                <li>Puede comenzar pocas horas después de comer algo contaminado o aparecer al día siguiente.</li>
+                                <li>El mayor riesgo es deshidratación, sobre todo en menores y adultos mayores.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Lavarse las manos, cocinar bien carnes y huevos, refrigerar alimentos y separar crudos de cocidos.</li>
+                                <li>Tomar suero oral en sorbitos, continuar alimentos suaves y evitar bebidas alcohólicas.</li>
+                                <li>No tomar antibióticos sin indicación, porque no todas las causas los necesitan.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Sangre en heces, fiebre alta, dolor abdominal fuerte, vómitos persistentes o señales de deshidratación.</li>
+                                <li>Varios enfermos después de una misma comida o síntomas en embarazadas, bebés o personas vulnerables.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Hepatitis A</strong>
+                        <p class="disease-card-intro">Infección del hígado que se transmite principalmente por agua o alimentos contaminados y por contacto fecal-oral. Puede aparecer donde hay dificultades de agua segura o saneamiento.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Cansancio, fiebre, náuseas, dolor abdominal, falta de apetito y malestar general.</li>
+                                <li>Puede aparecer piel u ojos amarillos, orina oscura y heces claras.</li>
+                                <li>En niñas y niños pequeños puede ser leve o pasar desapercibida.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Lavarse las manos después de ir al baño y antes de preparar alimentos.</li>
+                                <li>Usar agua segura, lavar frutas y verduras, cocinar alimentos y mantener baños limpios.</li>
+                                <li>Evitar alcohol y medicamentos innecesarios mientras hay inflamación del hígado.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Color amarillo intenso, vómitos persistentes, somnolencia, sangrados o dolor fuerte en el abdomen.</li>
+                                <li>Embarazo, enfermedad hepática previa o síntomas que empeoran.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Hepatitis B y C</strong>
+                        <p class="disease-card-intro">Infecciones virales que pueden afectar el hígado durante años. Se transmiten por sangre y fluidos corporales; la hepatitis B también puede prevenirse con vacuna.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Muchas personas no sienten síntomas al inicio.</li>
+                                <li>Puede haber cansancio, náuseas, dolor abdominal, orina oscura, piel amarilla y pérdida de apetito.</li>
+                                <li>Cuando se vuelve crónica puede causar cirrosis, cáncer de hígado o falla hepática.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Vacunarse contra hepatitis B, usar condón y no compartir agujas, rasuradoras o cepillos dentales.</li>
+                                <li>Exigir material estéril en tatuajes, piercings o procedimientos.</li>
+                                <li>Realizar pruebas si hubo exposición de riesgo o si hay embarazo.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Color amarillo, abdomen hinchado, vómitos con sangre, heces negras o confusión.</li>
+                                <li>Prueba positiva, contacto con sangre o pareja diagnosticada con hepatitis viral.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Varicela</strong>
+                        <p class="disease-card-intro">Enfermedad viral muy contagiosa que causa ampollas en la piel. Suele ser leve en la niñez, pero puede complicarse en adultos, embarazadas, recién nacidos y personas con defensas bajas.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Fiebre, malestar, picazón y ronchas que se vuelven ampollas y luego costras.</li>
+                                <li>Las lesiones pueden aparecer en cara, tronco, cuero cabelludo y extremidades.</li>
+                                <li>Se contagia desde antes del brote hasta que todas las lesiones están en costra.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Evitar rascarse, mantener uñas cortas y piel limpia para prevenir infección secundaria.</li>
+                                <li>No compartir ropa o toallas durante el brote y evitar contacto con embarazadas o personas vulnerables.</li>
+                                <li>La vacunación previene enfermedad y complicaciones donde esté disponible.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Dificultad para respirar, somnolencia, fiebre persistente o lesiones muy rojas, dolorosas o con pus.</li>
+                                <li>Varicela en embarazadas, recién nacidos, adultos o personas inmunosuprimidas.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Escabiosis o sarna</strong>
+                        <p class="disease-card-intro">Infestación de la piel causada por un ácaro. Se transmite por contacto piel con piel y puede propagarse en hogares, escuelas, albergues o lugares con convivencia cercana.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Picazón intensa, especialmente de noche, con granitos o líneas pequeñas en la piel.</li>
+                                <li>Suele afectar manos, muñecas, axilas, cintura, glúteos y genitales; en bebés puede afectar cuero cabelludo y plantas.</li>
+                                <li>Rascarse puede causar heridas e infecciones bacterianas.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Tratar a contactos cercanos según indicación para evitar reinfección.</li>
+                                <li>Lavar ropa, sábanas y toallas con agua caliente si es posible, o guardarlas cerradas varios días.</li>
+                                <li>No compartir ropa o camas hasta completar tratamiento.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Pus, fiebre, piel caliente, dolorosa o enrojecida alrededor de lesiones.</li>
+                                <li>Picazón en varias personas del hogar o brotes repetidos.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Infecciones de la piel</strong>
+                        <p class="disease-card-intro">Incluyen impétigo, celulitis, abscesos y heridas infectadas. Son frecuentes cuando hay picaduras, rasguños, heridas mal limpiadas, humedad, calor o rascado intenso.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Enrojecimiento, calor, dolor, hinchazón, costras, pus o ampollas.</li>
+                                <li>Puede haber fiebre si la infección se extiende.</li>
+                                <li>Las lesiones pueden aparecer después de picaduras, heridas, sarna o dermatitis.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Lavar heridas con agua limpia y jabón, cubrirlas si hay riesgo de suciedad y evitar rascarse.</li>
+                                <li>No exprimir abscesos o granos profundos, porque puede empeorar la infección.</li>
+                                <li>Mantener uñas cortas y no compartir toallas si hay lesiones con secreción.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Fiebre, dolor intenso, enrojecimiento que se expande, líneas rojas en la piel o pus abundante.</li>
+                                <li>Heridas en personas con diabetes, mala circulación o defensas bajas.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Fiebre tifoidea</strong>
+                        <p class="disease-card-intro">Infección bacteriana asociada con agua o alimentos contaminados. Puede presentarse en zonas donde el saneamiento o la manipulación segura de alimentos es limitada.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Fiebre prolongada, dolor de cabeza, debilidad, dolor abdominal, estreñimiento o diarrea.</li>
+                                <li>Puede haber manchas rosadas en la piel, tos seca o pérdida de apetito.</li>
+                                <li>Sin tratamiento puede causar complicaciones intestinales serias.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Tomar agua segura, lavar manos, cocinar bien alimentos y evitar comidas de riesgo si hay mala higiene.</li>
+                                <li>Manipular alimentos con limpieza y separar crudos de cocidos.</li>
+                                <li>Requiere evaluación y antibiótico adecuado cuando se confirma o sospecha fuertemente.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Fiebre por varios días, dolor abdominal fuerte, sangre en heces, confusión o deshidratación.</li>
+                                <li>Empeoramiento pese a cuidados en casa o brote en varias personas.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Enfermedad de Chagas</strong>
+                        <p class="disease-card-intro">Enfermedad parasitaria presente en América Latina. Puede transmitirse por chinches triatominas, durante embarazo, por sangre o alimentos contaminados; muchas personas no saben que la tienen.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>En fase inicial puede causar fiebre, cansancio, ganglios inflamados, hinchazón cerca del ojo o lesión en la piel.</li>
+                                <li>Con los años puede afectar corazón, ritmo cardiaco, esófago o colon.</li>
+                                <li>Muchas personas permanecen sin síntomas durante largo tiempo.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Mejorar paredes y techos con grietas, ordenar bodegas y gallineros, y evitar presencia de chinches en viviendas.</li>
+                                <li>Realizar pruebas en embarazo o si se vivió en zonas de riesgo.</li>
+                                <li>El tratamiento temprano es más efectivo y el seguimiento ayuda a prevenir complicaciones.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Palpitaciones, desmayos, dolor de pecho, falta de aire o dificultad para tragar.</li>
+                                <li>Antecedente de picadura por chinche, vivienda rural con presencia de vectores o madre con Chagas.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Leishmaniasis</strong>
+                        <p class="disease-card-intro">Enfermedad parasitaria transmitida por la picadura de flebótomos o “jejenes” infectados. En la región puede presentarse principalmente como lesiones en piel, aunque existen formas más graves.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Síntomas frecuentes</h4>
+                            <ul>
+                                <li>Úlceras o heridas en la piel que no sanan, generalmente en zonas expuestas.</li>
+                                <li>Puede iniciar como una roncha o nódulo y crecer lentamente.</li>
+                                <li>Algunas formas pueden afectar mucosas de nariz, boca o garganta.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Usar ropa protectora, repelente, mosquiteros finos y evitar picaduras en zonas de monte o transmisión.</li>
+                                <li>Consultar por heridas crónicas; el tratamiento depende del tipo de leishmaniasis.</li>
+                                <li>No aplicar sustancias irritantes en la lesión, porque puede empeorar o infectarse.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Herida que no cicatriza en semanas, lesión en cara o mucosas, sangrado nasal o dificultad para respirar.</li>
+                                <li>Fiebre prolongada, pérdida de peso o abdomen aumentado.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Desnutrición</strong>
+                        <p class="disease-card-intro">Condición causada por falta de energía, proteínas o micronutrientes, o por enfermedades repetidas que impiden crecer y recuperarse. Afecta especialmente a niñas, niños, embarazadas y adultos mayores.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Señales frecuentes</h4>
+                            <ul>
+                                <li>Bajo peso, pérdida de masa muscular, cansancio, palidez, infecciones repetidas o crecimiento lento.</li>
+                                <li>Cabello frágil, piel seca, hinchazón de pies o abdomen en casos graves.</li>
+                                <li>En niñas y niños puede afectar aprendizaje, defensas y desarrollo.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Promover lactancia materna, alimentación variada y comidas frecuentes según edad.</li>
+                                <li>Usar alimentos locales nutritivos como frijoles, huevos, verduras, frutas, arroz, maíz y proteínas disponibles.</li>
+                                <li>Tratar diarreas, parásitos, anemia y otras causas que impiden ganar peso.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Pérdida rápida de peso, hinchazón, somnolencia, rechazo de alimentos o infecciones repetidas.</li>
+                                <li>Niñas o niños que no crecen, embarazadas con bajo peso o adultos mayores con debilidad marcada.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Caries dental</strong>
+                        <p class="disease-card-intro">Daño progresivo del diente causado por placa bacteriana, azúcar frecuente y falta de higiene bucal. Es una de las condiciones de salud más comunes y puede causar dolor, infección y pérdida de piezas dentales.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Señales frecuentes</h4>
+                            <ul>
+                                <li>Dolor de muela, sensibilidad al frío o dulce, manchas oscuras, huecos o mal aliento.</li>
+                                <li>Encías inflamadas, sangrado al cepillarse o dolor al masticar.</li>
+                                <li>En niñas y niños puede afectar alimentación, sueño y asistencia a clases.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Cepillarse con pasta fluorada, limpiar entre dientes y reducir bebidas azucaradas o dulces frecuentes.</li>
+                                <li>No acostar bebés con pacha de bebidas dulces y revisar dientes desde edad temprana.</li>
+                                <li>Acudir a revisión dental aunque no haya dolor.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Dolor fuerte, hinchazón de cara o encía, fiebre, pus o dificultad para abrir la boca.</li>
+                                <li>Diente roto, sangrado persistente o dolor que impide comer o dormir.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Cáncer cervicouterino</strong>
+                        <p class="disease-card-intro">Cáncer del cuello del útero, relacionado principalmente con infección persistente por virus del papiloma humano. Es prevenible con vacunación, tamizaje y tratamiento temprano de lesiones precancerosas.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Señales frecuentes</h4>
+                            <ul>
+                                <li>Al inicio puede no dar síntomas.</li>
+                                <li>Sangrado después de relaciones sexuales, sangrado entre periodos o después de menopausia.</li>
+                                <li>Dolor pélvico, flujo con mal olor o dolor durante relaciones en etapas más avanzadas.</li>
+                            </ul>
+                            <h4>Prevención y detección</h4>
+                            <ul>
+                                <li>Vacunación contra VPH según disponibilidad y edad recomendada.</li>
+                                <li>Papanicolaou, prueba de VPH u otros tamizajes según orientación del sistema de salud.</li>
+                                <li>Usar condón reduce riesgo de infecciones, aunque no elimina por completo el riesgo de VPH.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Sangrado vaginal anormal, dolor pélvico persistente o flujo con mal olor.</li>
+                                <li>Resultado alterado en Papanicolaou o prueba de VPH.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Cáncer de mama</strong>
+                        <p class="disease-card-intro">Cáncer que se origina en tejido mamario. Puede afectar principalmente a mujeres, aunque también puede aparecer en hombres. La detección temprana mejora las opciones de tratamiento.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Señales frecuentes</h4>
+                            <ul>
+                                <li>Bulto en mama o axila, cambio de tamaño o forma, hundimiento de piel o pezón.</li>
+                                <li>Secreción por el pezón, enrojecimiento, piel como cáscara de naranja o dolor persistente.</li>
+                                <li>Algunos casos no causan dolor al inicio.</li>
+                            </ul>
+                            <h4>Prevención y detección</h4>
+                            <ul>
+                                <li>Conocer el propio cuerpo y consultar ante cambios nuevos o persistentes.</li>
+                                <li>Realizar examen clínico o mamografía según edad, riesgo y disponibilidad.</li>
+                                <li>Actividad física, peso saludable y reducción de alcohol pueden disminuir riesgo general.</li>
+                            </ul>
+                            <h4>Buscar atención si aparece</h4>
+                            <ul>
+                                <li>Bulto duro, crecimiento rápido, secreción con sangre o cambios visibles en la piel.</li>
+                                <li>Antecedente familiar fuerte o cambios que duran más de un ciclo menstrual.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Depresión</strong>
+                        <p class="disease-card-intro">Trastorno de salud mental que afecta ánimo, energía, sueño, apetito y forma de pensar. No es falta de voluntad: puede tratarse con apoyo, acompañamiento y atención profesional.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Señales frecuentes</h4>
+                            <ul>
+                                <li>Tristeza persistente, pérdida de interés, cansancio, culpa, irritabilidad o dificultad para concentrarse.</li>
+                                <li>Cambios en sueño o apetito, aislamiento, llanto frecuente o sensación de vacío.</li>
+                                <li>Puede acompañarse de dolores físicos, ansiedad o bajo rendimiento en estudio/trabajo.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Buscar apoyo de personas de confianza, mantener rutinas, descanso y actividad física suave si es posible.</li>
+                                <li>Evitar alcohol u otras sustancias para “aguantar” el malestar.</li>
+                                <li>La psicoterapia y, en algunos casos, medicamentos indicados pueden ayudar mucho.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Ideas de hacerse daño, deseo de no vivir, planes suicidas o despedidas inusuales.</li>
+                                <li>Depresión después del parto, abandono de autocuidado o incapacidad para realizar actividades básicas.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="filter-card" data-disease-card>
+                        <strong>Ansiedad</strong>
+                        <p class="disease-card-intro">Respuesta de alarma que se vuelve problema cuando es intensa, frecuente o limita la vida diaria. Puede presentarse como preocupación constante, ataques de pánico o miedo a situaciones específicas.</p>
+                        <details class="disease-detail">
+                            <summary>Ver información detallada</summary>
+                            <h4>Señales frecuentes</h4>
+                            <ul>
+                                <li>Preocupación excesiva, inquietud, tensión muscular, dificultad para dormir o concentrarse.</li>
+                                <li>Palpitaciones, sudoración, temblores, sensación de falta de aire o miedo intenso durante ataques de pánico.</li>
+                                <li>Evitar lugares o actividades por miedo puede reforzar el problema.</li>
+                            </ul>
+                            <h4>Prevención y cuidado</h4>
+                            <ul>
+                                <li>Respiración lenta, rutinas, actividad física, reducir cafeína y hablar con alguien de confianza puede ayudar.</li>
+                                <li>Identificar detonantes y aprender estrategias de manejo con apoyo profesional.</li>
+                                <li>No automedicarse con tranquilizantes o alcohol.</li>
+                            </ul>
+                            <h4>Buscar atención urgente si aparece</h4>
+                            <ul>
+                                <li>Dolor de pecho nuevo, desmayo, falta de aire intensa o síntomas que parecen emergencia médica.</li>
+                                <li>Ansiedad que impide estudiar, trabajar, dormir o salir de casa, o pensamientos de hacerse daño.</li>
+                            </ul>
+                        </details>
+                    </article>
+                </div>
+
+                <div class="source-note">
+                    <strong>Fuentes de referencia</strong>
+                    <p>Contenido educativo preparado con orientación general de la OMS y CDC sobre enfermedades transmisibles, respiratorias, crónicas, tropicales, salud oral, cáncer y salud mental.</p>
+                    <div>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue" target="_blank" rel="noreferrer">OMS: dengue</a>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease" target="_blank" rel="noreferrer">OMS: diarrea</a>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/hypertension" target="_blank" rel="noreferrer">OMS: hipertensión</a>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/diabetes" target="_blank" rel="noreferrer">OMS: diabetes</a>
+                        <a href="https://www.cdc.gov/flu/signs-symptoms/index.html" target="_blank" rel="noreferrer">CDC: influenza</a>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/chagas-disease-(american-trypanosomiasis)" target="_blank" rel="noreferrer">OMS: Chagas</a>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/leishmaniasis" target="_blank" rel="noreferrer">OMS: leishmaniasis</a>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/hepatitis-a" target="_blank" rel="noreferrer">OMS: hepatitis A</a>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/hepatitis-b" target="_blank" rel="noreferrer">OMS: hepatitis B</a>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/oral-health" target="_blank" rel="noreferrer">OMS: salud oral</a>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/cervical-cancer" target="_blank" rel="noreferrer">OMS: cáncer cervicouterino</a>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/breast-cancer" target="_blank" rel="noreferrer">OMS: cáncer de mama</a>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/depression" target="_blank" rel="noreferrer">OMS: depresión</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - NicaSalud | Salud Comunitaria de Nicaragua</p>
+    </footer>
+    <script src="Frontend.js"></script>
+</body>
+</html>

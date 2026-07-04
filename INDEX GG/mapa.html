@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa | NicaSalud</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="Diseño.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="NicaSalud.html#inicio" aria-label="NicaSalud inicio">
+            <img class="brand-logo" src="assets/Logo.jpeg" alt="" aria-hidden="true">
+            <span>NicaSalud</span>
+        </a>
+
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="NicaSalud.html#inicio">Inicio</a></li>
+                <li><a href="mapa.html">Mapa</a></li>
+                <li><a href="enfermedades.html">Enfermedades</a></li>
+                <li><a href="plantas.html">Plantas</a></li>
+                <li><a href="recetas.html">Recetas</a></li>
+                <li><a href="NicaSalud.html#contacto">Contactarnos</a></li>
+            </ul>
+        </nav>
+
+        <form class="site-search" role="search" aria-label="Buscar en el sitio">
+            <input type="search" id="siteSearch" placeholder="Buscar..." aria-label="Buscar palabras en el sitio">
+            <button type="submit">Buscar</button>
+            <span class="search-status" id="searchStatus" aria-live="polite"></span>
+        </form>
+    </header>
+
+    <main>
+        <section id="mapa">
+            <div class="section-inner map-section">
+                <div class="section-heading">
+                    <h2>Mapa hospitalario</h2>
+                    <p>Consulta hospitales por departamento y ubica puntos de atención en el territorio nacional.</p>
+                </div>
+
+                <div class="signal-panel" aria-label="Mapa con los hospitales">
+                    <div id="mapaNicaragua"></div>
+
+                    <div class="hospital-card">
+                        <strong id="departmentTitle">Mapa hospitalario</strong>
+                        <p id="departmentDescription">Acerca el cursor a un hospital para ver su información.</p>
+                        <ul class="department-hospital-list" id="departmentHospitals">
+                            <li>Selecciona una zona del mapa.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - NicaSalud | Salud Comunitaria de Nicaragua</p>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="Frontend.js"></script>
+</body>
+</html>

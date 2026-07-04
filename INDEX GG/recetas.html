@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas | NicaSalud</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="Diseño.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="NicaSalud.html#inicio" aria-label="NicaSalud inicio">
+            <img class="brand-logo" src="assets/Logo.jpeg" alt="" aria-hidden="true">
+            <span>NicaSalud</span>
+        </a>
+
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="NicaSalud.html#inicio">Inicio</a></li>
+                <li><a href="mapa.html">Mapa</a></li>
+                <li><a href="enfermedades.html">Enfermedades</a></li>
+                <li><a href="plantas.html">Plantas</a></li>
+                <li><a href="recetas.html">Recetas</a></li>
+                <li><a href="NicaSalud.html#contacto">Contactarnos</a></li>
+            </ul>
+        </nav>
+
+        <form class="site-search" role="search" aria-label="Buscar en el sitio">
+            <input type="search" id="siteSearch" placeholder="Buscar..." aria-label="Buscar palabras en el sitio">
+            <button type="submit">Buscar</button>
+            <span class="search-status" id="searchStatus" aria-live="polite"></span>
+        </form>
+    </header>
+
+    <main>
+        <section id="recetas">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <h2>Recetas saludables</h2>
+                    <p>Ideas sencillas para apoyar una alimentación familiar equilibrada y accesible.</p>
+                </div>
+
+                <div class="prevention-grid">
+                    <article class="prevention">
+                        <div class="icon" aria-hidden="true">S</div>
+                        <h3>Sopa de verduras</h3>
+                        <p>Combina verduras frescas, granos y poca sal. Es una opción ligera para sumar fibra, agua y micronutrientes.</p>
+                    </article>
+                    <article class="prevention">
+                        <div class="icon" aria-hidden="true">F</div>
+                        <h3>Frutas con avena</h3>
+                        <p>Una mezcla de fruta de temporada con avena ayuda a tener energía y mejorar la saciedad durante la mañana.</p>
+                    </article>
+                    <article class="prevention">
+                        <div class="icon" aria-hidden="true">G</div>
+                        <h3>Gallo pinto balanceado</h3>
+                        <p>Acompáñalo con ensalada, aguacate o vegetales cocidos para equilibrar proteína, carbohidratos y grasas saludables.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - NicaSalud | Salud Comunitaria de Nicaragua</p>
+    </footer>
+    <script src="Frontend.js"></script>
+</body>
+</html>

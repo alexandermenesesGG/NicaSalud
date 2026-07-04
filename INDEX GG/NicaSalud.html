@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NicaSalud | Salud Comunitaria de Nicaragua</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <!--conexion del diseñoGG-->
+    <link rel="stylesheet" href="Diseño.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="#inicio" aria-label="NicaSalud inicio">
+            <img class="brand-logo" src="assets/Logo.jpeg" alt="" aria-hidden="true">
+            <span>NicaSalud</span>
+        </a>
+
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="mapa.html">Mapa</a></li>
+                <li><a href="enfermedades.html">Enfermedades</a></li>
+                <li><a href="plantas.html">Plantas</a></li>
+                <li><a href="recetas.html">Recetas</a></li>
+                <li><a href="#contacto">Contactarnos</a></li>
+            </ul>
+        </nav>
+
+        <form class="site-search" role="search" aria-label="Buscar en el sitio">
+            <input type="search" id="siteSearch" placeholder="Buscar..." aria-label="Buscar palabras en el sitio">
+            <button type="submit">Buscar</button>
+            <span class="search-status" id="searchStatus" aria-live="polite"></span>
+        </form>
+    </header>
+    <!--Portada no terminada-->
+   <section class="hero" id="inicio">
+    <div class="hero-content">
+        <p class="eyebrow">
+            <span class="pulse" aria-hidden="true"></span>
+            Red comunitaria de bienestar
+        </p>
+
+        <h1>Salud Comunitaria de Nicaragua</h1>
+
+        <p>
+            Una mirada moderna a la prevención, la atención primaria y la participación de barrios,
+            comarcas y familias para cuidar la vida desde la comunidad.
+        </p>
+
+    </div>
+
+</section>
+
+    <main>
+        <section class="health-survey" id="encuesta-salud">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <h2>Mini encuesta de salud</h2>
+                    <p>
+                        Responde estas preguntas rápidas para recibir una orientación básica de cuidado.
+                    </p>
+                </div>
+
+                <form class="survey-form" id="healthSurvey">
+                    <fieldset class="survey-question">
+                        <legend>¿Cómo te has sentido en los últimos días?</legend>
+                        <label><input type="radio" name="estado" value="0" required> Bien, sin molestias importantes</label>
+                        <label><input type="radio" name="estado" value="1"> Con cansancio o malestar leve</label>
+                        <label><input type="radio" name="estado" value="2"> Con síntomas que me preocupan</label>
+                    </fieldset>
+
+                    <fieldset class="survey-question">
+                        <legend>¿Has tenido fiebre, tos fuerte, dolor intenso o dificultad para respirar?</legend>
+                        <label><input type="radio" name="sintomas" value="0" required> No</label>
+                        <label><input type="radio" name="sintomas" value="2"> Sí, pero leve</label>
+                        <label><input type="radio" name="sintomas" value="4"> Sí, fuerte o persistente</label>
+                    </fieldset>
+
+                    <fieldset class="survey-question">
+                        <legend>¿Cómo están tu alimentación y consumo de agua?</legend>
+                        <label><input type="radio" name="habitos" value="0" required> Bien, como variado y tomo suficiente agua</label>
+                        <label><input type="radio" name="habitos" value="1"> Regular, podría mejorar</label>
+                        <label><input type="radio" name="habitos" value="2"> Mal, casi no tomo agua o como poco variado</label>
+                    </fieldset>
+
+                    <fieldset class="survey-question">
+                        <legend>¿Mantienes medidas de prevención en casa?</legend>
+                        <label><input type="radio" name="prevencion" value="0" required> Sí, higiene, agua segura y eliminación de criaderos</label>
+                        <label><input type="radio" name="prevencion" value="1"> A veces</label>
+                        <label><input type="radio" name="prevencion" value="2"> Casi nunca</label>
+                    </fieldset>
+
+                    <button class="button primary" type="submit">Ver orientación</button>
+                    <div class="survey-result" id="surveyResult" aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+
+        <section id="imc">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <h2>Prueba de IMC</h2>
+                    <p>
+                        Calcula tu Índice de Masa Corporal con tus datos básicos y recibe una orientación
+                        general sobre el resultado.
+                    </p>
+                </div>
+
+                <form class="survey-form imc-form" id="imcForm">
+                    <label class="survey-question" for="imcAge">
+                        <span>Edad</span>
+                        <input type="number" id="imcAge" name="edad" min="1" max="120" placeholder="Ej. 25" required>
+                    </label>
+
+                    <label class="survey-question" for="imcGender">
+                        <span>Género</span>
+                        <select id="imcGender" name="genero" required>
+                            <option value="">Selecciona</option>
+                            <option value="femenino">Femenino</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="otro">Otro / prefiero no decir</option>
+                        </select>
+                    </label>
+
+                    <label class="survey-question" for="imcWeight">
+                        <span>Peso</span>
+                        <input type="number" id="imcWeight" name="peso" min="1" max="900" step="0.1" placeholder="Ej. 70" required>
+                    </label>
+
+                    <label class="survey-question" for="imcWeightUnit">
+                        <span>Unidad de peso</span>
+                        <select id="imcWeightUnit" name="unidadPeso" required>
+                            <option value="kg">Kilogramos (kg)</option>
+                            <option value="lbs">Libras (lbs)</option>
+                        </select>
+                    </label>
+
+                    <label class="survey-question" for="imcHeight">
+                        <span>Altura en centímetros</span>
+                        <input type="number" id="imcHeight" name="altura" min="50" max="250" step="0.1" placeholder="Ej. 170" required>
+                    </label>
+
+                    <button class="button primary" type="submit">Calcular IMC</button>
+                    <div class="survey-result" id="imcResult" aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <div class="section-inner contact">
+                <div>
+                    <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> Contactarnos</p>
+                    <h2>Estamos para ayudarte</h2>
+                    <p class="lead">
+                        Escríbenos si necesitas orientación, información sobre programas comunitarios o apoyo
+                        para ubicar servicios de salud cercanos.
+                    </p>
+                    <div class="contact-details">
+                        <p><strong>Correo:</strong> nicasalud365@gmail.com</p>
+                        <p><strong>Teléfono:</strong> +505 7838-7127</p>
+                    </div>
+                </div>
+                <form class="contact-box contact-form">
+                    <label for="contactName">Nombre</label>
+                    <input type="text" id="contactName" name="nombre" placeholder="Tu nombre">
+
+                    <label for="contactEmail">Correo electrónico</label>
+                    <input type="email" id="contactEmail" name="correo" placeholder="tucorreo@ejemplo.com">
+
+                    <label for="contactMessage">Mensaje</label>
+                    <textarea id="contactMessage" name="mensaje" rows="5" placeholder="Escribe tu consulta"></textarea>
+
+                    <button class="button primary" type="submit">Enviar mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - NicaSalud | Salud Comunitaria de Nicaragua</p>
+    </footer>
+    <!--conexion del javascript-->
+<script src="Frontend.js"></script>
+</body>
+</html>
