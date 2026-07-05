@@ -190,19 +190,19 @@
 
         .hero {
         position: relative;
-        min-height: 86vh;
+        min-height: 78vh;
         display: grid;
         grid-template-columns: 1fr;
         align-items: center;
         gap: 2rem;
         overflow: hidden;
-        color: var(--ink);
+        color: var(--white);
         background:
-        linear-gradient(90deg, rgba(7, 72, 83, 0.82), rgba(17, 111, 116, 0.54) 52%, rgba(53, 201, 139, 0.18)),
-        url("assets/Portada.jpeg");
+        linear-gradient(120deg, rgba(5, 31, 38, 0.9), rgba(7, 78, 86, 0.66) 45%, rgba(53, 201, 139, 0.22)),
+        url("assets/portada.jpeg");
         background-size: cover;
         background-position: center;
-        padding: 7rem clamp(1rem, 6vw, 5rem) 8rem;
+        padding: 5rem clamp(1rem, 6vw, 5rem) 6rem;
         }
 
         .hero::after {
@@ -220,8 +220,14 @@
         .hero-content {
         position: relative;
         z-index: 1;
-        width: 100%;
+        width: min(100%, 44rem);
         display: block;
+        padding: clamp(1.25rem, 2.6vw, 2rem);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 1.4rem;
+        background: linear-gradient(180deg, rgba(8, 28, 35, 0.72), rgba(8, 28, 35, 0.38));
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
+        backdrop-filter: blur(14px);
         color: var(--white);
         }
         .eyebrow {
@@ -248,18 +254,46 @@
 
         h1 {
             margin: 0;
-            max-width: 12ch;
-            font-size: clamp(3.6rem, 9vw, 7.4rem);
-            line-height: 0.88;
-            letter-spacing: 0;
+            max-width: 13ch;
+            font-size: clamp(2.8rem, 6vw, 5.2rem);
+            line-height: 0.92;
+            letter-spacing: -0.03em;
+            text-wrap: balance;
+            text-shadow: 0 4px 18px rgba(0, 0, 0, 0.24);
         }
 
         .hero p {
-            max-width: 41rem;
-            margin: 1.45rem 0 0;
+            max-width: 38rem;
+            margin: 1.2rem 0 0;
             color: #eefbf7;
-            font-size: clamp(1.05rem, 2vw, 1.3rem);
-            line-height: 1.65;
+            font-size: clamp(1rem, 1.5vw, 1.12rem);
+            line-height: 1.7;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.4rem;
+        }
+
+        .hero-badges span {
+            display: inline-flex;
+            align-items: center;
+            min-height: 2.35rem;
+            padding: 0.45rem 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #f5fffb;
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-visual {
+            display: none;
         }
 
         .page-hero {
@@ -295,7 +329,7 @@
         .disease-hero {
             background:
                 linear-gradient(90deg, rgba(7, 26, 34, 0.9), rgba(7, 72, 83, 0.62) 54%, rgba(7, 26, 34, 0.28)),
-                url("assets/ID_enfermedades_virus.jpg");
+                url("assets/id_enfermedades_virus.jpg");
             background-size: cover;
             background-position: center;
         }
@@ -303,7 +337,7 @@
         .plant-hero {
             background:
                 linear-gradient(90deg, rgba(7, 26, 34, 0.9), rgba(10, 93, 63, 0.58) 54%, rgba(7, 26, 34, 0.26)),
-                url("assets/PLANTA.jpg");
+                url("assets/planta.jpg");
             background-size: cover;
             background-position: center;
         }
@@ -590,6 +624,26 @@
 
         .signal-panel::before {
             display: none;
+        }
+
+        #mapaNicaragua {
+            position: relative;
+            min-height: 35rem;
+            overflow: hidden;
+        }
+
+        .map-visual {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .hospital-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
         }
 
         .nicaragua-map {
@@ -1485,15 +1539,35 @@
             box-shadow: 0 0 0 0.22rem rgba(47, 128, 237, 0.12);
         }
 
-        .contact-form .button {
-            border: 0;
-            cursor: pointer;
-            margin-top: 0.35rem;
-        }
+.contact-form .button {
+    border: 0;
+    cursor: pointer;
+    margin-top: 0.35rem;
+}
 
-        footer {
-            padding: 1.3rem clamp(1rem, 5vw, 4.5rem);
-            background: #0b5968;
+.contact-status {
+    min-height: 1.35rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.contact-status.success {
+    color: var(--mint);
+}
+
+.contact-status.error {
+    color: var(--coral);
+}
+
+.contact-form button:disabled {
+    opacity: 0.75;
+    cursor: wait;
+}
+
+footer {
+    padding: 1.3rem clamp(1rem, 5vw, 4.5rem);
+    background: #0b5968;
             color: rgba(255, 255, 255, 0.88);
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.16);
@@ -1521,23 +1595,29 @@
 
             .hero {
         position: relative;
-        min-height: 86vh;
+        min-height: 78vh;
         display: grid;
         align-items: center;
         overflow: hidden;
-        color: var(--ink);
+        color: var(--white);
         background:
-        linear-gradient(rgba(7, 72, 83, 0.68), rgba(7, 72, 83, 0.82)),
-        url("assets/Portada.jpeg");
+        linear-gradient(120deg, rgba(5, 31, 38, 0.9), rgba(7, 78, 86, 0.68) 45%, rgba(53, 201, 139, 0.22)),
+        url("assets/portada.jpeg");
         background-size: cover;
         background-position: center;
+        padding: 4.5rem 1rem 5rem;
         }
 
             .hero-content {
         position: relative;
         z-index: 1;
-        width: min(47rem, 100%);
-        padding: 7rem clamp(1rem, 6vw, 5rem) 8rem;
+        width: min(100%, 44rem);
+        padding: clamp(1.15rem, 4vw, 1.6rem);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 1.2rem;
+        background: linear-gradient(180deg, rgba(8, 28, 35, 0.72), rgba(8, 28, 35, 0.38));
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
+        backdrop-filter: blur(14px);
         display: block;
         }
 
@@ -1574,11 +1654,14 @@
 
         @media (max-width: 560px) {
             h1 {
-                font-size: clamp(3rem, 17vw, 4.3rem);
+                max-width: 100%;
+                font-size: clamp(1.95rem, 7.8vw, 2.75rem);
+                line-height: 0.98;
             }
 
             .hero p {
-                font-size: 1rem;
+                font-size: 0.98rem;
+                line-height: 1.6;
             }
 
             .stat {
@@ -1764,8 +1847,8 @@ nav a:focus {
 .hero {
     color: #ffffff;
     background:
-        linear-gradient(90deg, rgba(15, 118, 110, 0.78), rgba(47, 128, 237, 0.38) 58%, rgba(47, 191, 113, 0.18)),
-        url("assets/Portada.jpeg");
+        linear-gradient(120deg, rgba(5, 31, 38, 0.9), rgba(7, 78, 86, 0.68) 45%, rgba(53, 201, 139, 0.22)),
+        url("assets/portada.jpeg");
     background-size: cover;
     background-position: center;
 }
@@ -1778,7 +1861,7 @@ nav a:focus {
 .disease-hero {
     background:
         linear-gradient(90deg, rgba(15, 118, 110, 0.78), rgba(47, 128, 237, 0.36) 58%, rgba(255, 255, 255, 0.08)),
-        url("assets/ID_enfermedades_virus.jpg");
+        url("assets/id_enfermedades_virus.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -1786,7 +1869,7 @@ nav a:focus {
 .plant-hero {
     background:
         linear-gradient(90deg, rgba(15, 118, 110, 0.78), rgba(47, 191, 113, 0.38) 58%, rgba(255, 255, 255, 0.08)),
-        url("assets/PLANTA.jpg");
+        url("assets/planta.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -1981,9 +2064,11 @@ footer {
 @media (max-width: 900px) {
     .hero {
         background:
-            linear-gradient(rgba(15, 118, 110, 0.76), rgba(47, 128, 237, 0.34)),
-            url("assets/Portada.jpeg");
+            linear-gradient(120deg, rgba(5, 31, 38, 0.9), rgba(7, 78, 86, 0.7)),
+            url("assets/portada.jpeg");
         background-size: cover;
         background-position: center;
     }
 }
+
+

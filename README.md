@@ -1,2 +1,0 @@
-# NicaSalud
-Proyecto de Hackathon

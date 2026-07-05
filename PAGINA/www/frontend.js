@@ -769,27 +769,10 @@ const departmentDescription = document.getElementById("departmentDescription");
 const departmentHospitals = document.getElementById("departmentHospitals");
 const mapaNicaraguaElement = document.getElementById("mapaNicaragua");
 
-if (mapaNicaraguaElement && window.L) {
-const mapaNicaragua = L.map("mapaNicaragua", {
-    zoomControl: true,
-    scrollWheelZoom: false
-});
-
-const limitesNicaragua = L.latLngBounds(
-    [10.708055, -87.759674],
-    [15.076794, -82.634755]
-);
-
-mapaNicaragua.fitBounds(limitesNicaragua);
-
-mapaNicaragua.setMaxBounds(limitesNicaragua.pad(0.35));
-
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 18,
-    attribution: "&copy; OpenStreetMap contributors"
-}).addTo(mapaNicaragua);
-
+if (mapaNicaraguaElement) {
 const hospitales = [
+
+
     {
         nombre: "Hospital Alfonso Moncada Guillén",
         lugar: "Ocotal, Nueva Segovia",
@@ -984,51 +967,127 @@ const hospitales = [
     }
 ];
 
-function obtenerColorHospital(tipo) {
-    if (tipo === "nacional") {
-        return "#ffd166";
-    }
+if (window.L) {
+    const mapaNicaragua = L.map("mapaNicaragua", {
+        zoomControl: true,
+        scrollWheelZoom: false
+    }).setView([12.8654, -85.2072], 7.2);
 
-    if (tipo === "regional") {
-        return "#7bf1c8";
-    }
-
-    return "#ff6f61";
-}
-
-function mostrarHospital(hospital) {
-    departmentTitle.textContent = hospital.departamento;
-
-    departmentDescription.textContent = `${hospital.nombre} - ${hospital.lugar}`;
-
-    departmentHospitals.innerHTML = `
-        <li>Tipo: ${hospital.tipo}</li>
-        <li>Latitud: ${hospital.lat}</li>
-        <li>Longitud: ${hospital.lon}</li>
-    `;
-}
-
-hospitales.forEach((hospital) => {
-    const marcador = L.circleMarker([hospital.lat, hospital.lon], {
-        radius: hospital.tipo === "nacional" ? 9 : 7,
-        color: "#ffffff",
-        weight: 2,
-        fillColor: obtenerColorHospital(hospital.tipo),
-        fillOpacity: 0.95
+    L.tileLayer("https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}", {
+        maxZoom: 20,
+        subdomains: ["mt0", "mt1", "mt2", "mt3"],
+        attribution: "Map data by Google"
     }).addTo(mapaNicaragua);
 
-    marcador.bindPopup(`
-        <strong>${hospital.nombre}</strong><br>
-        ${hospital.lugar}<br>
-        ${hospital.departamento}
-    `);
+    function obtenerColorHospital(tipo) {
+        if (tipo === "nacional") {
+            return "#ffd166";
+        }
 
-    marcador.on("click", () => {
-        mostrarHospital(hospital);
+        if (tipo === "regional") {
+            return "#7bf1c8";
+        }
+
+        return "#ff6f61";
+    }
+
+    function mostrarHospital(hospital) {
+        departmentTitle.textContent = hospital.departamento;
+        departmentDescription.textContent = `${hospital.nombre} - ${hospital.lugar}`;
+        departmentHospitals.innerHTML = `
+            <li>Tipo: ${hospital.tipo}</li>
+            <li>Latitud: ${hospital.lat}</li>
+            <li>Longitud: ${hospital.lon}</li>
+        `;
+    }
+
+    const hospitalesLayer = L.layerGroup().addTo(mapaNicaragua);
+
+    hospitales.forEach((hospital) => {
+        const marcador = L.circleMarker([hospital.lat, hospital.lon], {
+            radius: hospital.tipo === "nacional" ? 9 : 7,
+            color: "#ffffff",
+            weight: 2,
+            fillColor: obtenerColorHospital(hospital.tipo),
+            fillOpacity: 0.95
+        }).addTo(hospitalesLayer);
+
+        marcador.bindPopup(`
+            <strong>${hospital.nombre}</strong><br>
+            ${hospital.lugar}<br>
+            ${hospital.departamento}
+        `);
+
+        marcador.on("click", () => {
+            mostrarHospital(hospital);
+        });
+
+        marcador.on("mouseover", () => {
+            mostrarHospital(hospital);
+        });
     });
 
-    marcador.on("mouseover", () => {
-        mostrarHospital(hospital);
-    });
-});
+    if (hospitales.length) {
+        mostrarHospital(hospitales[0]);
+    }
+} else {
+    mapaNicaraguaElement.innerHTML = "<div class=\"p-6 text-slate-700\">Activa internet para cargar Google Maps con Leaflet.</div>";
 }
+}
+const contactForm = document.getElementById("contactForm");
+const contactStatus = document.getElementById("contactStatus");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitButton?.textContent || "Enviar mensaje";
+        const endpoint = contactForm.getAttribute("action") || "api/contacto.php";
+
+        if (contactStatus) {
+            contactStatus.textContent = "Enviando mensaje...";
+            contactStatus.className = "contact-status";
+        }
+
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Enviando...";
+        }
+
+        try {
+            const response = await fetch(endpoint, {
+                method: "POST",
+                body: new FormData(contactForm),
+                headers: {
+                    Accept: "application/json"
+                }
+            });
+
+            const payload = await response.json().catch(() => null);
+
+            if (!response.ok || !payload?.success) {
+                throw new Error(payload?.message || "No se pudo guardar tu mensaje.");
+            }
+
+            contactForm.reset();
+
+            if (contactStatus) {
+                contactStatus.textContent = payload.message || "Mensaje enviado y guardado correctamente.";
+                contactStatus.className = "contact-status success";
+            }
+        } catch (error) {
+            if (contactStatus) {
+                contactStatus.textContent = error instanceof Error ? error.message : "Hubo un problema al enviar el mensaje.";
+                contactStatus.className = "contact-status error";
+            }
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = originalText;
+            }
+        }
+    });
+}
+
+

@@ -1,0 +1,48 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: nicasalud-db
+    restart: unless-stopped
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass123
+      MYSQL_DATABASE: nicasalud_contactos
+      MYSQL_USER: nicasalud
+      MYSQL_PASSWORD: nicasalud123
+      TZ: America/Managua
+    volumes:
+      - nicasalud_mysql_data:/var/lib/mysql
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-prootpass123"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nicasalud-web
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: nicasalud
+      DB_PASSWORD: nicasalud123
+      DB_NAME: nicasalud_contactos
+      ADMIN_USER: admin
+      ADMIN_PASSWORD: Admin123!
+    volumes:
+      - ./www:/var/www/html
+      - ./db:/var/www/db
+    ports:
+      - "8080:80"
+
+volumes:
+  nicasalud_mysql_data:

@@ -6,12 +6,12 @@
     <title>NicaSalud | Salud Comunitaria de Nicaragua</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <!--conexion del diseñoGG-->
-    <link rel="stylesheet" href="Diseño.css">
+    <link rel="stylesheet" href="diseno.css">
 </head>
 <body>
     <header class="topbar">
         <a class="brand" href="#inicio" aria-label="NicaSalud inicio">
-            <img class="brand-logo" src="assets/Logo.jpeg" alt="" aria-hidden="true">
+            <img class="brand-logo" src="assets/logo.jpeg" alt="" aria-hidden="true">
             <span>NicaSalud</span>
         </a>
 
@@ -160,16 +160,18 @@
                         <p><strong>Teléfono:</strong> +505 7838-7127</p>
                     </div>
                 </div>
-                <form class="contact-box contact-form">
+                <form class="contact-box contact-form" id="contactForm" action="api/contacto.php" method="post">
+                    <input type="hidden" name="pagina" value="nicasalud.html#contacto">
                     <label for="contactName">Nombre</label>
-                    <input type="text" id="contactName" name="nombre" placeholder="Tu nombre">
+                    <input type="text" id="contactName" name="nombre" placeholder="Tu nombre" autocomplete="name" maxlength="120" required>
 
                     <label for="contactEmail">Correo electrónico</label>
-                    <input type="email" id="contactEmail" name="correo" placeholder="tucorreo@ejemplo.com">
+                    <input type="email" id="contactEmail" name="correo" placeholder="tucorreo@ejemplo.com" autocomplete="email" maxlength="190" required>
 
                     <label for="contactMessage">Mensaje</label>
-                    <textarea id="contactMessage" name="mensaje" rows="5" placeholder="Escribe tu consulta"></textarea>
+                    <textarea id="contactMessage" name="mensaje" rows="5" placeholder="Escribe tu consulta" maxlength="5000" required></textarea>
 
+                    <div class="contact-status" id="contactStatus" aria-live="polite"></div>
                     <button class="button primary" type="submit">Enviar mensaje</button>
                 </form>
             </div>
@@ -177,9 +179,11 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 - NicaSalud | Salud Comunitaria de Nicaragua</p>
+        <p>&copy; 2026 - NicaSalud | Salud Comunitaria de Nicaragua | <a href="/admin/">Admin</a></p>
     </footer>
     <!--conexion del javascript-->
-<script src="Frontend.js"></script>
+<script src="frontend.js"></script>
 </body>
 </html>
+
+
