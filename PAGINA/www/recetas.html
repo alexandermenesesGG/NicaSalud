@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recetas | NicaSalud</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="stylesheet" href="diseno.css">
+    <link rel="stylesheet" href="diseno.css?v=6">
 </head>
 <body>
     <header class="topbar">
@@ -14,7 +14,7 @@
             <span>NicaSalud</span>
         </a>
 
-        <nav aria-label="Navegación principal">
+        <nav aria-label="NavegaciÃ³n principal">
             <ul>
                 <li><a href="nicasalud.html#inicio">Inicio</a></li>
                 <li><a href="mapa.html">Mapa</a></li>
@@ -24,37 +24,361 @@
                 <li><a href="nicasalud.html#contacto">Contactarnos</a></li>
             </ul>
         </nav>
-
-        <form class="site-search" role="search" aria-label="Buscar en el sitio">
-            <input type="search" id="siteSearch" placeholder="Buscar..." aria-label="Buscar palabras en el sitio">
-            <button type="submit">Buscar</button>
-            <span class="search-status" id="searchStatus" aria-live="polite"></span>
-        </form>
     </header>
+
+    <section class="page-hero recipe-hero" id="inicio-recetas">
+        <div class="hero-content">
+            <p class="eyebrow">
+                <span class="pulse" aria-hidden="true"></span>
+                Recetas con plantas
+            </p>
+            <h1>Recetas detalladas</h1>
+            <p>
+                Preparaciones claras, paso a paso, hechas con plantas que ya aparecen en la sección de plantas.
+                Puedes buscar por letra o por nombre de planta para encontrar la receta que te sirve.
+            </p>
+        </div>
+    </section>
 
     <main>
         <section id="recetas">
             <div class="section-inner">
                 <div class="section-heading">
-                    <h2>Recetas saludables</h2>
-                    <p>Ideas sencillas para apoyar una alimentación familiar equilibrada y accesible.</p>
+                    <h2>Buscar recetas por planta</h2>
+                    <p>Escribe una letra o el nombre de una planta para ver recetas relacionadas.</p>
                 </div>
 
-                <div class="prevention-grid">
-                    <article class="prevention">
-                        <div class="icon" aria-hidden="true">S</div>
-                        <h3>Sopa de verduras</h3>
-                        <p>Combina verduras frescas, granos y poca sal. Es una opción ligera para sumar fibra, agua y micronutrientes.</p>
+                <div class="disease-search recipe-search">
+                    <label for="recipeSearch">Buscar receta</label>
+                    <input type="search" id="recipeSearch" placeholder="Ej. manzanilla, menta, orégano..." autocomplete="off" aria-autocomplete="list" aria-controls="recipeSuggestions" aria-expanded="false">
+                    <div class="disease-suggestions recipe-suggestions" id="recipeSuggestions" role="listbox" aria-label="Sugerencias de recetas"></div>
+                    <p id="recipeSearchStatus" aria-live="polite">Busca por planta o por letra para encontrar recetas detalladas.</p>
+                </div>
+
+                <div class="health-note">
+                    <strong>Cómo leer esta sección</strong>
+                    <p>Las recetas están escritas de forma educativa. Usan plantas comunes de la sección de plantas, con pasos simples y precauciones básicas para no confundirte.</p>
+                </div>
+
+                <div class="recipe-grid" id="recipeList">
+                    <article class="recipe-card" data-recipe-card data-recipe-plants="Manzanilla, Cedrón" data-recipe-keywords="relajacion descanso infusion noche">
+                        <div class="recipe-topline">
+                            <span class="recipe-badge">Infusión</span>
+                            <span class="recipe-plants">Plantas: manzanilla y cedrón</span>
+                        </div>
+                        <h3>Infusión suave para descansar</h3>
+                        <p class="recipe-summary">Una bebida calmante para la noche, pensada para tomarla despacio después de cenar y antes de dormir.</p>
+                        <div class="recipe-columns">
+                            <div>
+                                <h4>Ingredientes</h4>
+                                <ul>
+                                    <li>1 cucharada de flores secas de manzanilla.</li>
+                                    <li>1 cucharada de hojas de cedrón.</li>
+                                    <li>2 tazas de agua.</li>
+                                    <li>Miel al gusto, opcional.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Paso a paso</h4>
+                                <ol>
+                                    <li>Pon a calentar el agua hasta que empiece a hervir.</li>
+                                    <li>Apaga el fuego y agrega la manzanilla y el cedrón.</li>
+                                    <li>Tapa la olla o taza y deja reposar 7 minutos exactos.</li>
+                                    <li>Cuela la infusión y sírvela tibia, no hirviendo.</li>
+                                    <li>Si lo deseas, agrega un poco de miel y bebe despacio.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="recipe-tip"><strong>Consejo:</strong> funciona mejor por la noche y en ambiente tranquilo.</div>
+                        <div class="recipe-warning"><strong>Precaución:</strong> puede dar sueño. No la uses si necesitas conducir o si estás tomando sedantes sin consultar.</div>
                     </article>
-                    <article class="prevention">
-                        <div class="icon" aria-hidden="true">F</div>
-                        <h3>Frutas con avena</h3>
-                        <p>Una mezcla de fruta de temporada con avena ayuda a tener energía y mejorar la saciedad durante la mañana.</p>
+
+                    <article class="recipe-card" data-recipe-card data-recipe-plants="Menta, Hierbabuena, Jengibre" data-recipe-keywords="digestivo estomago gases nausea">
+                        <div class="recipe-topline">
+                            <span class="recipe-badge">Digestiva</span>
+                            <span class="recipe-plants">Plantas: menta, hierbabuena y jengibre</span>
+                        </div>
+                        <h3>Té digestivo de menta, hierbabuena y jengibre</h3>
+                        <p class="recipe-summary">Una preparación ideal para después de una comida pesada cuando quieres aliviar sensación de llenura.</p>
+                        <div class="recipe-columns">
+                            <div>
+                                <h4>Ingredientes</h4>
+                                <ul>
+                                    <li>6 hojas de menta.</li>
+                                    <li>6 hojas de hierbabuena.</li>
+                                    <li>3 rodajas finas de jengibre fresco.</li>
+                                    <li>2 tazas de agua.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Paso a paso</h4>
+                                <ol>
+                                    <li>Hierve el agua con el jengibre durante 3 minutos.</li>
+                                    <li>Apaga el fuego y añade la menta y la hierbabuena.</li>
+                                    <li>Espera 5 minutos con la taza tapada para que no se escape el aroma.</li>
+                                    <li>Cuela la bebida y tómala tibia, lentamente.</li>
+                                    <li>Si te gusta más suave, agrega un poco más de agua caliente.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="recipe-tip"><strong>Consejo:</strong> beberla poco a poco ayuda más que tomarla rápido.</div>
+                        <div class="recipe-warning"><strong>Precaución:</strong> puede causar acidez en algunas personas; si eso pasa, reduce el jengibre o suspéndela.</div>
                     </article>
-                    <article class="prevention">
-                        <div class="icon" aria-hidden="true">G</div>
-                        <h3>Gallo pinto balanceado</h3>
-                        <p>Acompáñalo con ensalada, aguacate o vegetales cocidos para equilibrar proteína, carbohidratos y grasas saludables.</p>
+
+                    <article class="recipe-card" data-recipe-card data-recipe-plants="Orégano, Tomillo, Laurel" data-recipe-keywords="garganta tos vapores resfriado">
+                        <div class="recipe-topline">
+                            <span class="recipe-badge">Respiratoria</span>
+                            <span class="recipe-plants">Plantas: orégano, tomillo y laurel</span>
+                        </div>
+                        <h3>Infusión para garganta y respiración</h3>
+                        <p class="recipe-summary">Receta tradicional suave que acompaña resfriados leves y molestias de garganta con calor y vapor.</p>
+                        <div class="recipe-columns">
+                            <div>
+                                <h4>Ingredientes</h4>
+                                <ul>
+                                    <li>1 cucharada de orégano.</li>
+                                    <li>1 cucharada de tomillo.</li>
+                                    <li>2 hojas de laurel.</li>
+                                    <li>2 tazas de agua.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Paso a paso</h4>
+                                <ol>
+                                    <li>Hierve el agua y agrega el laurel primero.</li>
+                                    <li>Después de 2 minutos añade orégano y tomillo.</li>
+                                    <li>Tapa la olla y deja reposar 6 minutos.</li>
+                                    <li>Cuela y toma una taza tibia, sin endulzar o con muy poca miel.</li>
+                                    <li>Si quieres usar vapor, coloca el líquido caliente en un recipiente seguro y respira a distancia cómoda.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="recipe-tip"><strong>Consejo:</strong> el vapor debe sentirse tibio, nunca quemar.</div>
+                        <div class="recipe-warning"><strong>Precaución:</strong> si hay fiebre alta, falta de aire o dolor fuerte, no la uses como sustituto de atención médica.</div>
+                    </article>
+
+                    <article class="recipe-card" data-recipe-card data-recipe-plants="Flor de Jamaica, Canela, Menta" data-recipe-keywords="refresco bebida fria hidratacion">
+                        <div class="recipe-topline">
+                            <span class="recipe-badge">Refrescante</span>
+                            <span class="recipe-plants">Plantas: flor de Jamaica, canela y menta</span>
+                        </div>
+                        <h3>Bebida fría de Jamaica con canela y menta</h3>
+                        <p class="recipe-summary">Una bebida de sabor intenso para acompañar comidas o refrescarte durante el calor, sin complicarte.</p>
+                        <div class="recipe-columns">
+                            <div>
+                                <h4>Ingredientes</h4>
+                                <ul>
+                                    <li>1/2 taza de flor de Jamaica seca.</li>
+                                    <li>1 raja pequeña de canela.</li>
+                                    <li>8 hojas de menta.</li>
+                                    <li>1 litro de agua.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Paso a paso</h4>
+                                <ol>
+                                    <li>Hierve la Jamaica con la canela durante 5 minutos.</li>
+                                    <li>Apaga el fuego y agrega la menta.</li>
+                                    <li>Deja reposar 10 minutos completos.</li>
+                                    <li>Cuela la mezcla y enfríala en refrigeración.</li>
+                                    <li>Sírvela con hielo si la quieres más fresca.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="recipe-tip"><strong>Consejo:</strong> la puedes preparar con anticipación y guardar en frío por un día.</div>
+                        <div class="recipe-warning"><strong>Precaución:</strong> la Jamaica puede bajar la presión en algunas personas; si ya sueles tener presión baja, tómala con moderación.</div>
+                    </article>
+
+                    <article class="recipe-card" data-recipe-card data-recipe-plants="Cúrcuma, Laurel, Ajo, Cebolla" data-recipe-keywords="sopa caldo verduras comida">
+                        <div class="recipe-topline">
+                            <span class="recipe-badge">Comida</span>
+                            <span class="recipe-plants">Plantas: cúrcuma, laurel, ajo y cebolla</span>
+                        </div>
+                        <h3>Sopa de verduras con cúrcuma y laurel</h3>
+                        <p class="recipe-summary">Una sopa completa que suma verduras, aroma y color. Sirve para una comida fuerte, simple y nutritiva.</p>
+                        <div class="recipe-columns">
+                            <div>
+                                <h4>Ingredientes</h4>
+                                <ul>
+                                    <li>2 dientes de ajo picados.</li>
+                                    <li>1/2 cebolla picada.</li>
+                                    <li>1 cucharadita de cúrcuma.</li>
+                                    <li>2 hojas de laurel.</li>
+                                    <li>Verduras al gusto: zanahoria, chayote, papa y ayote.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Paso a paso</h4>
+                                <ol>
+                                    <li>En una olla, sofríe la cebolla y el ajo con muy poco aceite hasta que ablanden.</li>
+                                    <li>Agrega la cúrcuma y mueve por 20 segundos para que suelte aroma.</li>
+                                    <li>Añade agua suficiente, las hojas de laurel y las verduras duras primero.</li>
+                                    <li>Deja cocinar hasta que todo esté suave; después agrega las verduras blandas.</li>
+                                    <li>Corrige la sal al final y sirve caliente.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="recipe-tip"><strong>Consejo:</strong> si la sirves con arroz o tortilla, queda una comida más completa.</div>
+                        <div class="recipe-warning"><strong>Precaución:</strong> la cúrcuma puede no ser conveniente en exceso si tienes cálculos biliares o tomas anticoagulantes.</div>
+                    </article>
+
+                    <article class="recipe-card" data-recipe-card data-recipe-plants="Moringa, Chía, Guayaba" data-recipe-keywords="batido desayuno energia fibra">
+                        <div class="recipe-topline">
+                            <span class="recipe-badge">Nutritiva</span>
+                            <span class="recipe-plants">Plantas: moringa, chía y guayaba</span>
+                        </div>
+                        <h3>Bebida nutritiva de moringa y chía</h3>
+                        <p class="recipe-summary">Pensada para desayuno o merienda, con textura suave y un punto de frescura natural.</p>
+                        <div class="recipe-columns">
+                            <div>
+                                <h4>Ingredientes</h4>
+                                <ul>
+                                    <li>1 cucharada de hojas de moringa secas o frescas.</li>
+                                    <li>1 cucharada de chía.</li>
+                                    <li>1 guayaba madura o pulpa colada.</li>
+                                    <li>2 tazas de agua fría.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Paso a paso</h4>
+                                <ol>
+                                    <li>Hidrata la chía con media taza de agua durante 10 minutos.</li>
+                                    <li>Lava bien la guayaba y córtala en trozos si la vas a licuar.</li>
+                                    <li>Mezcla la guayaba con el resto del agua y la moringa.</li>
+                                    <li>Agrega la chía ya hidratada y revuelve.</li>
+                                    <li>Sirve fría y bebe el mismo día para mejor sabor.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="recipe-tip"><strong>Consejo:</strong> si la quieres más ligera, cuela la guayaba antes de servir.</div>
+                        <div class="recipe-warning"><strong>Precaución:</strong> la moringa es alimento complementario, no reemplaza comidas ni tratamientos.</div>
+                    </article>
+
+                    <article class="recipe-card" data-recipe-card data-recipe-plants="Sábila, Caléndula" data-recipe-keywords="piel gel externo quemaduras irritacion">
+                        <div class="recipe-topline">
+                            <span class="recipe-badge">Uso externo</span>
+                            <span class="recipe-plants">Plantas: sábila y caléndula</span>
+                        </div>
+                        <h3>Gel suave para la piel irritada</h3>
+                        <p class="recipe-summary">Preparación externa para piel sensible, pensada para alivio suave después de lavar y secar bien la zona.</p>
+                        <div class="recipe-columns">
+                            <div>
+                                <h4>Ingredientes</h4>
+                                <ul>
+                                    <li>2 cucharadas de gel de sábila limpio.</li>
+                                    <li>1 cucharada de infusión concentrada de caléndula ya fría.</li>
+                                    <li>Recipiente limpio con tapa.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Paso a paso</h4>
+                                <ol>
+                                    <li>Extrae el gel transparente de la sábila y lava cualquier residuo amarillo.</li>
+                                    <li>Prepara una infusión suave de caléndula y déjala enfriar completamente.</li>
+                                    <li>Mezcla ambos ingredientes con una cuchara limpia.</li>
+                                    <li>Aplica una capa delgada sobre piel limpia y seca.</li>
+                                    <li>Si arde o pica, retírala de inmediato con agua.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="recipe-tip"><strong>Consejo:</strong> úsalo solo en zonas pequeñas primero, para ver cómo responde la piel.</div>
+                        <div class="recipe-warning"><strong>Precaución:</strong> es de uso externo. No lo pongas en ojos, heridas abiertas ni en piel muy irritada.</div>
+                    </article>
+
+                    <article class="recipe-card" data-recipe-card data-recipe-plants="Toronjil, Valeriana, Tilo" data-recipe-keywords="relajacion sueño nervios noche">
+                        <div class="recipe-topline">
+                            <span class="recipe-badge">Calmante</span>
+                            <span class="recipe-plants">Plantas: toronjil, valeriana y tilo</span>
+                        </div>
+                        <h3>Infusión nocturna para relajarte</h3>
+                        <p class="recipe-summary">Una mezcla suave para noches tensas, cuando necesitas bajar el ritmo y descansar mejor.</p>
+                        <div class="recipe-columns">
+                            <div>
+                                <h4>Ingredientes</h4>
+                                <ul>
+                                    <li>1 cucharada de toronjil.</li>
+                                    <li>1 cucharadita de raíz de valeriana seca.</li>
+                                    <li>1 cucharada de flores de tilo.</li>
+                                    <li>2 tazas de agua.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Paso a paso</h4>
+                                <ol>
+                                    <li>Calienta el agua hasta hervir y apaga el fuego.</li>
+                                    <li>Agrega el toronjil, la valeriana y el tilo.</li>
+                                    <li>Tapa la mezcla durante 8 minutos.</li>
+                                    <li>Cuela y toma una taza tibia una hora antes de dormir.</li>
+                                    <li>Guarda el resto solo si vas a tomarlo el mismo día.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="recipe-tip"><strong>Consejo:</strong> acompáñala con ambiente tranquilo, poca luz y sin pantallas.</div>
+                        <div class="recipe-warning"><strong>Precaución:</strong> puede producir sueño fuerte. No mezclar con alcohol, sedantes ni actividades de manejo.</div>
+                    </article>
+
+                    <article class="recipe-card" data-recipe-card data-recipe-plants="Eucalipto, Romero" data-recipe-keywords="vapor congestion resfriado pecho">
+                        <div class="recipe-topline">
+                            <span class="recipe-badge">Vapor</span>
+                            <span class="recipe-plants">Plantas: eucalipto y romero</span>
+                        </div>
+                        <h3>Vapor casero para congestión</h3>
+                        <p class="recipe-summary">Uso tradicional para aliviar sensación de nariz tapada o pechos cargados sin tocar los ojos ni la piel.</p>
+                        <div class="recipe-columns">
+                            <div>
+                                <h4>Ingredientes</h4>
+                                <ul>
+                                    <li>4 hojas de eucalipto.</li>
+                                    <li>1 ramita de romero.</li>
+                                    <li>1 litro de agua muy caliente.</li>
+                                    <li>Toalla limpia.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Paso a paso</h4>
+                                <ol>
+                                    <li>Hierve el agua y colócala en un recipiente seguro y amplio.</li>
+                                    <li>Agrega el eucalipto y el romero al agua caliente.</li>
+                                    <li>Siéntate frente al recipiente y cubre tu cabeza con la toalla.</li>
+                                    <li>Respira a distancia cómoda durante 5 a 8 minutos.</li>
+                                    <li>Retírate de inmediato si el calor molesta o te hace toser más.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="recipe-tip"><strong>Consejo:</strong> el calor debe sentirse suave; si quema, está demasiado cerca.</div>
+                        <div class="recipe-warning"><strong>Precaución:</strong> no usar en bebés pequeños ni en personas con asma sin orientación profesional.</div>
+                    </article>
+
+                    <article class="recipe-card" data-recipe-card data-recipe-plants="Cebolla, Miel, Canela" data-recipe-keywords="jarabe tos garganta">
+                        <div class="recipe-topline">
+                            <span class="recipe-badge">Jarabe</span>
+                            <span class="recipe-plants">Plantas: cebolla y canela</span>
+                        </div>
+                        <h3>Jarabe suave de cebolla y miel</h3>
+                        <p class="recipe-summary">Una preparación casera muy simple para molestar menos la garganta cuando hay tos leve e irritación.</p>
+                        <div class="recipe-columns">
+                            <div>
+                                <h4>Ingredientes</h4>
+                                <ul>
+                                    <li>1 cebolla mediana en rodajas finas.</li>
+                                    <li>3 cucharadas de miel.</li>
+                                    <li>1 trozo pequeño de canela.</li>
+                                    <li>Frasco limpio con tapa.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Paso a paso</h4>
+                                <ol>
+                                    <li>Coloca una capa de cebolla en el frasco.</li>
+                                    <li>Agrega miel encima y luego un poco de canela.</li>
+                                    <li>Repite las capas hasta terminar la cebolla.</li>
+                                    <li>Deja reposar al menos 2 horas para que suelte el líquido.</li>
+                                    <li>Toma pequeñas cucharaditas cuando haga falta.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="recipe-tip"><strong>Consejo:</strong> si la guardas en refrigeración, dura mejor y el sabor se vuelve más suave.</div>
+                        <div class="recipe-warning"><strong>Precaución:</strong> no dar miel a menores de 1 año y consulta si la tos es fuerte o dura varios días.</div>
                     </article>
                 </div>
             </div>
@@ -64,8 +388,6 @@
     <footer>
         <p>&copy; 2026 - NicaSalud | Salud Comunitaria de Nicaragua | <a href="/admin/">Admin</a></p>
     </footer>
-    <script src="frontend.js"></script>
+    <script src="frontend.js?v=3"></script>
 </body>
 </html>
-
-

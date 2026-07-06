@@ -1,21 +1,21 @@
-:root {
-            --ink: #e8f7f3;
-            --deep: #bff7ea;
+﻿:root {
+            --ink: #27463e;
+            --deep: #355c4d;
             --blue: #67a7ff;
             --cyan: #31d8d2;
-            --mint: #5fe2a6;
+            --mint: #5dbf8c;
             --coral: #f26f63;
             --gold: #f2b84b;
-            --paper: #071a22;
+            --paper: #f5efe4;
             --white: #ffffff;
-            --muted: #a7c4c5;
-            --panel: #0d2730;
-            --panel-strong: #123946;
-            --line: rgba(49, 216, 210, 0.22);
-            --border: rgba(95, 226, 166, 0.2);
-            --glass: rgba(13, 39, 48, 0.82);
-            --glow: 0 12px 30px rgba(49, 216, 210, 0.18);
-            --shadow: 0 20px 52px rgba(0, 0, 0, 0.32);
+            --muted: #667d75;
+            --panel: #fffaf2;
+            --panel-strong: #f1e7d7;
+            --line: rgba(93, 191, 140, 0.18);
+            --border: rgba(93, 191, 140, 0.2);
+            --glass: rgba(255, 250, 242, 0.84);
+            --glow: 0 12px 30px rgba(93, 191, 140, 0.14);
+            --shadow: 0 20px 52px rgba(82, 103, 93, 0.16);
         }
 
         * {
@@ -29,11 +29,12 @@
         body {
             margin: 0;
             font-family: "Segoe UI", Arial, sans-serif;
+            color-scheme: light;
             color: var(--ink);
             background:
-                radial-gradient(circle at 12% 8%, rgba(95, 226, 166, 0.12), transparent 26rem),
-                radial-gradient(circle at 88% 18%, rgba(103, 167, 255, 0.13), transparent 24rem),
-                linear-gradient(180deg, #081f28 0, #071a22 34rem),
+                radial-gradient(circle at 12% 8%, rgba(93, 191, 140, 0.12), transparent 26rem),
+                radial-gradient(circle at 88% 18%, rgba(103, 167, 255, 0.12), transparent 24rem),
+                linear-gradient(180deg, #f8f1e5 0, #f4eadb 34rem),
                 var(--paper);
             isolation: isolate;
         }
@@ -44,7 +45,7 @@
             inset: 0;
             z-index: -1;
             pointer-events: none;
-            background-image: linear-gradient(135deg, rgba(34, 184, 199, 0.06), rgba(53, 201, 139, 0.04));
+            background-image: linear-gradient(135deg, rgba(34, 184, 199, 0.05), rgba(53, 201, 139, 0.04));
         }
 
         body::after {
@@ -65,10 +66,10 @@
             justify-content: space-between;
             gap: 1rem;
             padding: 0.85rem clamp(1rem, 4vw, 4.5rem);
-            background: rgba(7, 26, 34, 0.92);
+            background: rgba(255, 250, 242, 0.92);
             border-bottom: 1px solid var(--border);
             backdrop-filter: blur(16px);
-            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+            box-shadow: 0 10px 28px rgba(82, 103, 93, 0.14);
         }
 
         .brand {
@@ -105,7 +106,7 @@
             padding: 0.7rem 0.9rem;
             border: 1px solid transparent;
             border-radius: 0.45rem;
-            color: #cce8e6;
+            color: #395d55;
             font-size: 0.95rem;
             font-weight: 700;
             transition: 180ms ease;
@@ -113,7 +114,7 @@
 
         nav a:hover,
         nav a:focus {
-            background: rgba(95, 226, 166, 0.12);
+            background: rgba(93, 191, 140, 0.14);
             border-color: rgba(34, 184, 199, 0.22);
             color: var(--mint);
             outline: none;
@@ -134,7 +135,7 @@
             padding: 0.65rem 0.85rem;
             border: 1px solid rgba(28, 122, 134, 0.22);
             border-radius: 0.5rem;
-            background: #0b222b;
+            background: #fff8ef;
             color: var(--ink);
             font: inherit;
             outline: none;
@@ -151,7 +152,7 @@
             padding: 0.65rem 0.9rem;
             border: 0;
             border-radius: 0.5rem;
-            background: linear-gradient(135deg, var(--blue), var(--cyan));
+            background: linear-gradient(135deg, #5fa3d8, #66d6cc);
             color: var(--white);
             cursor: pointer;
             font: inherit;
@@ -165,7 +166,7 @@
             max-width: 18rem;
             padding: 0.45rem 0.6rem;
             border-radius: 0.45rem;
-            background: #102f3a;
+            background: #f3eadf;
             color: var(--muted);
             box-shadow: var(--shadow);
             font-size: 0.78rem;
@@ -210,7 +211,7 @@
             position: absolute;
             inset: auto 0 0;
             height: 10rem;
-            background: linear-gradient(180deg, transparent, var(--paper));
+        background: linear-gradient(180deg, transparent, rgba(245, 239, 228, 0.78));
         }
 
         .hero-grid {
@@ -313,7 +314,7 @@
             position: absolute;
             inset: auto 0 0;
             height: 8rem;
-            background: linear-gradient(180deg, transparent, var(--paper));
+            background: linear-gradient(180deg, transparent, rgba(245, 239, 228, 0.96));
             pointer-events: none;
         }
 
@@ -337,6 +338,14 @@
         .plant-hero {
             background:
                 linear-gradient(90deg, rgba(7, 26, 34, 0.9), rgba(10, 93, 63, 0.58) 54%, rgba(7, 26, 34, 0.26)),
+                url("assets/planta.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .recipe-hero {
+            background:
+                linear-gradient(90deg, rgba(7, 26, 34, 0.94), rgba(10, 70, 84, 0.72) 52%, rgba(7, 26, 34, 0.3)),
                 url("assets/planta.jpg");
             background-size: cover;
             background-position: center;
@@ -369,7 +378,7 @@
         }
 
         .button.primary {
-            background: linear-gradient(135deg, var(--blue), var(--cyan));
+            background: linear-gradient(135deg, #5fa3d8, #66d6cc);
             color: var(--white);
         }
 
@@ -400,7 +409,7 @@
         }
 
         .section-inner {
-            width: min(1180px, 100%);
+            width: min(1420px, 100%);
             margin: 0 auto;
         }
 
@@ -453,7 +462,7 @@
             padding: 1rem;
             border: 1px solid rgba(49, 216, 210, 0.18);
             border-radius: 0.5rem;
-            background: #0b222b;
+            background: #fff8ef;
         }
 
         .survey-question legend {
@@ -495,7 +504,7 @@
             padding: 0.7rem 0.85rem;
             border: 1px solid rgba(49, 216, 210, 0.22);
             border-radius: 0.5rem;
-            background: #071a22;
+            background: #fff8ef;
             color: var(--ink);
             font: inherit;
             outline: none;
@@ -836,8 +845,8 @@
         .filter-tab {
             min-height: 3.4rem;
             border: 0;
-            background: #0b222b;
-            color: #cce8e6;
+            background: #fff8ef;
+            color: #395d55;
             cursor: pointer;
             font: inherit;
             font-weight: 850;
@@ -852,7 +861,7 @@
         }
 
         .filter-tab.active {
-            background: linear-gradient(135deg, var(--blue), var(--cyan));
+            background: linear-gradient(135deg, #5fa3d8, #66d6cc);
             color: var(--white);
         }
 
@@ -1098,7 +1107,7 @@
         }
 
         .disease-detail h4:nth-of-type(2) + ul {
-            border-color: rgba(95, 226, 166, 0.18);
+            border-color: rgba(93, 191, 140, 0.18);
             background:
                 linear-gradient(135deg, rgba(95, 226, 166, 0.08), transparent 55%),
                 rgba(8, 28, 37, 0.84);
@@ -1192,7 +1201,7 @@
             padding: 0.75rem 0.9rem;
             border: 1px solid rgba(49, 216, 210, 0.22);
             border-radius: 0.5rem;
-            background: #071a22;
+            background: #fff8ef;
             color: var(--ink);
             font: inherit;
             outline: none;
@@ -1212,9 +1221,9 @@
             border: 1px solid rgba(95, 226, 166, 0.2);
             border-radius: 0.55rem;
             background:
-                linear-gradient(135deg, rgba(49, 216, 210, 0.12), transparent 42%),
-                #081d25;
-            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.24);
+                linear-gradient(135deg, rgba(93, 191, 140, 0.1), transparent 42%),
+                #fffaf2;
+            box-shadow: 0 1rem 2rem rgba(82, 103, 93, 0.14);
         }
 
         .disease-suggestions.visible {
@@ -1364,6 +1373,10 @@
             line-height: 1.35;
         }
 
+        .recipe-suggestions .suggestion-copy small {
+            line-height: 1.35;
+        }
+
         .program,
         .prevention {
             position: relative;
@@ -1378,6 +1391,144 @@
             overflow: hidden;
             backdrop-filter: blur(14px);
             transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+            gap: 1.15rem;
+            align-items: start;
+        }
+
+        .recipe-card {
+            position: relative;
+            display: grid;
+            gap: 1rem;
+            min-height: 100%;
+            padding: 1.35rem 1.35rem 1.25rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            background:
+                linear-gradient(135deg, rgba(95, 226, 166, 0.08), transparent 38%),
+                var(--panel);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            backdrop-filter: blur(14px);
+            transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+        }
+
+        .recipe-card::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto;
+            height: 0.25rem;
+            background: linear-gradient(90deg, var(--mint), var(--cyan), var(--blue));
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(34, 184, 199, 0.34);
+            box-shadow: 0 22px 46px rgba(22, 76, 86, 0.16);
+        }
+
+        .recipe-card h3 {
+            margin: 0;
+            color: #23473f;
+            font-size: 1.16rem;
+            line-height: 1.22;
+        }
+
+        .recipe-card p {
+            margin: 0;
+            color: #4f665f;
+            line-height: 1.55;
+        }
+
+        .recipe-card ul,
+        .recipe-card ol {
+            margin: 0;
+            padding-left: 1.1rem;
+            color: #4d645d;
+            line-height: 1.48;
+        }
+
+        .recipe-topline {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.55rem;
+        }
+
+        .recipe-badge {
+            display: inline-flex;
+            align-items: center;
+            min-height: 2rem;
+            padding: 0.38rem 0.68rem;
+            border: 1px solid rgba(95, 226, 166, 0.22);
+            border-radius: 999px;
+            background: rgba(93, 191, 140, 0.14);
+            color: var(--mint);
+            font-size: 0.8rem;
+            font-weight: 900;
+            letter-spacing: 0.02em;
+        }
+
+        .recipe-plants {
+            color: #4d645d;
+            font-size: 0.84rem;
+            font-weight: 700;
+        }
+
+        .recipe-summary {
+            font-size: 0.98rem;
+        }
+
+        .recipe-columns {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.95fr);
+            gap: 0.8rem;
+        }
+
+        .recipe-columns > div {
+            display: grid;
+            gap: 0.5rem;
+            padding: 0.82rem;
+            border: 1px solid rgba(93, 191, 140, 0.2);
+            border-radius: 0.45rem;
+            background: #f7f0e3;
+        }
+
+        .recipe-columns h4 {
+            margin: 0;
+            color: #365b50;
+            font-size: 0.92rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .recipe-tip,
+        .recipe-warning {
+            display: grid;
+            gap: 0.35rem;
+            padding: 0.78rem 0.9rem;
+            border-radius: 0.45rem;
+            line-height: 1.48;
+        }
+
+        .recipe-tip {
+            border-left: 3px solid var(--mint);
+            background: rgba(93, 191, 140, 0.12);
+            color: #2e4e43;
+        }
+
+        .recipe-warning {
+            border-left: 3px solid var(--coral);
+            background: rgba(242, 111, 99, 0.1);
+            color: #6f3d36;
+        }
+
+        .recipe-card.is-hidden {
+            display: none;
         }
 
         .program:hover,
@@ -1525,7 +1676,7 @@
             padding: 0.8rem 0.9rem;
             border: 1px solid rgba(28, 122, 134, 0.22);
             border-radius: 0.5rem;
-            background: #0b222b;
+            background: #fff8ef;
             color: var(--ink);
             font: inherit;
             resize: vertical;
@@ -1567,11 +1718,11 @@
 
 footer {
     padding: 1.3rem clamp(1rem, 5vw, 4.5rem);
-    background: #0b5968;
-            color: rgba(255, 255, 255, 0.88);
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.16);
-        }
+    background: #f0e6d8;
+    color: #4d675e;
+    text-align: center;
+    border-top: 1px solid rgba(93, 191, 140, 0.18);
+}
 
         @media (max-width: 900px) {
             .topbar {
@@ -1650,6 +1801,10 @@ footer {
                 border-left: 0;
                 border-top: 1px solid rgba(95, 226, 166, 0.28);
             }
+
+            .recipe-columns {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 560px) {
@@ -1692,7 +1847,7 @@ footer {
                 width: 100%;
             }
         }
-        /*diseño del mapa GG*/
+        /*diseÃ±o del mapa GG*/
 .signal-panel {
     position: relative;
     min-height: 35rem;
@@ -1757,56 +1912,57 @@ footer {
     border-left: 2px solid rgba(53, 201, 139, 0.5);
 }
 
-/* Tema salud claro */
+/* Tema salud crema */
 :root {
-    --ink: #17343a;
-    --deep: #0f766e;
-    --blue: #2f80ed;
-    --cyan: #4db6ac;
-    --mint: #2fbf71;
-    --coral: #e76f51;
-    --gold: #f2b84b;
-    --paper: #f5fbf8;
-    --white: #ffffff;
-    --muted: #5f7478;
-    --panel: #ffffff;
-    --panel-strong: #e8f7ef;
-    --line: rgba(47, 128, 237, 0.16);
-    --border: rgba(15, 118, 110, 0.16);
-    --glass: rgba(255, 255, 255, 0.9);
-    --glow: 0 12px 28px rgba(47, 128, 237, 0.12);
-    --shadow: 0 16px 38px rgba(39, 84, 91, 0.12);
-    --accent: #8bd17c;
-}
+            --ink: #27463e;
+            --deep: #355c4d;
+            --blue: #67a7ff;
+            --cyan: #31d8d2;
+            --mint: #5dbf8c;
+            --coral: #f26f63;
+            --gold: #f2b84b;
+            --paper: #f5efe4;
+            --white: #ffffff;
+            --muted: #667d75;
+            --panel: #fffaf2;
+            --panel-strong: #f1e7d7;
+            --line: rgba(93, 191, 140, 0.18);
+            --border: rgba(93, 191, 140, 0.2);
+            --glass: rgba(255, 250, 242, 0.84);
+            --glow: 0 12px 30px rgba(93, 191, 140, 0.14);
+            --shadow: 0 20px 52px rgba(82, 103, 93, 0.16);
+        }
 
 body {
     color: var(--ink);
     background:
-        linear-gradient(180deg, #f0fbf6 0, #f8fcfb 28rem),
+        radial-gradient(circle at 12% 8%, rgba(93, 191, 140, 0.12), transparent 26rem),
+        radial-gradient(circle at 88% 18%, rgba(103, 167, 255, 0.12), transparent 24rem),
+        linear-gradient(180deg, #f8f1e5 0, #f4eadb 34rem),
         var(--paper);
 }
 
 body::before {
     background:
-        linear-gradient(135deg, rgba(47, 191, 113, 0.08), rgba(47, 128, 237, 0.05));
+        linear-gradient(135deg, rgba(34, 184, 199, 0.05), rgba(53, 201, 139, 0.04));
 }
 
 .topbar {
-    background: rgba(255, 255, 255, 0.94);
-    border-bottom-color: rgba(15, 118, 110, 0.14);
-    box-shadow: 0 8px 24px rgba(39, 84, 91, 0.1);
+    background: rgba(255, 250, 242, 0.92);
+    border-bottom-color: rgba(95, 226, 166, 0.2);
+    box-shadow: 0 10px 28px rgba(82, 103, 93, 0.14);
 }
 
 nav a {
-    color: #31565c;
+    color: #395d55;
 }
 
 nav a:hover,
 nav a:focus {
-    background: #e8f7ef;
-    border-color: rgba(15, 118, 110, 0.18);
-    color: var(--deep);
-    box-shadow: none;
+    background: rgba(93, 191, 140, 0.14);
+    border-color: rgba(34, 184, 199, 0.22);
+    color: var(--mint);
+    box-shadow: var(--glow);
 }
 
 .site-search input,
@@ -1815,8 +1971,8 @@ nav a:focus {
 .contact-form input,
 .contact-form textarea,
 .disease-search input {
-    background: #ffffff;
-    border-color: rgba(15, 118, 110, 0.18);
+    background: #fff8ef;
+    border-color: rgba(93, 191, 140, 0.2);
     color: var(--ink);
 }
 
@@ -1826,22 +1982,22 @@ nav a:focus {
 .contact-form input:focus,
 .contact-form textarea:focus,
 .disease-search input:focus {
-    border-color: rgba(47, 128, 237, 0.42);
-    box-shadow: 0 0 0 0.22rem rgba(47, 128, 237, 0.1);
+    border-color: rgba(47, 128, 237, 0.45);
+    box-shadow: 0 0 0 0.22rem rgba(47, 128, 237, 0.12);
 }
 
 .site-search button,
 .button.primary,
 .filter-tab.active {
-    background: linear-gradient(135deg, #2fbf71, #2f80ed);
+    background: linear-gradient(135deg, #5fa3d8, #66d6cc);
     color: #ffffff;
 }
 
 .search-status,
 .hospital-card {
-    background: #ffffff;
+    background: #f3eadf;
     color: var(--muted);
-    border: 1px solid rgba(15, 118, 110, 0.14);
+    border: 1px solid rgba(95, 226, 166, 0.18);
 }
 
 .hero {
@@ -1855,12 +2011,12 @@ nav a:focus {
 
 .hero::after,
 .page-hero::after {
-    background: linear-gradient(180deg, transparent, var(--paper));
+    background: linear-gradient(180deg, transparent, rgba(245, 239, 228, 0.96));
 }
 
 .disease-hero {
     background:
-        linear-gradient(90deg, rgba(15, 118, 110, 0.78), rgba(47, 128, 237, 0.36) 58%, rgba(255, 255, 255, 0.08)),
+        linear-gradient(90deg, rgba(7, 26, 34, 0.9), rgba(7, 72, 83, 0.62) 54%, rgba(7, 26, 34, 0.28)),
         url("assets/id_enfermedades_virus.jpg");
     background-size: cover;
     background-position: center;
@@ -1868,24 +2024,32 @@ nav a:focus {
 
 .plant-hero {
     background:
-        linear-gradient(90deg, rgba(15, 118, 110, 0.78), rgba(47, 191, 113, 0.38) 58%, rgba(255, 255, 255, 0.08)),
+        linear-gradient(90deg, rgba(7, 26, 34, 0.9), rgba(10, 93, 63, 0.58) 54%, rgba(7, 26, 34, 0.26)),
+        url("assets/planta.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.recipe-hero {
+    background:
+        linear-gradient(90deg, rgba(7, 26, 34, 0.94), rgba(10, 70, 84, 0.72) 52%, rgba(7, 26, 34, 0.3)),
         url("assets/planta.jpg");
     background-size: cover;
     background-position: center;
 }
 
 .eyebrow {
-    border-color: rgba(255, 255, 255, 0.56);
-    background: rgba(255, 255, 255, 0.22);
-    color: #f4fff9;
+    border-color: rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.16);
+    color: #dffcf0;
 }
 
 .pulse {
-    background: #b9f6ca;
+    background: var(--mint);
 }
 
 .hero p {
-    color: #eefcf6;
+    color: #eefbf7;
 }
 
 main::before {
@@ -1939,11 +2103,12 @@ h2,
 .program,
 .prevention,
 .contact-box,
-.signal-panel {
+.signal-panel,
+.recipe-card {
     background:
-        linear-gradient(135deg, rgba(47, 191, 113, 0.05), transparent 40%),
-        #ffffff;
-    border-color: rgba(15, 118, 110, 0.14);
+        linear-gradient(135deg, rgba(53, 201, 139, 0.11), transparent 38%),
+        var(--panel);
+    border-color: var(--border);
     box-shadow: var(--shadow);
 }
 
@@ -1959,8 +2124,8 @@ h2,
 .source-note a,
 .disease-suggestions,
 .disease-suggestion {
-    background: #f8fcfb;
-    border-color: rgba(15, 118, 110, 0.14);
+    background: #fffaf2;
+    border-color: rgba(93, 191, 140, 0.18);
     color: var(--ink);
 }
 
@@ -1984,32 +2149,32 @@ h2,
 }
 
 .filter-tabs {
-    background: rgba(15, 118, 110, 0.1);
+    background: rgba(93, 191, 140, 0.08);
 }
 
 .filter-tab {
-    background: #ffffff;
-    color: #31565c;
+    background: #fff8ef;
+    color: #395d55;
 }
 
 .filter-tab:hover,
 .filter-tab:focus {
     color: var(--deep);
-    box-shadow: inset 0 -3px 0 rgba(47, 191, 113, 0.28);
+    box-shadow: inset 0 -3px 0 rgba(93, 191, 140, 0.28);
 }
 
 .disease-detail summary:hover,
 .disease-detail summary:focus-visible,
 .disease-suggestion:hover,
 .disease-suggestion:focus-visible {
-    background: #eefaf4;
-    border-color: rgba(47, 191, 113, 0.32);
+    background: #f4ebdf;
+    border-color: rgba(93, 191, 140, 0.3);
 }
 
 .disease-detail summary::before,
 .suggestion-mark {
-    background: linear-gradient(135deg, #2fbf71, #8bd17c);
-    color: #073b2a;
+    background: linear-gradient(135deg, #5dbf8c, #a6d49d);
+    color: #27463e;
 }
 
 .severity-tag,
@@ -2032,33 +2197,33 @@ h2,
 }
 
 .blue-band {
-    background: linear-gradient(135deg, #0f766e, #2f80ed 62%, #2fbf71);
+    background: linear-gradient(135deg, #0b5968, #168999 54%, #35c98b);
 }
 
 .route {
-    background: rgba(255, 255, 255, 0.4);
-    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.16);
 }
 
 .route-step {
-    background: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .route-step span,
 .icon {
-    background: #e8f7ef;
-    border-color: rgba(15, 118, 110, 0.14);
+    background: linear-gradient(135deg, rgba(47, 128, 237, 0.12), rgba(53, 201, 139, 0.14));
+    border-color: rgba(34, 184, 199, 0.18);
     color: var(--deep);
 }
 
 footer {
-    background: #0f766e;
-    color: rgba(255, 255, 255, 0.9);
-    border-top-color: rgba(255, 255, 255, 0.18);
+    background: #f0e6d8;
+    color: #4d675e;
+    border-top-color: rgba(93, 191, 140, 0.18);
 }
 
 .leaflet-container {
-    background: #eefaf4;
+    background: #fff8ef;
 }
 
 @media (max-width: 900px) {
@@ -2070,5 +2235,9 @@ footer {
         background-position: center;
     }
 }
+
+
+
+
 
 

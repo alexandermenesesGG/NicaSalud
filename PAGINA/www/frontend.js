@@ -1,4 +1,4 @@
-const filterTabs = document.querySelectorAll(".filter-tab");
+﻿const filterTabs = document.querySelectorAll(".filter-tab");
 const filterContents = document.querySelectorAll(".filter-content");
 
 filterTabs.forEach((tab) => {
@@ -76,7 +76,7 @@ function buscarEnSitio(consulta) {
     const resultado = candidatos.find((elemento) => normalizarTexto(elemento.textContent).includes(termino));
 
     if (!resultado) {
-        mostrarEstadoBusqueda(`No se encontró "${consulta}".`);
+        mostrarEstadoBusqueda(`No se encontrÃ³ "${consulta}".`);
         return;
     }
 
@@ -182,7 +182,7 @@ function filtrarEnfermedades() {
 
     if (diseaseSearchStatus) {
         if (!termino) {
-            diseaseSearchStatus.textContent = "Mostrando enfermedades más comunes.";
+            diseaseSearchStatus.textContent = "Mostrando enfermedades mÃ¡s comunes.";
         } else if (visibles === 1) {
             diseaseSearchStatus.textContent = "1 enfermedad encontrada.";
         } else if (visibles > 1) {
@@ -226,202 +226,202 @@ const plantDetailCare = document.getElementById("plantDetailCare");
 const plantDetails = {
     [normalizarTexto("Achiote")]: {
         info: "Arbusto tropical cuyas semillas se usan como colorante natural y en preparaciones caseras.",
-        care: "Usarlo en cantidades moderadas como alimento. Evitar aplicarlo en heridas abiertas sin orientación."
+        care: "Usarlo en cantidades moderadas como alimento. Evitar aplicarlo en heridas abiertas sin orientaciÃ³n."
     },
     [normalizarTexto("Ajo")]: {
-        info: "Bulbo aromático muy usado en la cocina por su sabor intenso y por su tradición en cuidados respiratorios.",
-        care: "Puede irritar el estómago o interactuar con anticoagulantes si se consume en exceso."
+        info: "Bulbo aromÃ¡tico muy usado en la cocina por su sabor intenso y por su tradiciÃ³n en cuidados respiratorios.",
+        care: "Puede irritar el estÃ³mago o interactuar con anticoagulantes si se consume en exceso."
     },
     [normalizarTexto("Albahaca")]: {
-        info: "Hierba aromática de hojas suaves usada en comidas, infusiones ligeras y cuidados digestivos caseros.",
-        care: "Evitar preparados concentrados durante embarazo o si hay alergias a plantas aromáticas."
+        info: "Hierba aromÃ¡tica de hojas suaves usada en comidas, infusiones ligeras y cuidados digestivos caseros.",
+        care: "Evitar preparados concentrados durante embarazo o si hay alergias a plantas aromÃ¡ticas."
     },
     [normalizarTexto("Aloe vera")]: {
         info: "Planta suculenta con gel transparente en sus hojas, popular para el cuidado externo de la piel.",
-        care: "Usar solo de forma externa en piel limpia. No ingerir el látex amarillo porque puede causar diarrea fuerte."
+        care: "Usar solo de forma externa en piel limpia. No ingerir el lÃ¡tex amarillo porque puede causar diarrea fuerte."
     },
-    [normalizarTexto("Anís")]: {
-        info: "Semilla aromática de sabor dulce, común en infusiones suaves y recetas tradicionales.",
-        care: "Usar con moderación. Evitar aceites esenciales o dosis concentradas sin indicación profesional."
+    [normalizarTexto("AnÃ­s")]: {
+        info: "Semilla aromÃ¡tica de sabor dulce, comÃºn en infusiones suaves y recetas tradicionales.",
+        care: "Usar con moderaciÃ³n. Evitar aceites esenciales o dosis concentradas sin indicaciÃ³n profesional."
     },
-    [normalizarTexto("Árnica")]: {
+    [normalizarTexto("Ãrnica")]: {
         info: "Planta de uso tradicional externo, frecuente en pomadas para golpes o molestias musculares leves.",
         care: "No ingerir. No aplicar en heridas abiertas, mucosas ni piel irritada."
     },
     [normalizarTexto("Boldo")]: {
-        info: "Planta amarga usada tradicionalmente para digestión pesada y malestar después de comidas grasosas.",
-        care: "Evitar en embarazo, lactancia, enfermedad hepática o cálculos biliares sin orientación médica."
+        info: "Planta amarga usada tradicionalmente para digestiÃ³n pesada y malestar despuÃ©s de comidas grasosas.",
+        care: "Evitar en embarazo, lactancia, enfermedad hepÃ¡tica o cÃ¡lculos biliares sin orientaciÃ³n mÃ©dica."
     },
-    [normalizarTexto("Caléndula")]: {
+    [normalizarTexto("CalÃ©ndula")]: {
         info: "Flor de color amarillo o naranja usada en lavados suaves y preparados externos para piel sensible.",
-        care: "No aplicar si produce ardor, ronchas o alergia. Evitar en personas alérgicas a margaritas o plantas similares."
+        care: "No aplicar si produce ardor, ronchas o alergia. Evitar en personas alÃ©rgicas a margaritas o plantas similares."
     },
     [normalizarTexto("Canela")]: {
-        info: "Corteza aromática usada en bebidas, comidas e infusiones por su sabor cálido.",
-        care: "Evitar exceso, especialmente en embarazo, enfermedad hepática o uso de anticoagulantes."
+        info: "Corteza aromÃ¡tica usada en bebidas, comidas e infusiones por su sabor cÃ¡lido.",
+        care: "Evitar exceso, especialmente en embarazo, enfermedad hepÃ¡tica o uso de anticoagulantes."
     },
     [normalizarTexto("Cebolla")]: {
-        info: "Bulbo alimenticio común en la cocina, usado tradicionalmente en preparaciones para tos leve.",
-        care: "Puede causar acidez o gases. No usar como reemplazo de atención médica si hay fiebre o dificultad respiratoria."
+        info: "Bulbo alimenticio comÃºn en la cocina, usado tradicionalmente en preparaciones para tos leve.",
+        care: "Puede causar acidez o gases. No usar como reemplazo de atenciÃ³n mÃ©dica si hay fiebre o dificultad respiratoria."
     },
-    [normalizarTexto("Cedrón")]: {
-        info: "Planta aromática de olor cítrico, frecuente en infusiones relajantes y digestivas.",
+    [normalizarTexto("CedrÃ³n")]: {
+        info: "Planta aromÃ¡tica de olor cÃ­trico, frecuente en infusiones relajantes y digestivas.",
         care: "Usar infusiones suaves. Suspender si causa somnolencia excesiva o malestar estomacal."
     },
-    [normalizarTexto("Chía")]: {
+    [normalizarTexto("ChÃ­a")]: {
         info: "Semilla rica en fibra que forma gel al hidratarse y se usa en bebidas o alimentos.",
-        care: "Tomarla con suficiente agua. Introducir poco a poco si hay estreñimiento o colon sensible."
+        care: "Tomarla con suficiente agua. Introducir poco a poco si hay estreÃ±imiento o colon sensible."
     },
     [normalizarTexto("Cilantro")]: {
         info: "Hierba culinaria de hojas frescas, usada para dar sabor y como apoyo digestivo tradicional.",
-        care: "Lavar bien antes de consumir. Evitar si hay alergia o irritación digestiva."
+        care: "Lavar bien antes de consumir. Evitar si hay alergia o irritaciÃ³n digestiva."
     },
     [normalizarTexto("Clavo de olor")]: {
-        info: "Botón floral seco de aroma fuerte, usado en cocina y en cuidados tradicionales de garganta o dientes.",
-        care: "No colocar aceite esencial directo en encías o piel. Puede irritar y no reemplaza atención dental."
+        info: "BotÃ³n floral seco de aroma fuerte, usado en cocina y en cuidados tradicionales de garganta o dientes.",
+        care: "No colocar aceite esencial directo en encÃ­as o piel. Puede irritar y no reemplaza atenciÃ³n dental."
     },
     [normalizarTexto("Cola de caballo")]: {
-        info: "Planta de tallos delgados usada en infusiones tradicionales por su efecto diurético suave.",
-        care: "Evitar si hay enfermedad renal, embarazo, deshidratación o uso de diuréticos."
+        info: "Planta de tallos delgados usada en infusiones tradicionales por su efecto diurÃ©tico suave.",
+        care: "Evitar si hay enfermedad renal, embarazo, deshidrataciÃ³n o uso de diurÃ©ticos."
     },
-    [normalizarTexto("Cúrcuma")]: {
-        info: "Raíz amarilla usada como condimento y en infusiones por su tradición antiinflamatoria.",
-        care: "Evitar dosis altas si hay cálculos biliares, gastritis fuerte o uso de anticoagulantes."
+    [normalizarTexto("CÃºrcuma")]: {
+        info: "RaÃ­z amarilla usada como condimento y en infusiones por su tradiciÃ³n antiinflamatoria.",
+        care: "Evitar dosis altas si hay cÃ¡lculos biliares, gastritis fuerte o uso de anticoagulantes."
     },
-    [normalizarTexto("Diente de león")]: {
-        info: "Planta de hojas y raíz usadas en infusiones tradicionales para digestión y eliminación de líquidos.",
-        care: "Consultar si hay problemas renales, biliares o uso de medicamentos diuréticos."
+    [normalizarTexto("Diente de leÃ³n")]: {
+        info: "Planta de hojas y raÃ­z usadas en infusiones tradicionales para digestiÃ³n y eliminaciÃ³n de lÃ­quidos.",
+        care: "Consultar si hay problemas renales, biliares o uso de medicamentos diurÃ©ticos."
     },
-    [normalizarTexto("Equinácea")]: {
+    [normalizarTexto("EquinÃ¡cea")]: {
         info: "Planta usada tradicionalmente como apoyo durante resfriados y temporadas de defensas bajas.",
         care: "Puede interactuar con medicamentos y no conviene en algunas enfermedades autoinmunes."
     },
     [normalizarTexto("Eucalipto")]: {
-        info: "Árbol aromático cuyas hojas se usan en vapores para sensación de congestión nasal.",
-        care: "No ingerir aceite esencial. Evitar vapores muy calientes en niños pequeños o personas con asma."
+        info: "Ãrbol aromÃ¡tico cuyas hojas se usan en vapores para sensaciÃ³n de congestiÃ³n nasal.",
+        care: "No ingerir aceite esencial. Evitar vapores muy calientes en niÃ±os pequeÃ±os o personas con asma."
     },
     [normalizarTexto("Flor de Jamaica")]: {
-        info: "Flor seca usada en refrescos e infusiones ácidas, populares para hidratar y acompañar comidas.",
-        care: "Consultar si hay presión baja, embarazo o uso de medicamentos para presión arterial."
+        info: "Flor seca usada en refrescos e infusiones Ã¡cidas, populares para hidratar y acompaÃ±ar comidas.",
+        care: "Consultar si hay presiÃ³n baja, embarazo o uso de medicamentos para presiÃ³n arterial."
     },
     [normalizarTexto("Ginseng")]: {
-        info: "Raíz usada tradicionalmente para cansancio, energía y rendimiento físico o mental.",
-        care: "Evitar si hay presión alta no controlada, insomnio, embarazo o uso de anticoagulantes."
+        info: "RaÃ­z usada tradicionalmente para cansancio, energÃ­a y rendimiento fÃ­sico o mental.",
+        care: "Evitar si hay presiÃ³n alta no controlada, insomnio, embarazo o uso de anticoagulantes."
     },
     [normalizarTexto("Guayaba")]: {
-        info: "Árbol frutal cuyas hojas se usan en infusiones tradicionales y cuyo fruto aporta vitamina C.",
-        care: "No reemplaza suero oral ni atención si hay diarrea con sangre, fiebre o deshidratación."
+        info: "Ãrbol frutal cuyas hojas se usan en infusiones tradicionales y cuyo fruto aporta vitamina C.",
+        care: "No reemplaza suero oral ni atenciÃ³n si hay diarrea con sangre, fiebre o deshidrataciÃ³n."
     },
     [normalizarTexto("Hierbabuena")]: {
-        info: "Hierba aromática fresca, parecida a la menta, usada en bebidas e infusiones digestivas.",
+        info: "Hierba aromÃ¡tica fresca, parecida a la menta, usada en bebidas e infusiones digestivas.",
         care: "Puede empeorar reflujo en algunas personas. Usar infusiones suaves."
     },
     [normalizarTexto("Hinojo")]: {
-        info: "Semilla aromática usada en infusiones tradicionales para gases y cólicos leves.",
-        care: "Evitar preparados concentrados en embarazo, lactancia o niños pequeños sin orientación."
+        info: "Semilla aromÃ¡tica usada en infusiones tradicionales para gases y cÃ³licos leves.",
+        care: "Evitar preparados concentrados en embarazo, lactancia o niÃ±os pequeÃ±os sin orientaciÃ³n."
     },
     [normalizarTexto("Jengibre")]: {
-        info: "Raíz picante usada en comidas, bebidas e infusiones durante resfriados o náuseas leves.",
-        care: "Puede causar acidez. Consultar si se usan anticoagulantes o hay cálculos biliares."
+        info: "RaÃ­z picante usada en comidas, bebidas e infusiones durante resfriados o nÃ¡useas leves.",
+        care: "Puede causar acidez. Consultar si se usan anticoagulantes o hay cÃ¡lculos biliares."
     },
     [normalizarTexto("Laurel")]: {
-        info: "Hoja aromática usada para dar sabor a comidas y en infusiones digestivas tradicionales.",
+        info: "Hoja aromÃ¡tica usada para dar sabor a comidas y en infusiones digestivas tradicionales.",
         care: "Retirar la hoja de las comidas antes de servir. Evitar aceites concentrados."
     },
     [normalizarTexto("Linaza")]: {
-        info: "Semilla rica en fibra y mucílagos, usada para apoyar tránsito intestinal y saciedad.",
-        care: "Tomarla con agua suficiente. Separarla de medicamentos porque puede disminuir su absorción."
+        info: "Semilla rica en fibra y mucÃ­lagos, usada para apoyar trÃ¡nsito intestinal y saciedad.",
+        care: "Tomarla con agua suficiente. Separarla de medicamentos porque puede disminuir su absorciÃ³n."
     },
-    [normalizarTexto("Llantén")]: {
-        info: "Planta de hojas anchas usada en tradición popular para garganta, tos leve y lavados externos.",
+    [normalizarTexto("LlantÃ©n")]: {
+        info: "Planta de hojas anchas usada en tradiciÃ³n popular para garganta, tos leve y lavados externos.",
         care: "Lavar muy bien las hojas. No aplicar en heridas profundas ni usar si hay alergia."
     },
     [normalizarTexto("Malva")]: {
-        info: "Planta suave con mucílagos, usada en infusiones para garganta irritada y molestias digestivas leves.",
-        care: "Separar de medicamentos por al menos dos horas, porque sus mucílagos pueden afectar absorción."
+        info: "Planta suave con mucÃ­lagos, usada en infusiones para garganta irritada y molestias digestivas leves.",
+        care: "Separar de medicamentos por al menos dos horas, porque sus mucÃ­lagos pueden afectar absorciÃ³n."
     },
     [normalizarTexto("Manzanilla")]: {
-        info: "Flor aromática usada en infusiones suaves para descanso, nervios leves y digestión.",
-        care: "Evitar si hay alergia a margaritas o plantas similares. No usar en ojos sin indicación."
+        info: "Flor aromÃ¡tica usada en infusiones suaves para descanso, nervios leves y digestiÃ³n.",
+        care: "Evitar si hay alergia a margaritas o plantas similares. No usar en ojos sin indicaciÃ³n."
     },
     [normalizarTexto("Menta")]: {
         info: "Hierba fresca de aroma intenso usada en bebidas, comidas e infusiones digestivas.",
-        care: "Puede empeorar reflujo. Evitar aceites esenciales por vía oral."
+        care: "Puede empeorar reflujo. Evitar aceites esenciales por vÃ­a oral."
     },
     [normalizarTexto("Moringa")]: {
-        info: "Árbol de hojas nutritivas usadas como alimento por su aporte de vitaminas y minerales.",
-        care: "Usarla como complemento alimenticio, no como cura. Consultar en embarazo o tratamientos crónicos."
+        info: "Ãrbol de hojas nutritivas usadas como alimento por su aporte de vitaminas y minerales.",
+        care: "Usarla como complemento alimenticio, no como cura. Consultar en embarazo o tratamientos crÃ³nicos."
     },
     [normalizarTexto("Naranja agria")]: {
-        info: "Cítrico usado en comidas, bebidas y preparaciones tradicionales por su sabor ácido.",
-        care: "Puede irritar gastritis o reflujo. Consultar si se toman medicamentos sensibles a cítricos."
+        info: "CÃ­trico usado en comidas, bebidas y preparaciones tradicionales por su sabor Ã¡cido.",
+        care: "Puede irritar gastritis o reflujo. Consultar si se toman medicamentos sensibles a cÃ­tricos."
     },
     [normalizarTexto("Noni")]: {
         info: "Fruto tropical usado tradicionalmente en jugos o preparados para bienestar general.",
-        care: "Consultar si hay enfermedad renal, hepática o uso de medicamentos. Evitar exceso."
+        care: "Consultar si hay enfermedad renal, hepÃ¡tica o uso de medicamentos. Evitar exceso."
     },
-    [normalizarTexto("Orégano")]: {
-        info: "Hierba aromática muy usada en cocina y en infusiones tradicionales para tos o digestión.",
-        care: "Evitar aceite esencial por vía oral. Usar cantidades culinarias o infusiones suaves."
+    [normalizarTexto("OrÃ©gano")]: {
+        info: "Hierba aromÃ¡tica muy usada en cocina y en infusiones tradicionales para tos o digestiÃ³n.",
+        care: "Evitar aceite esencial por vÃ­a oral. Usar cantidades culinarias o infusiones suaves."
     },
     [normalizarTexto("Ortiga")]: {
         info: "Planta de hojas urticantes usada tradicionalmente en infusiones y preparaciones para articulaciones.",
-        care: "Manipular con cuidado. Consultar si hay embarazo, presión baja o uso de diuréticos."
+        care: "Manipular con cuidado. Consultar si hay embarazo, presiÃ³n baja o uso de diurÃ©ticos."
     },
     [normalizarTexto("Pasiflora")]: {
-        info: "Planta trepadora usada en infusiones para relajación, nervios leves y sueño.",
-        care: "Puede causar somnolencia. Evitar mezclar con alcohol, sedantes o manejar después de tomarla."
+        info: "Planta trepadora usada en infusiones para relajaciÃ³n, nervios leves y sueÃ±o.",
+        care: "Puede causar somnolencia. Evitar mezclar con alcohol, sedantes o manejar despuÃ©s de tomarla."
     },
     [normalizarTexto("Perejil")]: {
-        info: "Hierba culinaria fresca usada para sabor y como apoyo diurético tradicional.",
+        info: "Hierba culinaria fresca usada para sabor y como apoyo diurÃ©tico tradicional.",
         care: "Evitar preparados concentrados en embarazo o enfermedad renal."
     },
     [normalizarTexto("Romero")]: {
-        info: "Arbusto aromático usado en cocina, infusiones y fricciones externas tradicionales.",
-        care: "Evitar aceite esencial por vía oral. Consultar si hay epilepsia, embarazo o presión alta."
+        info: "Arbusto aromÃ¡tico usado en cocina, infusiones y fricciones externas tradicionales.",
+        care: "Evitar aceite esencial por vÃ­a oral. Consultar si hay epilepsia, embarazo o presiÃ³n alta."
     },
     [normalizarTexto("Ruda")]: {
-        info: "Planta de olor fuerte usada en tradición popular para cólicos y rituales.",
-        care: "No usar en embarazo. Puede ser tóxica en dosis altas y causar irritación."
+        info: "Planta de olor fuerte usada en tradiciÃ³n popular para cÃ³licos y rituales.",
+        care: "No usar en embarazo. Puede ser tÃ³xica en dosis altas y causar irritaciÃ³n."
     },
     [normalizarTexto("Salvia")]: {
-        info: "Planta aromática usada en infusiones y gárgaras tradicionales para garganta y digestión.",
+        info: "Planta aromÃ¡tica usada en infusiones y gÃ¡rgaras tradicionales para garganta y digestiÃ³n.",
         care: "Evitar uso prolongado o concentrado. Consultar en embarazo, lactancia o epilepsia."
     },
-    [normalizarTexto("Sábila")]: {
-        info: "Nombre común del aloe vera, planta de hojas carnosas con gel usado en piel.",
-        care: "Usar el gel limpio de forma externa. No ingerir el látex amarillo."
+    [normalizarTexto("SÃ¡bila")]: {
+        info: "Nombre comÃºn del aloe vera, planta de hojas carnosas con gel usado en piel.",
+        care: "Usar el gel limpio de forma externa. No ingerir el lÃ¡tex amarillo."
     },
     [normalizarTexto("Sauco")]: {
-        info: "Planta de flores pequeñas usada en infusiones tradicionales durante resfriados leves.",
+        info: "Planta de flores pequeÃ±as usada en infusiones tradicionales durante resfriados leves.",
         care: "No consumir partes crudas o verdes. Consultar si hay embarazo o enfermedad autoinmune."
     },
-    [normalizarTexto("Té verde")]: {
-        info: "Infusión de hojas de Camellia sinensis, apreciada por su sabor y contenido de cafeína.",
-        care: "Puede causar insomnio o acidez. Moderar si hay ansiedad, presión alta o embarazo."
+    [normalizarTexto("TÃ© verde")]: {
+        info: "InfusiÃ³n de hojas de Camellia sinensis, apreciada por su sabor y contenido de cafeÃ­na.",
+        care: "Puede causar insomnio o acidez. Moderar si hay ansiedad, presiÃ³n alta o embarazo."
     },
     [normalizarTexto("Tilo")]: {
-        info: "Flor usada en infusiones tradicionales para relajación, descanso y nervios leves.",
-        care: "Puede causar sueño. Evitar mezclar con sedantes o alcohol."
+        info: "Flor usada en infusiones tradicionales para relajaciÃ³n, descanso y nervios leves.",
+        care: "Puede causar sueÃ±o. Evitar mezclar con sedantes o alcohol."
     },
     [normalizarTexto("Tomillo")]: {
-        info: "Hierba aromática usada en cocina e infusiones tradicionales para garganta y digestión.",
-        care: "Evitar aceites esenciales por vía oral. Consultar en embarazo o alergias."
+        info: "Hierba aromÃ¡tica usada en cocina e infusiones tradicionales para garganta y digestiÃ³n.",
+        care: "Evitar aceites esenciales por vÃ­a oral. Consultar en embarazo o alergias."
     },
     [normalizarTexto("Toronjil")]: {
-        info: "Planta aromática de olor cítrico, también conocida como melisa, usada para calma y digestión.",
+        info: "Planta aromÃ¡tica de olor cÃ­trico, tambiÃ©n conocida como melisa, usada para calma y digestiÃ³n.",
         care: "Puede causar somnolencia. Consultar si se toman medicamentos sedantes o tiroideos."
     },
     [normalizarTexto("Valeriana")]: {
-        info: "Raíz usada tradicionalmente para sueño, relajación y nervios leves.",
-        care: "Puede causar somnolencia. No mezclar con alcohol, sedantes ni manejar después."
+        info: "RaÃ­z usada tradicionalmente para sueÃ±o, relajaciÃ³n y nervios leves.",
+        care: "Puede causar somnolencia. No mezclar con alcohol, sedantes ni manejar despuÃ©s."
     },
-    [normalizarTexto("Zacate limón")]: {
-        info: "Hierba de aroma cítrico usada en infusiones refrescantes y relajantes.",
+    [normalizarTexto("Zacate limÃ³n")]: {
+        info: "Hierba de aroma cÃ­trico usada en infusiones refrescantes y relajantes.",
         care: "Usar infusiones suaves. Consultar en embarazo o si causa acidez."
     },
     [normalizarTexto("Zarzaparrilla")]: {
-        info: "Planta trepadora cuya raíz se usa tradicionalmente en bebidas y preparados de bienestar.",
+        info: "Planta trepadora cuya raÃ­z se usa tradicionalmente en bebidas y preparados de bienestar.",
         care: "Consultar si hay enfermedad renal, embarazo o uso de medicamentos."
     }
 };
@@ -435,8 +435,8 @@ const plantIndex = Array.from(plantCards)
             card,
             nombre,
             uso,
-            info: detalle.info || "Planta de uso tradicional en cuidados caseros y alimentación.",
-            care: detalle.care || "Usar con moderación y consultar con personal de salud ante dudas o síntomas persistentes.",
+            info: detalle.info || "Planta de uso tradicional en cuidados caseros y alimentaciÃ³n.",
+            care: detalle.care || "Usar con moderaciÃ³n y consultar con personal de salud ante dudas o sÃ­ntomas persistentes.",
             nombreTexto: normalizarTexto(nombre || ""),
             usoTexto: normalizarTexto(uso)
         };
@@ -651,6 +651,158 @@ if (plantSearch && plantCards.length) {
     filtrarPlantas();
 }
 
+const recipeSearch = document.getElementById("recipeSearch");
+const recipeSearchStatus = document.getElementById("recipeSearchStatus");
+const recipeSuggestions = document.getElementById("recipeSuggestions");
+const recipeCards = document.querySelectorAll("[data-recipe-card]");
+const featuredRecipeCount = 6;
+const recipeIndex = Array.from(recipeCards)
+    .map((card, index) => {
+        const nombre = card.querySelector("h3")?.textContent.trim();
+        const plantas = (card.dataset.recipePlants || "").trim();
+        const resumen = card.querySelector(".recipe-summary")?.textContent.trim() || "";
+        const contenido = normalizarTexto(card.textContent);
+        const busqueda = normalizarTexto(`${nombre || ""} ${plantas} ${resumen} ${card.dataset.recipeKeywords || ""}`);
+        const bloques = card.querySelectorAll(".recipe-columns > div");
+        const ingredientes = Array.from(bloques[0]?.querySelectorAll("li") || [])
+            .map((li) => li.textContent.trim())
+            .filter(Boolean);
+        const pasos = Array.from(bloques[1]?.querySelectorAll("li") || [])
+            .map((li) => li.textContent.trim())
+            .filter(Boolean);
+        const consejo = card.querySelector(".recipe-tip")?.textContent.replace(/^Consejo:\s*/i, "").trim() || "";
+        const warning = card.querySelector(".recipe-warning")?.textContent.replace(/^PrecauciÃ³n:\s*/i, "").trim() || "";
+
+        return {
+            card,
+            nombre,
+            nombreTexto: normalizarTexto(nombre || ""),
+            plantas,
+            plantasTexto: normalizarTexto(plantas),
+            resumen,
+            contenido,
+            busqueda,
+            ingredientes,
+            pasos,
+            consejo,
+            warning,
+            index
+        };
+    })
+    .filter((item) => item.nombre);
+
+function actualizarOpcionesReceta(termino) {
+    if (!recipeSuggestions || !recipeSearch) {
+        return;
+    }
+
+    recipeSuggestions.replaceChildren();
+
+    if (!termino) {
+        recipeSuggestions.classList.remove("visible");
+        recipeSearch.setAttribute("aria-expanded", "false");
+        return;
+    }
+
+    const coincidencias = recipeIndex
+        .filter((item) => item.busqueda.includes(termino))
+        .slice(0, 8);
+
+    recipeSuggestions.classList.toggle("visible", coincidencias.length > 0);
+    recipeSearch.setAttribute("aria-expanded", String(coincidencias.length > 0));
+
+    coincidencias.forEach((item) => {
+        const button = document.createElement("button");
+        const mark = document.createElement("span");
+        const copy = document.createElement("span");
+        const name = document.createElement("strong");
+        const hint = document.createElement("small");
+
+        button.type = "button";
+        button.className = "disease-suggestion";
+        button.setAttribute("role", "option");
+
+        mark.className = "suggestion-mark";
+        mark.textContent = item.nombre.charAt(0);
+
+        copy.className = "suggestion-copy";
+        name.textContent = item.nombre;
+        hint.textContent = item.plantas || "Ver receta";
+
+        copy.append(name, hint);
+        button.append(mark, copy);
+
+        button.addEventListener("click", () => {
+            recipeSearch.value = item.nombre;
+            filtrarRecetas();
+            item.card.scrollIntoView({ behavior: "smooth", block: "center" });
+            recipeSuggestions.classList.remove("visible");
+            recipeSearch.setAttribute("aria-expanded", "false");
+            recipeSearch.focus();
+        });
+
+        recipeSuggestions.appendChild(button);
+    });
+}
+
+function filtrarRecetas() {
+    if (!recipeSearch) {
+        return;
+    }
+
+    const termino = normalizarTexto(recipeSearch.value.trim());
+    let visibles = 0;
+
+    actualizarOpcionesReceta(termino);
+
+    recipeIndex.forEach((item) => {
+        const coincide = !termino
+            ? true
+            : item.busqueda.includes(termino) || item.contenido.includes(termino);
+        const mostrar = termino ? coincide : item.index < featuredRecipeCount;
+        item.card.classList.toggle("is-hidden", !mostrar);
+        item.card.classList.toggle("search-match", Boolean(termino) && coincide);
+
+        if (mostrar) {
+            visibles += 1;
+        }
+    });
+
+    if (recipeSearchStatus) {
+        if (!termino) {
+            recipeSearchStatus.textContent = `Muestra ${featuredRecipeCount} recetas destacadas de ${recipeIndex.length}. Escribe una planta o una letra para ver todas las recetas detalladas.`;
+        } else if (visibles === 1) {
+            recipeSearchStatus.textContent = "1 receta relacionada encontrada.";
+        } else if (visibles > 1) {
+            recipeSearchStatus.textContent = `${visibles} recetas relacionadas encontradas.`;
+        } else {
+            recipeSearchStatus.textContent = "No se encontraron recetas con esas letras.";
+        }
+    }
+}
+
+if (recipeSearch && recipeCards.length) {
+    recipeSearch.addEventListener("input", filtrarRecetas);
+    recipeSearch.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && recipeSuggestions) {
+            recipeSuggestions.classList.remove("visible");
+            recipeSearch.setAttribute("aria-expanded", "false");
+        }
+    });
+
+    document.addEventListener("click", (event) => {
+        const target = event.target;
+
+        if (recipeSuggestions && target instanceof Element && !target.closest(".recipe-search")) {
+            recipeSuggestions.classList.remove("visible");
+            recipeSearch.setAttribute("aria-expanded", "false");
+        }
+    });
+
+    filtrarRecetas();
+}
+
+
 const healthSurvey = document.getElementById("healthSurvey");
 const surveyResult = document.getElementById("surveyResult");
 
@@ -670,16 +822,16 @@ if (healthSurvey && surveyResult) {
 
         if (sintomas >= 4 || total >= 8) {
             titulo = "Prioridad alta";
-            mensaje = "Tus respuestas indican señales que conviene atender pronto. Busca orientación en una unidad de salud, especialmente si los síntomas son fuertes o persistentes.";
+            mensaje = "Tus respuestas indican seÃ±ales que conviene atender pronto. Busca orientaciÃ³n en una unidad de salud, especialmente si los sÃ­ntomas son fuertes o persistentes.";
         } else if (total >= 5) {
             titulo = "Cuidado preventivo recomendado";
-            mensaje = "Hay algunos puntos que puedes mejorar desde hoy. Observa tus síntomas y refuerza hábitos de prevención durante los próximos días.";
+            mensaje = "Hay algunos puntos que puedes mejorar desde hoy. Observa tus sÃ­ntomas y refuerza hÃ¡bitos de prevenciÃ³n durante los prÃ³ximos dÃ­as.";
         } else if (total >= 2) {
-            titulo = "Vas bien, con pequeños ajustes";
+            titulo = "Vas bien, con pequeÃ±os ajustes";
             mensaje = "Tus respuestas muestran un estado general estable, pero hay detalles que puedes fortalecer para prevenir riesgos.";
         } else {
             titulo = "Buen cuidado general";
-            mensaje = "Tus respuestas reflejan buenos hábitos de salud. Mantén la higiene, la hidratación, la alimentación variada y la prevención en casa.";
+            mensaje = "Tus respuestas reflejan buenos hÃ¡bitos de salud. MantÃ©n la higiene, la hidrataciÃ³n, la alimentaciÃ³n variada y la prevenciÃ³n en casa.";
         }
 
         if (sintomas >= 2) {
@@ -687,11 +839,11 @@ if (healthSurvey && surveyResult) {
         }
 
         if (habitos >= 1) {
-            consejos.push("Mejora el consumo de agua y procura comidas más variadas.");
+            consejos.push("Mejora el consumo de agua y procura comidas mÃ¡s variadas.");
         }
 
         if (prevencion >= 1) {
-            consejos.push("Refuerza lavado de manos, agua segura y eliminación de criaderos.");
+            consejos.push("Refuerza lavado de manos, agua segura y eliminaciÃ³n de criaderos.");
         }
 
         const detalle = consejos.length
@@ -730,7 +882,7 @@ if (imcForm && imcResult) {
         if (!edad || !genero || !peso || !unidadPeso || !alturaCm || alturaM <= 0) {
             imcResult.innerHTML = `
                 <strong>Revisa los datos</strong>
-                <p>Completa edad, género, peso y altura para calcular el IMC.</p>
+                <p>Completa edad, gÃ©nero, peso y altura para calcular el IMC.</p>
             `;
             imcResult.classList.add("visible");
             return;
@@ -738,24 +890,24 @@ if (imcForm && imcResult) {
 
         if (edad < 18) {
             categoria = "Resultado orientativo";
-            mensaje = "En menores de 18 años el IMC se interpreta con tablas de crecimiento según edad y sexo. Comparte este resultado con personal de salud para una orientación adecuada.";
+            mensaje = "En menores de 18 aÃ±os el IMC se interpreta con tablas de crecimiento segÃºn edad y sexo. Comparte este resultado con personal de salud para una orientaciÃ³n adecuada.";
         } else if (imc < 18.5) {
             categoria = "Bajo peso";
-            mensaje = "Tu IMC está por debajo del rango de referencia para personas adultas. Procura una alimentación suficiente y consulta si hay pérdida de peso, cansancio o falta de apetito.";
+            mensaje = "Tu IMC estÃ¡ por debajo del rango de referencia para personas adultas. Procura una alimentaciÃ³n suficiente y consulta si hay pÃ©rdida de peso, cansancio o falta de apetito.";
         } else if (imc < 25) {
             categoria = "Rango saludable";
-            mensaje = "Tu IMC está dentro del rango de referencia para personas adultas. Mantén hábitos de alimentación variada, hidratación y actividad física.";
+            mensaje = "Tu IMC estÃ¡ dentro del rango de referencia para personas adultas. MantÃ©n hÃ¡bitos de alimentaciÃ³n variada, hidrataciÃ³n y actividad fÃ­sica.";
         } else if (imc < 30) {
             categoria = "Sobrepeso";
-            mensaje = "Tu IMC está por encima del rango saludable. Puede ayudar revisar porciones, actividad física y consumo de agua; busca orientación si tienes presión alta, diabetes u otros riesgos.";
+            mensaje = "Tu IMC estÃ¡ por encima del rango saludable. Puede ayudar revisar porciones, actividad fÃ­sica y consumo de agua; busca orientaciÃ³n si tienes presiÃ³n alta, diabetes u otros riesgos.";
         } else {
             categoria = "Obesidad";
-            mensaje = "Tu IMC indica obesidad en rangos adultos. Es recomendable recibir orientación profesional para cuidar tu salud de forma segura y progresiva.";
+            mensaje = "Tu IMC indica obesidad en rangos adultos. Es recomendable recibir orientaciÃ³n profesional para cuidar tu salud de forma segura y progresiva.";
         }
 
         imcResult.innerHTML = `
             <strong>${categoria}</strong>
-            <p>IMC: ${imc.toFixed(1)} | Peso: ${peso} ${unidadPeso} | Edad: ${edad} | Género: ${genero}</p>
+            <p>IMC: ${imc.toFixed(1)} | Peso: ${peso} ${unidadPeso} | Edad: ${edad} | GÃ©nero: ${genero}</p>
             <p>${mensaje}</p>
         `;
         imcResult.classList.add("visible");
@@ -774,7 +926,7 @@ const hospitales = [
 
 
     {
-        nombre: "Hospital Alfonso Moncada Guillén",
+        nombre: "Hospital Alfonso Moncada GuillÃ©n",
         lugar: "Ocotal, Nueva Segovia",
         departamento: "Nueva Segovia",
         lat: 13.6321,
@@ -791,8 +943,8 @@ const hospitales = [
     },
     {
         nombre: "Hospital San Juan de Dios",
-        lugar: "Estelí",
-        departamento: "Estelí",
+        lugar: "EstelÃ­",
+        departamento: "EstelÃ­",
         lat: 13.0919,
         lon: -86.3538,
         tipo: "regional"
@@ -806,7 +958,7 @@ const hospitales = [
         tipo: "regional"
     },
     {
-        nombre: "Hospital Escuela César Amador Molina",
+        nombre: "Hospital Escuela CÃ©sar Amador Molina",
         lugar: "Matagalpa",
         departamento: "Matagalpa",
         lat: 12.9256,
@@ -830,7 +982,7 @@ const hospitales = [
         tipo: "normal"
     },
     {
-        nombre: "Hospital España",
+        nombre: "Hospital EspaÃ±a",
         lugar: "Chinandega",
         departamento: "Chinandega",
         lat: 12.6294,
@@ -839,14 +991,14 @@ const hospitales = [
     },
     {
         nombre: "Hospital Escuela Oscar Danilo Rosales",
-        lugar: "León",
-        departamento: "León",
+        lugar: "LeÃ³n",
+        departamento: "LeÃ³n",
         lat: 12.4379,
         lon: -86.8780,
         tipo: "regional"
     },
     {
-        nombre: "Hospital Antonio Lenín Fonseca",
+        nombre: "Hospital Antonio LenÃ­n Fonseca",
         lugar: "Managua",
         departamento: "Managua",
         lat: 12.1440,
@@ -854,7 +1006,7 @@ const hospitales = [
         tipo: "nacional"
     },
     {
-        nombre: "Hospital Bertha Calderón Roque",
+        nombre: "Hospital Bertha CalderÃ³n Roque",
         lugar: "Managua",
         departamento: "Managua",
         lat: 12.1307,
@@ -862,7 +1014,7 @@ const hospitales = [
         tipo: "nacional"
     },
     {
-        nombre: "Hospital Infantil Manuel de Jesús Rivera La Mascota",
+        nombre: "Hospital Infantil Manuel de JesÃºs Rivera La Mascota",
         lugar: "Managua",
         departamento: "Managua",
         lat: 12.1257,
@@ -870,7 +1022,7 @@ const hospitales = [
         tipo: "nacional"
     },
     {
-        nombre: "Hospital Alemán Nicaragüense",
+        nombre: "Hospital AlemÃ¡n NicaragÃ¼ense",
         lugar: "Managua",
         departamento: "Managua",
         lat: 12.1515,
@@ -886,7 +1038,7 @@ const hospitales = [
         tipo: "nacional"
     },
     {
-        nombre: "Hospital Occidental Fernando Vélez Paiz",
+        nombre: "Hospital Occidental Fernando VÃ©lez Paiz",
         lugar: "Managua",
         departamento: "Managua",
         lat: 12.1183,
@@ -894,7 +1046,7 @@ const hospitales = [
         tipo: "nacional"
     },
     {
-        nombre: "Hospital José Nieborowski",
+        nombre: "Hospital JosÃ© Nieborowski",
         lugar: "Boaco",
         departamento: "Boaco",
         lat: 12.4690,
@@ -902,7 +1054,7 @@ const hospitales = [
         tipo: "normal"
     },
     {
-        nombre: "Hospital Humberto Alvarado Vásquez",
+        nombre: "Hospital Humberto Alvarado VÃ¡squez",
         lugar: "Masaya",
         departamento: "Masaya",
         lat: 11.9744,
@@ -910,7 +1062,7 @@ const hospitales = [
         tipo: "regional"
     },
     {
-        nombre: "Hospital Amistad Japón-Nicaragua",
+        nombre: "Hospital Amistad JapÃ³n-Nicaragua",
         lugar: "Granada",
         departamento: "Granada",
         lat: 11.9299,
@@ -926,7 +1078,7 @@ const hospitales = [
         tipo: "normal"
     },
     {
-        nombre: "Hospital Gaspar García Laviana",
+        nombre: "Hospital Gaspar GarcÃ­a Laviana",
         lugar: "Rivas",
         departamento: "Rivas",
         lat: 11.4372,
@@ -934,7 +1086,7 @@ const hospitales = [
         tipo: "regional"
     },
     {
-        nombre: "Hospital Escuela Asunción",
+        nombre: "Hospital Escuela AsunciÃ³n",
         lugar: "Juigalpa",
         departamento: "Chontales",
         lat: 12.1063,
@@ -942,7 +1094,7 @@ const hospitales = [
         tipo: "regional"
     },
     {
-        nombre: "Hospital Jacinto Hernández",
+        nombre: "Hospital Jacinto HernÃ¡ndez",
         lugar: "Nueva Guinea",
         departamento: "Costa Caribe Sur",
         lat: 11.6876,
@@ -960,7 +1112,7 @@ const hospitales = [
     {
         nombre: "Hospital Luis Felipe Moncada",
         lugar: "San Carlos",
-        departamento: "Río San Juan",
+        departamento: "RÃ­o San Juan",
         lat: 11.1236,
         lon: -84.7779,
         tipo: "normal"
@@ -1089,5 +1241,6 @@ if (contactForm) {
         }
     });
 }
+
 
 
