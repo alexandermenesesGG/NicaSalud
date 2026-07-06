@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 declare(strict_types=1);
 
 header('Content-Type: application/json; charset=utf-8');
@@ -68,3 +68,4 @@ try {
         'message' => 'No se pudo guardar el mensaje. Revisa la conexión a MySQL y la configuración del servidor.'
     ], JSON_UNESCAPED_UNICODE);
 }
+

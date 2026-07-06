@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 declare(strict_types=1);
 
 session_start();
@@ -421,7 +421,7 @@ function excerpt(string $value, int $limit = 120): string
                 </div>
 
                 <?php if (empty($messages)): ?>
-                    <div class="empty">Todavia no hay mensajes guardados.</div>
+                    <div class="empty">Todavía no hay mensajes guardados.</div>
                 <?php else: ?>
                     <div class="table-wrap">
                         <table id="messagesTable">
@@ -485,3 +485,4 @@ function excerpt(string $value, int $limit = 120): string
     </script>
 </body>
 </html>
+
