@@ -24,8 +24,8 @@ NicaSalud es un sitio web informativo de salud comunitaria para Nicaragua. Reune
 - HTML5 para la estructura de las paginas.
 - CSS3 para el diseño visual y el modo oscuro.
 - JavaScript vanilla para busquedas, filtros, calculos y el formulario de contacto.
-- PHP para la API de contacto y el panel de administracion.
-- MySQL para almacenar mensajes de contacto.
+- PHP 8.3 para la API de contacto y el panel de administracion.
+- MySQL 8 para almacenar mensajes de contacto.
 - Apache dentro de Docker para servir la aplicacion.
 - Docker y Docker Compose para levantar el entorno completo.
 - Leaflet para el mapa hospitalario.
@@ -107,7 +107,7 @@ Luego abre:
 
 ### Sin Docker
 
-Si por alguna razon quieren correr la pagina sin docker, pueden usar el servidor local incluido:
+Si quieres probar el sitio sin Docker, puedes usar el servidor local incluido:
 
 ```powershell
 .\start-php-server.ps1 Mas recomendado hacerlo con docker
