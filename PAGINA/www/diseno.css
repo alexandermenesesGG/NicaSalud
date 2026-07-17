@@ -2044,6 +2044,18 @@ nav a:focus {
     color: #dffcf0;
 }
 
+#contacto .eyebrow {
+    border-color: rgba(53, 201, 139, 0.32);
+    background: rgba(93, 191, 140, 0.16);
+    color: var(--deep);
+    text-shadow: none;
+}
+
+#contacto .eyebrow .pulse {
+    background: var(--mint);
+    box-shadow: 0 0 0 0.45rem rgba(93, 191, 140, 0.14);
+}
+
 .pulse {
     background: var(--mint);
 }
@@ -2234,6 +2246,287 @@ footer {
         background-size: cover;
         background-position: center;
     }
+}
+
+/* Dark mode override */
+:root {
+    color-scheme: dark;
+    --ink: #e8f6f1;
+    --deep: #d3efe4;
+    --blue: #7db8ff;
+    --cyan: #5fe5dd;
+    --mint: #76d69f;
+    --coral: #ff8a7d;
+    --gold: #f0c35a;
+    --paper: #08161a;
+    --white: #ffffff;
+    --muted: #afc2bc;
+    --panel: #0d2228;
+    --panel-strong: #132c33;
+    --line: rgba(117, 214, 159, 0.18);
+    --border: rgba(117, 214, 159, 0.18);
+    --glass: rgba(13, 34, 40, 0.84);
+    --glow: 0 12px 30px rgba(117, 214, 159, 0.16);
+    --shadow: 0 20px 52px rgba(0, 0, 0, 0.35);
+}
+
+body {
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 12% 8%, rgba(93, 191, 140, 0.12), transparent 26rem),
+        radial-gradient(circle at 88% 18%, rgba(103, 167, 255, 0.12), transparent 24rem),
+        linear-gradient(180deg, #061419 0, #081a1f 34rem),
+        var(--paper);
+}
+
+body::before {
+    background:
+        linear-gradient(135deg, rgba(34, 184, 199, 0.08), rgba(53, 201, 139, 0.06));
+}
+
+.topbar {
+    background: rgba(8, 24, 29, 0.92);
+    border-bottom-color: rgba(117, 214, 159, 0.18);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
+}
+
+nav a {
+    color: #d7f2ea;
+}
+
+nav a:hover,
+nav a:focus {
+    background: rgba(117, 214, 159, 0.12);
+    border-color: rgba(95, 226, 166, 0.22);
+    color: #effff8;
+}
+
+.site-search input,
+.survey-question input,
+.survey-question select,
+.contact-form input,
+.contact-form textarea,
+.disease-search input {
+    background: rgba(8, 24, 29, 0.96);
+    border-color: rgba(117, 214, 159, 0.18);
+    color: var(--ink);
+}
+
+.site-search input::placeholder,
+.contact-form input::placeholder,
+.contact-form textarea::placeholder,
+.disease-search input::placeholder,
+.imc-form input::placeholder {
+    color: rgba(232, 246, 241, 0.55);
+}
+
+.site-search input:focus,
+.survey-question input:focus,
+.survey-question select:focus,
+.contact-form input:focus,
+.contact-form textarea:focus,
+.disease-search input:focus {
+    border-color: rgba(95, 226, 166, 0.5);
+    box-shadow: 0 0 0 0.22rem rgba(95, 226, 166, 0.14);
+}
+
+.site-search button,
+.button.primary,
+.filter-tab.active {
+    background: linear-gradient(135deg, #5fa3d8, #66d6cc);
+    color: #ffffff;
+}
+
+.search-status,
+.hospital-card {
+    background: rgba(13, 34, 40, 0.96);
+    color: var(--muted);
+    border: 1px solid rgba(117, 214, 159, 0.14);
+}
+
+.hero::after,
+.page-hero::after {
+    background: linear-gradient(180deg, transparent, rgba(6, 20, 25, 0.96));
+}
+
+.eyebrow {
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.1);
+    color: #f1fffb;
+}
+
+#contacto .eyebrow {
+    border-color: rgba(117, 214, 159, 0.34);
+    background: rgba(13, 34, 40, 0.92);
+    color: #f2fffb;
+    text-shadow: none;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
+
+#contacto .eyebrow .pulse {
+    background: var(--mint);
+    box-shadow: 0 0 0 0.45rem rgba(117, 214, 159, 0.14);
+}
+
+.hero p {
+    color: #e6fbf6;
+}
+
+main::before {
+    background:
+        linear-gradient(180deg, rgba(47, 191, 113, 0.05), transparent 26rem);
+}
+
+h2,
+.filter-content h3,
+.survey-question legend,
+.survey-question span,
+.filter-card strong,
+.health-note strong,
+.disease-detail h4,
+.source-note strong,
+.disease-search label,
+.plant-detail-panel h3,
+.program h3,
+.prevention h3,
+.contact-details strong,
+.hospital-card strong,
+.contact-form label {
+    color: var(--deep);
+}
+
+.section-heading p,
+.lead,
+.survey-question label,
+.filter-card p,
+.health-note p,
+.disease-detail li,
+.source-note p,
+.source-note a,
+.disease-search p,
+.plant-detail-panel p,
+.program p,
+.prevention p,
+.hospital-card p,
+.department-hospital-list {
+    color: var(--muted);
+}
+
+.survey-form,
+.filter-panel,
+.filter-card,
+.health-note,
+.source-note,
+.disease-search,
+.plant-detail-panel,
+.stat,
+.program,
+.prevention,
+.contact-box,
+.signal-panel,
+.recipe-card {
+    background:
+        linear-gradient(135deg, rgba(53, 201, 139, 0.08), transparent 38%),
+        var(--panel);
+    border-color: var(--border);
+    box-shadow: var(--shadow);
+}
+
+.survey-question,
+.disease-card-intro,
+.disease-detail summary,
+.disease-detail[open],
+.disease-detail ul,
+.disease-detail h4:nth-of-type(1) + ul,
+.disease-detail h4:nth-of-type(2) + ul,
+.disease-detail h4:nth-of-type(3) + ul,
+.definition-card,
+.source-note a,
+.disease-suggestions,
+.disease-suggestion,
+.filter-tab {
+    background: #0e2329;
+    border-color: rgba(117, 214, 159, 0.16);
+    color: var(--ink);
+}
+
+.disease-card-intro {
+    color: var(--ink) !important;
+}
+
+.disease-detail summary:hover,
+.disease-detail summary:focus-visible,
+.disease-suggestion:hover,
+.disease-suggestion:focus-visible,
+.filter-tab:hover,
+.filter-tab:focus {
+    background: #132b31;
+    border-color: rgba(117, 214, 159, 0.28);
+}
+
+.disease-detail summary::before,
+.suggestion-mark,
+.route-step span,
+.icon {
+    background: linear-gradient(135deg, #5dbf8c, #7db8ff);
+    color: #082026;
+}
+
+.filter-card::before {
+    background: linear-gradient(180deg, #2fbf71, #2f80ed);
+}
+
+.filter-card:hover,
+.plant-card.active,
+.plant-card:focus-visible {
+    border-color: rgba(95, 226, 166, 0.38);
+    box-shadow: 0 0 0 0.18rem rgba(95, 226, 166, 0.12), var(--shadow);
+}
+
+.filter-tabs {
+    background: rgba(117, 214, 159, 0.08);
+}
+
+.severity-tag,
+.severity-tag.high,
+.severity-tag.medium,
+.severity-tag.low {
+    color: #082026;
+}
+
+.severity-tag.high {
+    background: #ffd6c7;
+}
+
+.severity-tag.medium {
+    background: #fff0c2;
+}
+
+.severity-tag.low {
+    background: #dff7e7;
+}
+
+.blue-band {
+    background: linear-gradient(135deg, #0b5968, #168999 54%, #35c98b);
+}
+
+.route {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.route-step {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+footer {
+    background: #071317;
+    color: #b9d0c9;
+    border-top-color: rgba(117, 214, 159, 0.16);
+}
+
+.leaflet-container {
+    background: #0a2029;
 }
 
 

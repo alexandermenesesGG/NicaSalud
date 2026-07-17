@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 declare(strict_types=1);
 
 header('Content-Type: application/json; charset=utf-8');
@@ -14,12 +14,28 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 require_once __DIR__ . '/../../db/conexion.php';
 
+function recortar_texto(string $valor, int $maximo): string
+{
+    if (function_exists('mb_strlen') && function_exists('mb_substr')) {
+        return mb_strlen($valor) > $maximo ? mb_substr($valor, 0, $maximo) : $valor;
+    }
+
+    return strlen($valor) > $maximo ? substr($valor, 0, $maximo) : $valor;
+}
+
 $nombre = trim((string) ($_POST['nombre'] ?? ''));
 $correo = trim((string) ($_POST['correo'] ?? ''));
 $mensaje = trim((string) ($_POST['mensaje'] ?? ''));
 $pagina = trim((string) ($_POST['pagina'] ?? ''));
 $ipOrigen = $_SERVER['REMOTE_ADDR'] ?? null;
 $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? null;
+
+$nombre = recortar_texto($nombre, 120);
+$correo = recortar_texto($correo, 190);
+$mensaje = recortar_texto($mensaje, 5000);
+$pagina = recortar_texto($pagina, 190);
+$ipOrigen = $ipOrigen !== null ? recortar_texto($ipOrigen, 45) : null;
+$userAgent = $userAgent !== null ? recortar_texto($userAgent, 255) : null;
 
 if ($nombre === '' || $correo === '' || $mensaje === '') {
     http_response_code(422);

@@ -1,6 +1,14 @@
-﻿<?php
+<?php
 declare(strict_types=1);
 
+ini_set('session.use_strict_mode', '1');
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path' => '/',
+    'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
+    'httponly' => true,
+    'samesite' => 'Lax',
+]);
 session_start();
 
 header('Content-Type: text/html; charset=utf-8');
@@ -11,34 +19,58 @@ $adminUser = getenv('ADMIN_USER') ?: 'admin';
 $adminPassword = getenv('ADMIN_PASSWORD') ?: 'Admin123!';
 $error = '';
 
-if (isset($_GET['logout'])) {
-    $_SESSION = [];
-    if (ini_get('session.use_cookies')) {
-        $params = session_get_cookie_params();
-        setcookie(session_name(), '', time() - 42000, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+function admin_csrf_token(): string
+{
+    if (empty($_SESSION['csrf_token']) || !is_string($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
     }
-    session_destroy();
+
+    return $_SESSION['csrf_token'];
+}
+
+function admin_verify_csrf(string $token): bool
+{
+    return isset($_SESSION['csrf_token']) && is_string($_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $token);
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'logout') {
+    if (admin_verify_csrf((string) ($_POST['csrf_token'] ?? ''))) {
+        $_SESSION = [];
+        if (ini_get('session.use_cookies')) {
+            $params = session_get_cookie_params();
+            setcookie(session_name(), '', time() - 42000, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+        }
+        session_destroy();
+    }
+
     header('Location: /admin/');
     exit;
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'login') {
+    $csrfToken = (string) ($_POST['csrf_token'] ?? '');
     $username = trim((string) ($_POST['username'] ?? ''));
     $password = (string) ($_POST['password'] ?? '');
 
-    if ($username === $adminUser && hash_equals($adminPassword, $password)) {
+    if (!admin_verify_csrf($csrfToken)) {
+        $error = 'La sesión expiró. Recarga la página e intenta de nuevo.';
+    } elseif ($username === $adminUser && hash_equals($adminPassword, $password)) {
+        session_regenerate_id(true);
         $_SESSION['admin_logged_in'] = true;
         header('Location: /admin/');
         exit;
+    } else {
+        $error = 'Credenciales incorrectas.';
     }
-
-    $error = 'Credenciales incorrectas.';
 }
 
 if (!empty($_SESSION['admin_logged_in']) && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete') {
+    $csrfToken = (string) ($_POST['csrf_token'] ?? '');
     $id = (int) ($_POST['id'] ?? 0);
 
-    if ($id > 0) {
+    if (!admin_verify_csrf($csrfToken)) {
+        $error = 'La sesión expiró. Recarga la página e intenta de nuevo.';
+    } elseif ($id > 0) {
         try {
             $db = nicasalud_db_connection();
             $statement = $db->prepare('DELETE FROM contactos WHERE id = ?');
@@ -63,6 +95,7 @@ $stats = [
     'today' => 0,
     'last' => null,
 ];
+$csrfToken = admin_csrf_token();
 
 if (!empty($_SESSION['admin_logged_in'])) {
     try {
@@ -123,7 +156,7 @@ function excerpt(string $value, int $limit = 120): string
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin | NicaSalud</title>
-    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="icon" type="image/png" href="/assets/favicon.png?v=2">
     <style>
         :root {
             color-scheme: dark;
@@ -187,6 +220,9 @@ function excerpt(string $value, int $limit = 120): string
             display: flex;
             gap: 0.75rem;
             flex-wrap: wrap;
+        }
+        .actions form {
+            margin: 0;
         }
         .button, .ghost {
             display: inline-flex;
@@ -356,7 +392,7 @@ function excerpt(string $value, int $limit = 120): string
         <section class="hero">
             <div class="topline">
                 <div class="brand">
-                    <img src="/assets/logo.jpeg" alt="">
+                    <img src="/assets/logo.jpeg?v=2" alt="">
                     <div>
                         <div>Panel de administracion</div>
                         <div class="muted">Mensajes de contacto NicaSalud</div>
@@ -365,7 +401,11 @@ function excerpt(string $value, int $limit = 120): string
                 <div class="actions">
                     <a class="ghost" href="/nicasalud.html">Volver al sitio</a>
                     <?php if (!empty($_SESSION['admin_logged_in'])): ?>
-                        <a class="ghost" href="/admin/?logout=1">Salir</a>
+                        <form method="post" action="/admin/">
+                            <input type="hidden" name="action" value="logout">
+                            <input type="hidden" name="csrf_token" value="<?= h($csrfToken) ?>">
+                            <button class="ghost" type="submit">Salir</button>
+                        </form>
                     <?php endif; ?>
                 </div>
             </div>
@@ -398,6 +438,7 @@ function excerpt(string $value, int $limit = 120): string
             <section class="login">
                 <form class="login-grid" method="post" action="/admin/">
                     <input type="hidden" name="action" value="login">
+                    <input type="hidden" name="csrf_token" value="<?= h($csrfToken) ?>">
                     <label>
                         Usuario
                         <input type="text" name="username" autocomplete="username" required>
@@ -453,6 +494,7 @@ function excerpt(string $value, int $limit = 120): string
                                         <td>
                                             <form method="post" action="/admin/" onsubmit="return confirm('Eliminar este mensaje?');">
                                                 <input type="hidden" name="action" value="delete">
+                                                <input type="hidden" name="csrf_token" value="<?= h($csrfToken) ?>">
                                                 <input type="hidden" name="id" value="<?= h((string) $message['id']) ?>">
                                                 <button class="delete-btn" type="submit">Eliminar</button>
                                             </form>
