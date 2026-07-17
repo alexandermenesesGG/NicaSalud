@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const root = path.join(__dirname, 'www');
+const root = __dirname;
 const rootResolved = path.resolve(root);
 const port = 4173;
 

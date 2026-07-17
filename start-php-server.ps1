@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
 $projectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-$webRoot = Join-Path $projectRoot 'www'
+$webRoot = $projectRoot
 $port = 8000
 $serverHost = '127.0.0.1'
 

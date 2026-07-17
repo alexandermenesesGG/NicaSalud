@@ -34,16 +34,16 @@ NicaSalud es un sitio web informativo de salud comunitaria para Nicaragua. Reune
 
 ## Estructura del proyecto
 
-- `www/nicasalud.html`: pagina principal.
-- `www/enfermedades.html`: guia de enfermedades.
-- `www/plantas.html`: listado de plantas medicinales.
-- `www/recetas.html`: recetas con plantas.
-- `www/mapa.html`: mapa hospitalario.
-- `www/frontend.js`: logica de busqueda, filtros, calculos y contacto.
-- `www/diseno.css`: estilos globales del sitio.
-- `www/api/contacto.php`: API que guarda mensajes en MySQL.
-- `www/admin/index.php`: panel de administracion.
-- `www/assets/`: imagenes, logo y favicon.
+- `nicasalud.html`: pagina principal.
+- `enfermedades.html`: guia de enfermedades.
+- `plantas.html`: listado de plantas medicinales.
+- `recetas.html`: recetas con plantas.
+- `mapa.html`: mapa hospitalario.
+- `frontend.js`: logica de busqueda, filtros, calculos y contacto.
+- `diseno.css`: estilos globales del sitio.
+- `api/contacto.php`: API que guarda mensajes en MySQL.
+- `admin/index.php`: panel de administracion.
+- `assets/`: imagenes, logo y favicon.
 - `db/schema.sql`: esquema de base de datos.
 - `db/conexion.php`: conector PHP a MySQL.
 
@@ -117,7 +117,7 @@ Tambien existe `local-server.js`, pero ese servidor solo sirve la parte estatica
 
 ## Como probar el formulario
 
-El formulario de contacto envia los datos a `www/api/contacto.php` y guarda el mensaje en MySQL.
+El formulario de contacto envia los datos a `api/contacto.php` y guarda el mensaje en MySQL.
 
 ## Notas de uso
 

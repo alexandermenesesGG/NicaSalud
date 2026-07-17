@@ -13,7 +13,7 @@ session_start();
 
 header('Content-Type: text/html; charset=utf-8');
 
-require_once __DIR__ . '/../../db/conexion.php';
+require_once __DIR__ . '/../PAGINA/db/conexion.php';
 
 $adminUser = getenv('ADMIN_USER') ?: 'admin';
 $adminPassword = getenv('ADMIN_PASSWORD') ?: 'Admin123!';

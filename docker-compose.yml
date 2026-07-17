@@ -14,7 +14,7 @@ services:
       TZ: America/Managua
     volumes:
       - nicasalud_mysql_data:/var/lib/mysql
-      - ./db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./PAGINA/db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-prootpass123"]
       interval: 10s
@@ -39,8 +39,8 @@ services:
       ADMIN_USER: admin
       ADMIN_PASSWORD: Admin123!
     volumes:
-      - ./www:/var/www/html
-      - ./db:/var/www/db
+      - .:/var/www/html
+      - ./PAGINA/db:/var/www/db
     ports:
       - "8080:80"
 

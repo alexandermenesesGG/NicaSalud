@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-require_once __DIR__ . '/../../db/conexion.php';
+require_once __DIR__ . '/../PAGINA/db/conexion.php';
 
 function recortar_texto(string $valor, int $maximo): string
 {
