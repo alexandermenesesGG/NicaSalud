@@ -2529,6 +2529,231 @@ footer {
     background: #0a2029;
 }
 
+@media (max-width: 768px) {
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.85rem 1rem;
+    }
+
+    .brand {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .brand-logo {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 0.4rem;
+    }
+
+    nav a {
+        width: 100%;
+        justify-content: center;
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    section {
+        padding: 2.2rem 0.9rem;
+    }
+
+    .section-inner {
+        width: 100%;
+    }
+
+    .section-heading {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        margin-bottom: 1.15rem;
+    }
+
+    .hero,
+    .page-hero {
+        min-height: auto;
+        padding: 4.2rem 0.9rem 3.4rem;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    h1,
+    .page-hero h1 {
+        font-size: clamp(2rem, 10vw, 3.2rem);
+        line-height: 1.08;
+    }
+
+    .hero p,
+    .lead {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .hero-actions,
+    .site-search,
+    .contact-form .button {
+        width: 100%;
+    }
+
+    .hero-actions {
+        gap: 0.65rem;
+    }
+
+    .site-search {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .site-search input,
+    .site-search button,
+    .button.primary,
+    .contact-form .button {
+        width: 100%;
+        min-height: 48px;
+    }
+
+    .site-search input,
+    .survey-question input,
+    .survey-question select,
+    .contact-form input,
+    .contact-form textarea,
+    .disease-search input {
+        font-size: 16px;
+    }
+
+    .survey-form,
+    .contact,
+    .route,
+    .stats,
+    .definition,
+    .filter-grid,
+    .recipe-columns,
+    .plant-detail-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .contact,
+    .survey-form,
+    .plant-detail-panel,
+    .signal-panel,
+    .recipe-card,
+    .contact-box {
+        padding: 1rem;
+    }
+
+    .plant-detail-use,
+    .plant-detail-care {
+        padding-left: 0;
+        padding-top: 0.85rem;
+        border-left: 0;
+        border-top: 1px solid rgba(117, 214, 159, 0.16);
+    }
+
+    .signal-panel {
+        min-height: 24rem;
+    }
+
+    .search-status {
+        max-width: 100%;
+        left: 0;
+        right: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar {
+        padding: 0.75rem 0.85rem;
+    }
+
+    .brand span {
+        font-size: 1rem;
+    }
+
+    nav a {
+        width: 100%;
+        font-size: 0.92rem;
+    }
+
+    section {
+        padding: 1.9rem 0.75rem;
+    }
+
+    .hero,
+    .page-hero {
+        padding: 3.8rem 0.75rem 3rem;
+    }
+
+    .hero-content {
+        padding: 0.9rem 0.85rem;
+    }
+
+    h1,
+    .page-hero h1 {
+        font-size: clamp(1.85rem, 11vw, 2.7rem);
+    }
+
+    .hero p,
+    .lead {
+        font-size: 0.98rem;
+    }
+
+    .section-heading h2,
+    h2 {
+        font-size: clamp(1.45rem, 7vw, 2rem);
+    }
+
+    .survey-form,
+    .contact,
+    .plant-detail-panel,
+    .signal-panel,
+    .recipe-card,
+    .contact-box {
+        padding: 0.9rem;
+    }
+
+    .site-search input,
+    .site-search button,
+    .button.primary,
+    .contact-form .button,
+    .contact-form input,
+    .contact-form textarea,
+    .survey-question input,
+    .survey-question select,
+    .disease-search input {
+        min-height: 48px;
+    }
+
+    .hero-badges {
+        gap: 0.45rem;
+    }
+
+    .hero-badges span {
+        font-size: 0.82rem;
+        padding: 0.5rem 0.8rem;
+    }
+}
+
 
 
 
